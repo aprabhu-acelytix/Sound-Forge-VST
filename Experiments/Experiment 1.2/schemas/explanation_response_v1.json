@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sound Forge Experiment 1.2 Explanation Response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "explanation"
+  ],
+  "properties": {
+    "explanation": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 280,
+      "description": "Short UI-facing explanation grounded in the final sanitized applied patch."
+    }
+  }
+}

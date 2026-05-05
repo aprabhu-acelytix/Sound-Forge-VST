@@ -1,0 +1,10 @@
+root ::= ws explanation-object ws
+
+explanation-object ::= "{" ws "\"explanation\"" ws ":" ws json-string ws "}"
+
+json-string ::= "\"" string-char* "\""
+string-char ::= [^"\\\n\r] | escape
+escape ::= "\\" (["\\/bfnrt] | "u" hex hex hex hex)
+hex ::= [0-9a-fA-F]
+
+ws ::= [ \t\n\r]*

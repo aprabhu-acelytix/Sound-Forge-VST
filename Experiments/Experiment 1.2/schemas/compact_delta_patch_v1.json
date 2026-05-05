@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sound Forge Experiment 1.2 Compact Delta Patch",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "changes"
+  ],
+  "properties": {
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "value"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "enum": [
+              "oscillator-1.shape",
+              "oscillator-1.octave",
+              "oscillator-1.semitone",
+              "oscillator-1.detune-cents",
+              "oscillator-1.level",
+              "oscillator-1.unison-voices",
+              "oscillator-2.shape",
+              "oscillator-2.octave",
+              "oscillator-2.semitone",
+              "oscillator-2.detune-cents",
+              "oscillator-2.level",
+              "oscillator-2.sync-mode",
+              "filter.mode",
+              "filter.cutoff-hz",
+              "filter.resonance",
+              "filter.drive",
+              "filter.keytrack",
+              "filter.env-amount",
+              "filter.slope-db-per-oct",
+              "envelope.attack-ms",
+              "envelope.decay-ms",
+              "envelope.sustain",
+              "envelope.release-ms",
+              "envelope.velocity-amount",
+              "effects.reverb-mix",
+              "effects.delay-mix",
+              "effects.chorus-mix",
+              "effects.stereo-width",
+              "effects.output-gain-db",
+              "effects.distortion-drive"
+            ]
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string",
+                "enum": [
+                  "sine",
+                  "saw",
+                  "square",
+                  "off",
+                  "hard",
+                  "lowpass",
+                  "highpass",
+                  "bandpass"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
