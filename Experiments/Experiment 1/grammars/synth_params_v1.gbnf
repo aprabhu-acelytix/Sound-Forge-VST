@@ -1,0 +1,9 @@
+root ::= ws object ws
+
+object ::= "{" ws "\"osc_shape\"" ws ":" ws osc-shape-value ws "," ws "\"filter_cutoff\"" ws ":" ws number ws "," ws "\"attack_ms\"" ws ":" ws number ws "," ws "\"decay_ms\"" ws ":" ws number ws "," ws "\"reverb_mix\"" ws ":" ws number ws "}"
+
+osc-shape-value ::= "\"sine\"" | "\"saw\"" | "\"square\""
+number ::= integer fraction?
+integer ::= "0" | [1-9] [0-9]*
+fraction ::= "." [0-9]+
+ws ::= [ \t\n\r]*

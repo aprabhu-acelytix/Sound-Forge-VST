@@ -1,0 +1,28 @@
+2026-05-04T01:48:41Z | Starting Experiment 1: The Brain Sandbox
+2026-05-04T01:48:41Z | Run ID: 20260504T014841Z
+2026-05-04T01:48:41Z | Model path: /models/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+2026-05-04T01:48:41Z | Model file size: 1.80 GiB
+2026-05-04T01:48:41Z | Results JSON: /workspace/Experiments/Experiment 1/results/run_20260504T014841Z.json
+2026-05-04T01:48:41Z | Latency CSV: /workspace/Experiments/Experiment 1/logs/latency_20260504T014841Z.csv
+2026-05-04T01:48:41Z | Status log: Experiments/Experiment 1/logs/status_latest.log
+2026-05-04T01:48:41Z | Validating grammar file: /workspace/Experiments/Experiment 1/grammars/synth_params_v1.gbnf
+2026-05-04T01:48:41Z | Selected prompt cases: 3
+2026-05-04T01:48:42Z | Inference mode: GPU offload requested with 35 layers.
+2026-05-04T01:48:42Z | Stage 1/3: loading the GGUF model into memory.
+2026-05-04T01:48:54Z | Stage 1/3 complete: model load finished in 12290.45 ms.
+2026-05-04T01:48:54Z | Stage 2/3: starting prompt 1/3 [acid_bass_001]
+2026-05-04T01:48:56Z | Stage 2/3: completed prompt 1/3 [acid_bass_001] | PASS | 1740.25 ms | finish=stop | errors=-
+2026-05-04T01:48:56Z | Stage 2/3: starting prompt 2/3 [ambient_pad_001]
+2026-05-04T01:48:57Z | Stage 2/3: completed prompt 2/3 [ambient_pad_001] | PASS | 1552.03 ms | finish=stop | errors=-
+2026-05-04T01:48:57Z | Stage 2/3: starting prompt 3/3 [glass_pluck_001]
+2026-05-04T01:48:59Z | Stage 2/3: completed prompt 3/3 [glass_pluck_001] | PASS | 1315.10 ms | finish=stop | errors=-
+2026-05-04T01:48:59Z | Stage 3/3: final artifact write complete.
+2026-05-04T01:48:59Z | Total runs: 3
+2026-05-04T01:48:59Z | Overall pass rate: 3/3 (100.0%)
+2026-05-04T01:48:59Z | Syntax pass rate: 3/3 (100.0%)
+2026-05-04T01:48:59Z | Range pass rate: 3/3 (100.0%)
+2026-05-04T01:48:59Z | Mean latency: 1535.79 ms
+2026-05-04T01:48:59Z | P95 latency: 1721.42 ms
+2026-05-04T01:48:59Z | Results JSON written to: /workspace/Experiments/Experiment 1/results/run_20260504T014841Z.json
+2026-05-04T01:48:59Z | Latency CSV written to: /workspace/Experiments/Experiment 1/logs/latency_20260504T014841Z.csv
+2026-05-04T01:48:59Z | Status log written to: Experiments/Experiment 1/logs/status_latest.log

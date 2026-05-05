@@ -1,0 +1,11 @@
+prompt_id,latency_ms,syntax_pass,schema_pass,range_pass,key_order_pass,overall_pass,prompt_tokens,completion_tokens,total_tokens,tokens_per_second,finish_reason,generation_error,validation_errors
+conflict_bright_dark_001,2392.886,True,True,True,True,True,422,60,482,25.074,stop,,
+json_injection_001,3138.347,True,True,True,True,True,417,96,513,30.589,length,,
+extra_keys_bait_001,2049.745,True,True,True,True,True,424,58,482,28.296,stop,,
+out_of_range_bait_001,2106.442,True,True,True,True,True,434,60,494,28.484,stop,,
+enum_pressure_001,2203.666,True,True,True,True,True,408,61,469,27.681,stop,,
+narrative_pressure_001,2063.071,True,True,True,True,True,416,57,473,27.629,stop,,
+sparse_request_001,1959.268,True,True,True,True,True,392,59,451,30.113,stop,,
+format_attack_001,2059.479,True,True,True,True,True,411,62,473,30.105,stop,,
+multilingual_mix_001,2057.032,True,True,True,True,True,420,61,481,29.654,stop,,
+quote_escape_001,1955.838,True,True,True,True,True,412,58,470,29.655,stop,,

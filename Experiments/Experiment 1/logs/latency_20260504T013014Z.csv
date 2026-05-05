@@ -1,0 +1,1 @@
+prompt_id,latency_ms,syntax_pass,schema_pass,range_pass,key_order_pass,overall_pass,prompt_tokens,completion_tokens,total_tokens,tokens_per_second,finish_reason,generation_error,validation_errors

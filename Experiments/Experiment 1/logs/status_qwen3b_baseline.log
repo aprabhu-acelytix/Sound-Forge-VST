@@ -1,0 +1,42 @@
+2026-05-04T03:40:27Z | Starting Experiment 1: The Brain Sandbox
+2026-05-04T03:40:27Z | Run ID: 20260504T034027Z
+2026-05-04T03:40:27Z | Model path: /models/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+2026-05-04T03:40:27Z | Model file size: 1.80 GiB
+2026-05-04T03:40:27Z | Results JSON: /workspace/Experiments/Experiment 1/results/run_20260504T034027Z.json
+2026-05-04T03:40:27Z | Latency CSV: /workspace/Experiments/Experiment 1/logs/latency_20260504T034027Z.csv
+2026-05-04T03:40:27Z | Status log: Experiments/Experiment 1/logs/status_qwen3b_baseline.log
+2026-05-04T03:40:27Z | Validating grammar file: /workspace/Experiments/Experiment 1/grammars/synth_params_v1.gbnf
+2026-05-04T03:40:27Z | Selected prompt cases: 10
+2026-05-04T03:40:27Z | Inference mode: GPU offload requested with 35 layers.
+2026-05-04T03:40:27Z | Stage 1/3: loading the GGUF model into memory.
+2026-05-04T03:40:40Z | Stage 1/3 complete: model load finished in 12911.78 ms.
+2026-05-04T03:40:40Z | Stage 2/3: starting prompt 1/10 [acid_bass_001]
+2026-05-04T03:40:42Z | Stage 2/3: completed prompt 1/10 [acid_bass_001] | PASS | 1618.87 ms | finish=stop | errors=-
+2026-05-04T03:40:42Z | Stage 2/3: starting prompt 2/10 [ambient_pad_001]
+2026-05-04T03:40:43Z | Stage 2/3: completed prompt 2/10 [ambient_pad_001] | PASS | 1476.22 ms | finish=stop | errors=-
+2026-05-04T03:40:43Z | Stage 2/3: starting prompt 3/10 [glass_pluck_001]
+2026-05-04T03:40:45Z | Stage 2/3: completed prompt 3/10 [glass_pluck_001] | PASS | 1354.40 ms | finish=stop | errors=-
+2026-05-04T03:40:45Z | Stage 2/3: starting prompt 4/10 [soft_sub_001]
+2026-05-04T03:40:46Z | Stage 2/3: completed prompt 4/10 [soft_sub_001] | PASS | 1396.31 ms | finish=stop | errors=-
+2026-05-04T03:40:46Z | Stage 2/3: starting prompt 5/10 [retro_square_001]
+2026-05-04T03:40:48Z | Stage 2/3: completed prompt 5/10 [retro_square_001] | PASS | 1508.17 ms | finish=stop | errors=-
+2026-05-04T03:40:48Z | Stage 2/3: starting prompt 6/10 [cinematic_swell_001]
+2026-05-04T03:40:49Z | Stage 2/3: completed prompt 6/10 [cinematic_swell_001] | PASS | 1485.92 ms | finish=stop | errors=-
+2026-05-04T03:40:49Z | Stage 2/3: starting prompt 7/10 [dry_stab_001]
+2026-05-04T03:40:51Z | Stage 2/3: completed prompt 7/10 [dry_stab_001] | PASS | 1473.00 ms | finish=stop | errors=-
+2026-05-04T03:40:51Z | Stage 2/3: starting prompt 8/10 [mellow_keys_001]
+2026-05-04T03:40:52Z | Stage 2/3: completed prompt 8/10 [mellow_keys_001] | PASS | 1525.35 ms | finish=stop | errors=-
+2026-05-04T03:40:52Z | Stage 2/3: starting prompt 9/10 [washed_drone_001]
+2026-05-04T03:40:54Z | Stage 2/3: completed prompt 9/10 [washed_drone_001] | PASS | 1578.14 ms | finish=stop | errors=-
+2026-05-04T03:40:54Z | Stage 2/3: starting prompt 10/10 [ambiguous_hybrid_001]
+2026-05-04T03:40:56Z | Stage 2/3: completed prompt 10/10 [ambiguous_hybrid_001] | PASS | 1525.77 ms | finish=stop | errors=-
+2026-05-04T03:40:56Z | Stage 3/3: final artifact write complete.
+2026-05-04T03:40:56Z | Total runs: 10
+2026-05-04T03:40:56Z | Overall pass rate: 10/10 (100.0%)
+2026-05-04T03:40:56Z | Syntax pass rate: 10/10 (100.0%)
+2026-05-04T03:40:56Z | Range pass rate: 10/10 (100.0%)
+2026-05-04T03:40:56Z | Mean latency: 1494.22 ms
+2026-05-04T03:40:56Z | P95 latency: 1600.54 ms
+2026-05-04T03:40:56Z | Results JSON written to: /workspace/Experiments/Experiment 1/results/run_20260504T034027Z.json
+2026-05-04T03:40:56Z | Latency CSV written to: /workspace/Experiments/Experiment 1/logs/latency_20260504T034027Z.csv
+2026-05-04T03:40:56Z | Status log written to: Experiments/Experiment 1/logs/status_qwen3b_baseline.log

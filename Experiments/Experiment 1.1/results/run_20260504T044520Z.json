@@ -1,0 +1,1039 @@
+{
+  "experiment": "Experiment 1.1: The Advanced Brain Sandbox",
+  "run_id": "20260504T044520Z",
+  "run_state": "completed",
+  "timestamp_utc": "20260504T044623Z",
+  "environment": {
+    "python_version": "3.10.12",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35"
+  },
+  "artifacts": {
+    "results_json": "/workspace/Experiments/Experiment 1.1/results/run_20260504T044520Z.json",
+    "latency_csv": "/workspace/Experiments/Experiment 1.1/logs/latency_20260504T044520Z.csv",
+    "status_log": "Experiments/Experiment 1.1/logs/status_qwen3b_baseline.log"
+  },
+  "config": {
+    "model_path": "/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "system_prompt_file": "/workspace/Experiments/Experiment 1.1/prompts/system_prompt_v1_1.txt",
+    "grammar_file": "/workspace/Experiments/Experiment 1.1/grammars/advanced_patch_v1.gbnf",
+    "schema_file": "/workspace/Experiments/Experiment 1.1/schemas/advanced_patch_v1.json",
+    "prompts_file": "Experiments/Experiment 1.1/fixtures/baseline_prompts.json",
+    "results_dir": "/workspace/Experiments/Experiment 1.1/results",
+    "logs_dir": "/workspace/Experiments/Experiment 1.1/logs",
+    "status_file": "Experiments/Experiment 1.1/logs/status_qwen3b_baseline.log",
+    "chat_format": null,
+    "n_ctx": 4096,
+    "n_threads": null,
+    "n_gpu_layers": 35,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "repeat_penalty": 1.0,
+    "max_tokens": 640,
+    "seed": 42,
+    "limit": null,
+    "prompt_id": []
+  },
+  "model": {
+    "model_path": "/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "model_name": "Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "model_file_size": "1.80 GiB",
+    "model_load_ms": 11880.085911001515
+  },
+  "progress": {
+    "completed_runs": 5,
+    "total_runs": 5
+  },
+  "summary": {
+    "total_runs": 5,
+    "syntax_pass_count": 5,
+    "schema_pass_count": 5,
+    "range_pass_count": 5,
+    "key_order_pass_count": 5,
+    "explanation_pass_count": 5,
+    "sparse_pass_count": 2,
+    "overall_pass_count": 2,
+    "syntax_pass_rate": 1.0,
+    "schema_pass_rate": 1.0,
+    "range_pass_rate": 1.0,
+    "key_order_pass_rate": 1.0,
+    "explanation_pass_rate": 1.0,
+    "sparse_pass_rate": 0.4,
+    "overall_pass_rate": 0.4,
+    "latency_ms": {
+      "mean": 10141.192379999848,
+      "median": 9863.794175998919,
+      "min": 9634.182937999867,
+      "max": 11639.627569998993,
+      "p95": 11284.65889539948,
+      "p99": 11568.63383507909
+    },
+    "parse_latency_ms": {
+      "mean": 0.04460699929040857
+    },
+    "validation_latency_ms": {
+      "mean": 0.04384099956951104
+    },
+    "sparse_latency_ms": {
+      "mean": 0.025491000269539654
+    },
+    "explanation_length_chars": {
+      "mean": 78.0,
+      "max": 113
+    },
+    "null_ratio": {
+      "mean": 0.04,
+      "max": 0.2
+    },
+    "changed_param_count": {
+      "mean": 28.8,
+      "max": 30
+    },
+    "all_null_noop_count": 0,
+    "failure_categories": {
+      "pass": 2,
+      "sparse_fail": 3
+    }
+  },
+  "results": [
+    {
+      "prompt_id": "full_design_pad_001",
+      "prompt": "Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.",
+      "tags": [
+        "baseline",
+        "full-design",
+        "pad"
+      ],
+      "current_patch_context": null,
+      "latency_ms": 9864.784197001427,
+      "parse_latency_ms": 0.03845300307148136,
+      "validation_latency_ms": 0.039721999200992286,
+      "sparse_latency_ms": 0.014204000763129443,
+      "raw_output": "{\n  \"explanation\": \"Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.\",\n  \"oscillator-1\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5\n  ,\n  \"unison-voices\": 4\n  },\n  \"oscillator-2\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 500,\n    \"resonance\": 1.0,\n    \"drive\": 0.5,\n    \"keytrack\": 0.5,\n    \"env-amount\": 0.5\n  ,\n  \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 200,\n    \"decay-ms\": 500,\n    \"sustain\": 0.5,\n    \"release-ms\": 1000,\n    \"velocity-amount\": 0.5\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.5,\n    \"delay-mix\": 0.2,\n    \"chorus-mix\": 0.3,\n    \"stereo-width\": 1.0,\n    \"output-gain-db\": -3,\n    \"distortion-drive\": 0.1\n  }\n}",
+      "trimmed_output": "{\n  \"explanation\": \"Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.\",\n  \"oscillator-1\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5\n  ,\n  \"unison-voices\": 4\n  },\n  \"oscillator-2\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 500,\n    \"resonance\": 1.0,\n    \"drive\": 0.5,\n    \"keytrack\": 0.5,\n    \"env-amount\": 0.5\n  ,\n  \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 200,\n    \"decay-ms\": 500,\n    \"sustain\": 0.5,\n    \"release-ms\": 1000,\n    \"velocity-amount\": 0.5\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.5,\n    \"delay-mix\": 0.2,\n    \"chorus-mix\": 0.3,\n    \"stereo-width\": 1.0,\n    \"output-gain-db\": -3,\n    \"distortion-drive\": 0.1\n  }\n}",
+      "parsed_payload": {
+        "explanation": "Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.",
+        "oscillator-1": {
+          "shape": "sine",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 0,
+          "level": 0.5,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "sine",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 0,
+          "level": 0.5,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 500,
+          "resonance": 1.0,
+          "drive": 0.5,
+          "keytrack": 0.5,
+          "env-amount": 0.5,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 200,
+          "decay-ms": 500,
+          "sustain": 0.5,
+          "release-ms": 1000,
+          "velocity-amount": 0.5
+        },
+        "effects": {
+          "reverb-mix": 0.5,
+          "delay-mix": 0.2,
+          "chorus-mix": 0.3,
+          "stereo-width": 1.0,
+          "output-gain-db": -3,
+          "distortion-drive": 0.1
+        }
+      },
+      "merged_patch_preview": null,
+      "syntax_pass": true,
+      "schema_pass": true,
+      "range_pass": true,
+      "key_order_pass": true,
+      "explanation_pass": true,
+      "sparse_pass": true,
+      "overall_pass": true,
+      "finish_reason": "stop",
+      "prompt_tokens": 1063,
+      "completion_tokens": 372,
+      "total_tokens": 1435,
+      "tokens_per_second": 37.709897405872894,
+      "generation_error": null,
+      "validation_errors": [],
+      "explanation": "Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.",
+      "explanation_length": 80,
+      "changed_paths": {
+        "oscillator-1.shape": "sine",
+        "oscillator-1.octave": -1,
+        "oscillator-1.semitone": 0,
+        "oscillator-1.detune-cents": 0,
+        "oscillator-1.level": 0.5,
+        "oscillator-1.unison-voices": 4,
+        "oscillator-2.shape": "sine",
+        "oscillator-2.octave": -1,
+        "oscillator-2.semitone": 0,
+        "oscillator-2.detune-cents": 0,
+        "oscillator-2.level": 0.5,
+        "oscillator-2.sync-mode": "off",
+        "filter.mode": "lowpass",
+        "filter.cutoff-hz": 500,
+        "filter.resonance": 1.0,
+        "filter.drive": 0.5,
+        "filter.keytrack": 0.5,
+        "filter.env-amount": 0.5,
+        "filter.slope-db-per-oct": 24,
+        "envelope.attack-ms": 200,
+        "envelope.decay-ms": 500,
+        "envelope.sustain": 0.5,
+        "envelope.release-ms": 1000,
+        "envelope.velocity-amount": 0.5,
+        "effects.reverb-mix": 0.5,
+        "effects.delay-mix": 0.2,
+        "effects.chorus-mix": 0.3,
+        "effects.stereo-width": 1.0,
+        "effects.output-gain-db": -3,
+        "effects.distortion-drive": 0.1
+      },
+      "ignored_paths": [],
+      "changed_param_count": 30,
+      "null_param_count": 0,
+      "changed_block_count": 5,
+      "changed_blocks": [
+        "effects",
+        "envelope",
+        "filter",
+        "oscillator-1",
+        "oscillator-2"
+      ],
+      "all_null_noop": false,
+      "null_ratio": 0.0
+    },
+    {
+      "prompt_id": "full_design_bass_001",
+      "prompt": "Create an aggressive mono bass with a fast attack, tight decay, and minimal ambience.",
+      "tags": [
+        "baseline",
+        "full-design",
+        "bass"
+      ],
+      "current_patch_context": null,
+      "latency_ms": 11639.627569998993,
+      "parse_latency_ms": 0.04023300061817281,
+      "validation_latency_ms": 0.04641400300897658,
+      "sparse_latency_ms": 0.01475300086895004,
+      "raw_output": "{\n  \"explanation\": \"Aggressive saw wave, fast attack, tight decay, and minimal reverb and delay.\",\n  \"oscillator-1\": {\n    \"shape\": \"saw\"\n  \t,\n    \"octave\": -1\n  \t,\n    \"semitone\": 0\n  \t,\n    \"detune-cents\": 0\n  \t,\n    \"level\": 0.5\n  \t,\n    \"unison-voices\": 1\n  },\n  \"oscillator-2\": {\n    \"shape\": null\n  \t,\n    \"octave\": null\n  \t,\n    \"semitone\": null\n  \t,\n    \"detune-cents\": null\n  \t,\n    \"level\": null\n  \t,\n    \"sync-mode\": null\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\"\n  \t,\n    \"cutoff-hz\": 200\n  \t,\n    \"resonance\": 1.0\n  \t,\n    \"drive\": 0.5\n  \t,\n    \"keytrack\": 0.5\n  \t,\n    \"env-amount\": 0.5\n  \t,\n    \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 50\n  \t,\n    \"decay-ms\": 500\n  \t,\n    \"sustain\": 0.5\n  \t,\n    \"release-ms\": 500\n  \t,\n    \"velocity-amount\": 0.5\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.1\n  \t,\n    \"delay-mix\": 0.1\n  \t,\n    \"chorus-mix\": 0.1\n  \t,\n    \"stereo-width\": 1.0\n  \t,\n    \"output-gain-db\": -3\n  \t,\n    \"distortion-drive\": 0.1\n  }\n}",
+      "trimmed_output": "{\n  \"explanation\": \"Aggressive saw wave, fast attack, tight decay, and minimal reverb and delay.\",\n  \"oscillator-1\": {\n    \"shape\": \"saw\"\n  \t,\n    \"octave\": -1\n  \t,\n    \"semitone\": 0\n  \t,\n    \"detune-cents\": 0\n  \t,\n    \"level\": 0.5\n  \t,\n    \"unison-voices\": 1\n  },\n  \"oscillator-2\": {\n    \"shape\": null\n  \t,\n    \"octave\": null\n  \t,\n    \"semitone\": null\n  \t,\n    \"detune-cents\": null\n  \t,\n    \"level\": null\n  \t,\n    \"sync-mode\": null\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\"\n  \t,\n    \"cutoff-hz\": 200\n  \t,\n    \"resonance\": 1.0\n  \t,\n    \"drive\": 0.5\n  \t,\n    \"keytrack\": 0.5\n  \t,\n    \"env-amount\": 0.5\n  \t,\n    \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 50\n  \t,\n    \"decay-ms\": 500\n  \t,\n    \"sustain\": 0.5\n  \t,\n    \"release-ms\": 500\n  \t,\n    \"velocity-amount\": 0.5\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.1\n  \t,\n    \"delay-mix\": 0.1\n  \t,\n    \"chorus-mix\": 0.1\n  \t,\n    \"stereo-width\": 1.0\n  \t,\n    \"output-gain-db\": -3\n  \t,\n    \"distortion-drive\": 0.1\n  }\n}",
+      "parsed_payload": {
+        "explanation": "Aggressive saw wave, fast attack, tight decay, and minimal reverb and delay.",
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 0,
+          "level": 0.5,
+          "unison-voices": 1
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 200,
+          "resonance": 1.0,
+          "drive": 0.5,
+          "keytrack": 0.5,
+          "env-amount": 0.5,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 50,
+          "decay-ms": 500,
+          "sustain": 0.5,
+          "release-ms": 500,
+          "velocity-amount": 0.5
+        },
+        "effects": {
+          "reverb-mix": 0.1,
+          "delay-mix": 0.1,
+          "chorus-mix": 0.1,
+          "stereo-width": 1.0,
+          "output-gain-db": -3,
+          "distortion-drive": 0.1
+        }
+      },
+      "merged_patch_preview": null,
+      "syntax_pass": true,
+      "schema_pass": true,
+      "range_pass": true,
+      "key_order_pass": true,
+      "explanation_pass": true,
+      "sparse_pass": true,
+      "overall_pass": true,
+      "finish_reason": "stop",
+      "prompt_tokens": 1063,
+      "completion_tokens": 455,
+      "total_tokens": 1518,
+      "tokens_per_second": 39.09059781025617,
+      "generation_error": null,
+      "validation_errors": [],
+      "explanation": "Aggressive saw wave, fast attack, tight decay, and minimal reverb and delay.",
+      "explanation_length": 76,
+      "changed_paths": {
+        "oscillator-1.shape": "saw",
+        "oscillator-1.octave": -1,
+        "oscillator-1.semitone": 0,
+        "oscillator-1.detune-cents": 0,
+        "oscillator-1.level": 0.5,
+        "oscillator-1.unison-voices": 1,
+        "filter.mode": "lowpass",
+        "filter.cutoff-hz": 200,
+        "filter.resonance": 1.0,
+        "filter.drive": 0.5,
+        "filter.keytrack": 0.5,
+        "filter.env-amount": 0.5,
+        "filter.slope-db-per-oct": 24,
+        "envelope.attack-ms": 50,
+        "envelope.decay-ms": 500,
+        "envelope.sustain": 0.5,
+        "envelope.release-ms": 500,
+        "envelope.velocity-amount": 0.5,
+        "effects.reverb-mix": 0.1,
+        "effects.delay-mix": 0.1,
+        "effects.chorus-mix": 0.1,
+        "effects.stereo-width": 1.0,
+        "effects.output-gain-db": -3,
+        "effects.distortion-drive": 0.1
+      },
+      "ignored_paths": [
+        "oscillator-2.shape",
+        "oscillator-2.octave",
+        "oscillator-2.semitone",
+        "oscillator-2.detune-cents",
+        "oscillator-2.level",
+        "oscillator-2.sync-mode"
+      ],
+      "changed_param_count": 24,
+      "null_param_count": 6,
+      "changed_block_count": 4,
+      "changed_blocks": [
+        "effects",
+        "envelope",
+        "filter",
+        "oscillator-1"
+      ],
+      "all_null_noop": false,
+      "null_ratio": 0.2
+    },
+    {
+      "prompt_id": "sparse_brighter_001",
+      "prompt": "Make it brighter without changing the articulation or space.",
+      "tags": [
+        "baseline",
+        "sparse",
+        "filter"
+      ],
+      "current_patch_context": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 3.0,
+          "level": 0.8,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": -2.0,
+          "level": 0.4,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 1800.0,
+          "resonance": 1.2,
+          "drive": 0.1,
+          "keytrack": 0.4,
+          "env-amount": 0.2,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 120.0,
+          "decay-ms": 900.0,
+          "sustain": 0.6,
+          "release-ms": 1200.0,
+          "velocity-amount": 0.5
+        },
+        "effects": {
+          "reverb-mix": 0.35,
+          "delay-mix": 0.1,
+          "chorus-mix": 0.2,
+          "stereo-width": 1.2,
+          "output-gain-db": -3.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "latency_ms": 9703.573019000032,
+      "parse_latency_ms": 0.051087998144794255,
+      "validation_latency_ms": 0.05204299668548629,
+      "sparse_latency_ms": 0.02641399987624027,
+      "raw_output": "{\n  \"explanation\": \"Increase the filter cutoff and resonance to make the sound brighter.\",\n  \"oscillator-1\": {\n    \"shape\": \"saw\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 3.0,\n    \"level\": 0.8,\n    \"unison-voices\": 4\n  },\n  \"oscillator-2\": {\n    \"shape\": \"square\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": -2.0,\n    \"level\": 0.4,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 2500.0,\n    \"resonance\": 2.0,\n    \"drive\": 0.1,\n    \"keytrack\": 0.4,\n    \"env-amount\": 0.2,\n    \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 120.0,\n    \"decay-ms\": 900.0,\n    \"sustain\": 0.6,\n    \"release-ms\": 1200.0,\n    \"velocity-amount\": 0.5\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.35,\n    \"delay-mix\": 0.1,\n    \"chorus-mix\": 0.2,\n    \"stereo-width\": 1.2,\n    \"output-gain-db\": -3.0,\n    \"distortion-drive\": 0.0\n  }\n}",
+      "trimmed_output": "{\n  \"explanation\": \"Increase the filter cutoff and resonance to make the sound brighter.\",\n  \"oscillator-1\": {\n    \"shape\": \"saw\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 3.0,\n    \"level\": 0.8,\n    \"unison-voices\": 4\n  },\n  \"oscillator-2\": {\n    \"shape\": \"square\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": -2.0,\n    \"level\": 0.4,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 2500.0,\n    \"resonance\": 2.0,\n    \"drive\": 0.1,\n    \"keytrack\": 0.4,\n    \"env-amount\": 0.2,\n    \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 120.0,\n    \"decay-ms\": 900.0,\n    \"sustain\": 0.6,\n    \"release-ms\": 1200.0,\n    \"velocity-amount\": 0.5\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.35,\n    \"delay-mix\": 0.1,\n    \"chorus-mix\": 0.2,\n    \"stereo-width\": 1.2,\n    \"output-gain-db\": -3.0,\n    \"distortion-drive\": 0.0\n  }\n}",
+      "parsed_payload": {
+        "explanation": "Increase the filter cutoff and resonance to make the sound brighter.",
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 3.0,
+          "level": 0.8,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": -2.0,
+          "level": 0.4,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 2500.0,
+          "resonance": 2.0,
+          "drive": 0.1,
+          "keytrack": 0.4,
+          "env-amount": 0.2,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 120.0,
+          "decay-ms": 900.0,
+          "sustain": 0.6,
+          "release-ms": 1200.0,
+          "velocity-amount": 0.5
+        },
+        "effects": {
+          "reverb-mix": 0.35,
+          "delay-mix": 0.1,
+          "chorus-mix": 0.2,
+          "stereo-width": 1.2,
+          "output-gain-db": -3.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "merged_patch_preview": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 3.0,
+          "level": 0.8,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": -2.0,
+          "level": 0.4,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 2500.0,
+          "resonance": 2.0,
+          "drive": 0.1,
+          "keytrack": 0.4,
+          "env-amount": 0.2,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 120.0,
+          "decay-ms": 900.0,
+          "sustain": 0.6,
+          "release-ms": 1200.0,
+          "velocity-amount": 0.5
+        },
+        "effects": {
+          "reverb-mix": 0.35,
+          "delay-mix": 0.1,
+          "chorus-mix": 0.2,
+          "stereo-width": 1.2,
+          "output-gain-db": -3.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "syntax_pass": true,
+      "schema_pass": true,
+      "range_pass": true,
+      "key_order_pass": true,
+      "explanation_pass": true,
+      "sparse_pass": false,
+      "overall_pass": false,
+      "finish_reason": "stop",
+      "prompt_tokens": 1419,
+      "completion_tokens": 375,
+      "total_tokens": 1794,
+      "tokens_per_second": 38.64555862729462,
+      "generation_error": null,
+      "validation_errors": [
+        "Sparse update returned no null no-op parameters even though current_patch_context was provided.",
+        "oscillator-1.shape matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.octave matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.semitone matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.detune-cents matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.level matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.unison-voices matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.shape matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.octave matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.semitone matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.detune-cents matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.level matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.sync-mode matches current_patch_context and should be null in a sparse patch.",
+        "filter.mode matches current_patch_context and should be null in a sparse patch.",
+        "filter.drive matches current_patch_context and should be null in a sparse patch.",
+        "filter.keytrack matches current_patch_context and should be null in a sparse patch.",
+        "filter.env-amount matches current_patch_context and should be null in a sparse patch.",
+        "filter.slope-db-per-oct matches current_patch_context and should be null in a sparse patch.",
+        "envelope.attack-ms matches current_patch_context and should be null in a sparse patch.",
+        "envelope.decay-ms matches current_patch_context and should be null in a sparse patch.",
+        "envelope.sustain matches current_patch_context and should be null in a sparse patch.",
+        "envelope.release-ms matches current_patch_context and should be null in a sparse patch.",
+        "envelope.velocity-amount matches current_patch_context and should be null in a sparse patch.",
+        "effects.reverb-mix matches current_patch_context and should be null in a sparse patch.",
+        "effects.delay-mix matches current_patch_context and should be null in a sparse patch.",
+        "effects.chorus-mix matches current_patch_context and should be null in a sparse patch.",
+        "effects.stereo-width matches current_patch_context and should be null in a sparse patch.",
+        "effects.output-gain-db matches current_patch_context and should be null in a sparse patch.",
+        "effects.distortion-drive matches current_patch_context and should be null in a sparse patch."
+      ],
+      "explanation": "Increase the filter cutoff and resonance to make the sound brighter.",
+      "explanation_length": 68,
+      "changed_paths": {
+        "oscillator-1.shape": "saw",
+        "oscillator-1.octave": 0,
+        "oscillator-1.semitone": 0,
+        "oscillator-1.detune-cents": 3.0,
+        "oscillator-1.level": 0.8,
+        "oscillator-1.unison-voices": 4,
+        "oscillator-2.shape": "square",
+        "oscillator-2.octave": -1,
+        "oscillator-2.semitone": 0,
+        "oscillator-2.detune-cents": -2.0,
+        "oscillator-2.level": 0.4,
+        "oscillator-2.sync-mode": "off",
+        "filter.mode": "lowpass",
+        "filter.cutoff-hz": 2500.0,
+        "filter.resonance": 2.0,
+        "filter.drive": 0.1,
+        "filter.keytrack": 0.4,
+        "filter.env-amount": 0.2,
+        "filter.slope-db-per-oct": 24,
+        "envelope.attack-ms": 120.0,
+        "envelope.decay-ms": 900.0,
+        "envelope.sustain": 0.6,
+        "envelope.release-ms": 1200.0,
+        "envelope.velocity-amount": 0.5,
+        "effects.reverb-mix": 0.35,
+        "effects.delay-mix": 0.1,
+        "effects.chorus-mix": 0.2,
+        "effects.stereo-width": 1.2,
+        "effects.output-gain-db": -3.0,
+        "effects.distortion-drive": 0.0
+      },
+      "ignored_paths": [],
+      "changed_param_count": 30,
+      "null_param_count": 0,
+      "changed_block_count": 5,
+      "changed_blocks": [
+        "effects",
+        "envelope",
+        "filter",
+        "oscillator-1",
+        "oscillator-2"
+      ],
+      "all_null_noop": false,
+      "null_ratio": 0.0
+    },
+    {
+      "prompt_id": "sparse_attack_001",
+      "prompt": "Make the attack sharper and more percussive, but leave the tone and effects alone.",
+      "tags": [
+        "baseline",
+        "sparse",
+        "envelope"
+      ],
+      "current_patch_context": {
+        "oscillator-1": {
+          "shape": "square",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.7,
+          "unison-voices": 2
+        },
+        "oscillator-2": {
+          "shape": "sine",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.2,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 2500.0,
+          "resonance": 0.8,
+          "drive": 0.0,
+          "keytrack": 0.3,
+          "env-amount": 0.1,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 220.0,
+          "decay-ms": 600.0,
+          "sustain": 0.4,
+          "release-ms": 500.0,
+          "velocity-amount": 0.3
+        },
+        "effects": {
+          "reverb-mix": 0.15,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 1.0,
+          "output-gain-db": -2.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "latency_ms": 9634.182937999867,
+      "parse_latency_ms": 0.04660399645217694,
+      "validation_latency_ms": 0.04250399797456339,
+      "sparse_latency_ms": 0.046332999772857875,
+      "raw_output": "{\n  \"explanation\": \"Sharpen the attack to make the sound more percussive.\",\n  \"oscillator-1\": {\n    \"shape\": \"square\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 0.0,\n    \"level\": 0.7,\n    \"unison-voices\": 2\n  },\n  \"oscillator-2\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0.0,\n    \"level\": 0.2,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 2500.0,\n    \"resonance\": 0.8,\n    \"drive\": 0.0,\n    \"keytrack\": 0.3,\n    \"env-amount\": 0.1,\n    \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 100.0,\n    \"decay-ms\": 600.0,\n    \"sustain\": 0.4,\n    \"release-ms\": 500.0,\n    \"velocity-amount\": 0.3\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.15,\n    \"delay-mix\": 0.0,\n    \"chorus-mix\": 0.0,\n    \"stereo-width\": 1.0,\n    \"output-gain-db\": -2.0,\n    \"distortion-drive\": 0.0\n  }\n}",
+      "trimmed_output": "{\n  \"explanation\": \"Sharpen the attack to make the sound more percussive.\",\n  \"oscillator-1\": {\n    \"shape\": \"square\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 0.0,\n    \"level\": 0.7,\n    \"unison-voices\": 2\n  },\n  \"oscillator-2\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0.0,\n    \"level\": 0.2,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 2500.0,\n    \"resonance\": 0.8,\n    \"drive\": 0.0,\n    \"keytrack\": 0.3,\n    \"env-amount\": 0.1,\n    \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 100.0,\n    \"decay-ms\": 600.0,\n    \"sustain\": 0.4,\n    \"release-ms\": 500.0,\n    \"velocity-amount\": 0.3\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.15,\n    \"delay-mix\": 0.0,\n    \"chorus-mix\": 0.0,\n    \"stereo-width\": 1.0,\n    \"output-gain-db\": -2.0,\n    \"distortion-drive\": 0.0\n  }\n}",
+      "parsed_payload": {
+        "explanation": "Sharpen the attack to make the sound more percussive.",
+        "oscillator-1": {
+          "shape": "square",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.7,
+          "unison-voices": 2
+        },
+        "oscillator-2": {
+          "shape": "sine",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.2,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 2500.0,
+          "resonance": 0.8,
+          "drive": 0.0,
+          "keytrack": 0.3,
+          "env-amount": 0.1,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 100.0,
+          "decay-ms": 600.0,
+          "sustain": 0.4,
+          "release-ms": 500.0,
+          "velocity-amount": 0.3
+        },
+        "effects": {
+          "reverb-mix": 0.15,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 1.0,
+          "output-gain-db": -2.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "merged_patch_preview": {
+        "oscillator-1": {
+          "shape": "square",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.7,
+          "unison-voices": 2
+        },
+        "oscillator-2": {
+          "shape": "sine",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.2,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 2500.0,
+          "resonance": 0.8,
+          "drive": 0.0,
+          "keytrack": 0.3,
+          "env-amount": 0.1,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 100.0,
+          "decay-ms": 600.0,
+          "sustain": 0.4,
+          "release-ms": 500.0,
+          "velocity-amount": 0.3
+        },
+        "effects": {
+          "reverb-mix": 0.15,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 1.0,
+          "output-gain-db": -2.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "syntax_pass": true,
+      "schema_pass": true,
+      "range_pass": true,
+      "key_order_pass": true,
+      "explanation_pass": true,
+      "sparse_pass": false,
+      "overall_pass": false,
+      "finish_reason": "stop",
+      "prompt_tokens": 1425,
+      "completion_tokens": 375,
+      "total_tokens": 1800,
+      "tokens_per_second": 38.92390277549089,
+      "generation_error": null,
+      "validation_errors": [
+        "Sparse update returned no null no-op parameters even though current_patch_context was provided.",
+        "oscillator-1.shape matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.octave matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.semitone matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.detune-cents matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.level matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.unison-voices matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.shape matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.octave matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.semitone matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.detune-cents matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.level matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.sync-mode matches current_patch_context and should be null in a sparse patch.",
+        "filter.mode matches current_patch_context and should be null in a sparse patch.",
+        "filter.cutoff-hz matches current_patch_context and should be null in a sparse patch.",
+        "filter.resonance matches current_patch_context and should be null in a sparse patch.",
+        "filter.drive matches current_patch_context and should be null in a sparse patch.",
+        "filter.keytrack matches current_patch_context and should be null in a sparse patch.",
+        "filter.env-amount matches current_patch_context and should be null in a sparse patch.",
+        "filter.slope-db-per-oct matches current_patch_context and should be null in a sparse patch.",
+        "envelope.decay-ms matches current_patch_context and should be null in a sparse patch.",
+        "envelope.sustain matches current_patch_context and should be null in a sparse patch.",
+        "envelope.release-ms matches current_patch_context and should be null in a sparse patch.",
+        "envelope.velocity-amount matches current_patch_context and should be null in a sparse patch.",
+        "effects.reverb-mix matches current_patch_context and should be null in a sparse patch.",
+        "effects.delay-mix matches current_patch_context and should be null in a sparse patch.",
+        "effects.chorus-mix matches current_patch_context and should be null in a sparse patch.",
+        "effects.stereo-width matches current_patch_context and should be null in a sparse patch.",
+        "effects.output-gain-db matches current_patch_context and should be null in a sparse patch.",
+        "effects.distortion-drive matches current_patch_context and should be null in a sparse patch."
+      ],
+      "explanation": "Sharpen the attack to make the sound more percussive.",
+      "explanation_length": 53,
+      "changed_paths": {
+        "oscillator-1.shape": "square",
+        "oscillator-1.octave": 0,
+        "oscillator-1.semitone": 0,
+        "oscillator-1.detune-cents": 0.0,
+        "oscillator-1.level": 0.7,
+        "oscillator-1.unison-voices": 2,
+        "oscillator-2.shape": "sine",
+        "oscillator-2.octave": -1,
+        "oscillator-2.semitone": 0,
+        "oscillator-2.detune-cents": 0.0,
+        "oscillator-2.level": 0.2,
+        "oscillator-2.sync-mode": "off",
+        "filter.mode": "lowpass",
+        "filter.cutoff-hz": 2500.0,
+        "filter.resonance": 0.8,
+        "filter.drive": 0.0,
+        "filter.keytrack": 0.3,
+        "filter.env-amount": 0.1,
+        "filter.slope-db-per-oct": 24,
+        "envelope.attack-ms": 100.0,
+        "envelope.decay-ms": 600.0,
+        "envelope.sustain": 0.4,
+        "envelope.release-ms": 500.0,
+        "envelope.velocity-amount": 0.3,
+        "effects.reverb-mix": 0.15,
+        "effects.delay-mix": 0.0,
+        "effects.chorus-mix": 0.0,
+        "effects.stereo-width": 1.0,
+        "effects.output-gain-db": -2.0,
+        "effects.distortion-drive": 0.0
+      },
+      "ignored_paths": [],
+      "changed_param_count": 30,
+      "null_param_count": 0,
+      "changed_block_count": 5,
+      "changed_blocks": [
+        "effects",
+        "envelope",
+        "filter",
+        "oscillator-1",
+        "oscillator-2"
+      ],
+      "all_null_noop": false,
+      "null_ratio": 0.0
+    },
+    {
+      "prompt_id": "sparse_space_001",
+      "prompt": "Add more depth and width, but do not touch the oscillators or filter movement.",
+      "tags": [
+        "baseline",
+        "sparse",
+        "effects"
+      ],
+      "current_patch_context": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 4.0,
+          "level": 0.8,
+          "unison-voices": 3
+        },
+        "oscillator-2": {
+          "shape": "sine",
+          "octave": 0,
+          "semitone": 12,
+          "detune-cents": 1.0,
+          "level": 0.2,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "bandpass",
+          "cutoff-hz": 3200.0,
+          "resonance": 1.8,
+          "drive": 0.0,
+          "keytrack": 0.2,
+          "env-amount": 0.0,
+          "slope-db-per-oct": 12
+        },
+        "envelope": {
+          "attack-ms": 80.0,
+          "decay-ms": 400.0,
+          "sustain": 0.7,
+          "release-ms": 600.0,
+          "velocity-amount": 0.4
+        },
+        "effects": {
+          "reverb-mix": 0.2,
+          "delay-mix": 0.1,
+          "chorus-mix": 0.15,
+          "stereo-width": 1.0,
+          "output-gain-db": -1.5,
+          "distortion-drive": 0.0
+        }
+      },
+      "latency_ms": 9863.794175998919,
+      "parse_latency_ms": 0.04665699816541746,
+      "validation_latency_ms": 0.03852200097753666,
+      "sparse_latency_ms": 0.025751000066520646,
+      "raw_output": "{\n  \"explanation\": \"Increase the reverb and delay to add depth and width, while keeping the oscillator and filter settings unchanged.\",\n  \"oscillator-1\": {\n    \"shape\": \"saw\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 4.0,\n    \"level\": 0.8,\n    \"unison-voices\": 3\n  },\n  \"oscillator-2\": {\n    \"shape\": \"sine\",\n    \"octave\": 0,\n    \"semitone\": 12,\n    \"detune-cents\": 1.0,\n    \"level\": 0.2,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"bandpass\",\n    \"cutoff-hz\": 3200.0,\n    \"resonance\": 1.8,\n    \"drive\": 0.0,\n    \"keytrack\": 0.2,\n    \"env-amount\": 0.0,\n    \"slope-db-per-oct\": 12\n  },\n  \"envelope\": {\n    \"attack-ms\": 80.0,\n    \"decay-ms\": 400.0,\n    \"sustain\": 0.7,\n    \"release-ms\": 600.0,\n    \"velocity-amount\": 0.4\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.5,\n    \"delay-mix\": 0.3,\n    \"chorus-mix\": 0.2,\n    \"stereo-width\": 1.5,\n    \"output-gain-db\": -1.5,\n    \"distortion-drive\": 0.0\n  }\n}",
+      "trimmed_output": "{\n  \"explanation\": \"Increase the reverb and delay to add depth and width, while keeping the oscillator and filter settings unchanged.\",\n  \"oscillator-1\": {\n    \"shape\": \"saw\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 4.0,\n    \"level\": 0.8,\n    \"unison-voices\": 3\n  },\n  \"oscillator-2\": {\n    \"shape\": \"sine\",\n    \"octave\": 0,\n    \"semitone\": 12,\n    \"detune-cents\": 1.0,\n    \"level\": 0.2,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"bandpass\",\n    \"cutoff-hz\": 3200.0,\n    \"resonance\": 1.8,\n    \"drive\": 0.0,\n    \"keytrack\": 0.2,\n    \"env-amount\": 0.0,\n    \"slope-db-per-oct\": 12\n  },\n  \"envelope\": {\n    \"attack-ms\": 80.0,\n    \"decay-ms\": 400.0,\n    \"sustain\": 0.7,\n    \"release-ms\": 600.0,\n    \"velocity-amount\": 0.4\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.5,\n    \"delay-mix\": 0.3,\n    \"chorus-mix\": 0.2,\n    \"stereo-width\": 1.5,\n    \"output-gain-db\": -1.5,\n    \"distortion-drive\": 0.0\n  }\n}",
+      "parsed_payload": {
+        "explanation": "Increase the reverb and delay to add depth and width, while keeping the oscillator and filter settings unchanged.",
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 4.0,
+          "level": 0.8,
+          "unison-voices": 3
+        },
+        "oscillator-2": {
+          "shape": "sine",
+          "octave": 0,
+          "semitone": 12,
+          "detune-cents": 1.0,
+          "level": 0.2,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "bandpass",
+          "cutoff-hz": 3200.0,
+          "resonance": 1.8,
+          "drive": 0.0,
+          "keytrack": 0.2,
+          "env-amount": 0.0,
+          "slope-db-per-oct": 12
+        },
+        "envelope": {
+          "attack-ms": 80.0,
+          "decay-ms": 400.0,
+          "sustain": 0.7,
+          "release-ms": 600.0,
+          "velocity-amount": 0.4
+        },
+        "effects": {
+          "reverb-mix": 0.5,
+          "delay-mix": 0.3,
+          "chorus-mix": 0.2,
+          "stereo-width": 1.5,
+          "output-gain-db": -1.5,
+          "distortion-drive": 0.0
+        }
+      },
+      "merged_patch_preview": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 4.0,
+          "level": 0.8,
+          "unison-voices": 3
+        },
+        "oscillator-2": {
+          "shape": "sine",
+          "octave": 0,
+          "semitone": 12,
+          "detune-cents": 1.0,
+          "level": 0.2,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "bandpass",
+          "cutoff-hz": 3200.0,
+          "resonance": 1.8,
+          "drive": 0.0,
+          "keytrack": 0.2,
+          "env-amount": 0.0,
+          "slope-db-per-oct": 12
+        },
+        "envelope": {
+          "attack-ms": 80.0,
+          "decay-ms": 400.0,
+          "sustain": 0.7,
+          "release-ms": 600.0,
+          "velocity-amount": 0.4
+        },
+        "effects": {
+          "reverb-mix": 0.5,
+          "delay-mix": 0.3,
+          "chorus-mix": 0.2,
+          "stereo-width": 1.5,
+          "output-gain-db": -1.5,
+          "distortion-drive": 0.0
+        }
+      },
+      "syntax_pass": true,
+      "schema_pass": true,
+      "range_pass": true,
+      "key_order_pass": true,
+      "explanation_pass": true,
+      "sparse_pass": false,
+      "overall_pass": false,
+      "finish_reason": "stop",
+      "prompt_tokens": 1425,
+      "completion_tokens": 383,
+      "total_tokens": 1808,
+      "tokens_per_second": 38.82887184851595,
+      "generation_error": null,
+      "validation_errors": [
+        "Sparse update returned no null no-op parameters even though current_patch_context was provided.",
+        "oscillator-1.shape matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.octave matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.semitone matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.detune-cents matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.level matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-1.unison-voices matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.shape matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.octave matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.semitone matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.detune-cents matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.level matches current_patch_context and should be null in a sparse patch.",
+        "oscillator-2.sync-mode matches current_patch_context and should be null in a sparse patch.",
+        "filter.mode matches current_patch_context and should be null in a sparse patch.",
+        "filter.cutoff-hz matches current_patch_context and should be null in a sparse patch.",
+        "filter.resonance matches current_patch_context and should be null in a sparse patch.",
+        "filter.drive matches current_patch_context and should be null in a sparse patch.",
+        "filter.keytrack matches current_patch_context and should be null in a sparse patch.",
+        "filter.env-amount matches current_patch_context and should be null in a sparse patch.",
+        "filter.slope-db-per-oct matches current_patch_context and should be null in a sparse patch.",
+        "envelope.attack-ms matches current_patch_context and should be null in a sparse patch.",
+        "envelope.decay-ms matches current_patch_context and should be null in a sparse patch.",
+        "envelope.sustain matches current_patch_context and should be null in a sparse patch.",
+        "envelope.release-ms matches current_patch_context and should be null in a sparse patch.",
+        "envelope.velocity-amount matches current_patch_context and should be null in a sparse patch.",
+        "effects.output-gain-db matches current_patch_context and should be null in a sparse patch.",
+        "effects.distortion-drive matches current_patch_context and should be null in a sparse patch."
+      ],
+      "explanation": "Increase the reverb and delay to add depth and width, while keeping the oscillator and filter settings unchanged.",
+      "explanation_length": 113,
+      "changed_paths": {
+        "oscillator-1.shape": "saw",
+        "oscillator-1.octave": 0,
+        "oscillator-1.semitone": 0,
+        "oscillator-1.detune-cents": 4.0,
+        "oscillator-1.level": 0.8,
+        "oscillator-1.unison-voices": 3,
+        "oscillator-2.shape": "sine",
+        "oscillator-2.octave": 0,
+        "oscillator-2.semitone": 12,
+        "oscillator-2.detune-cents": 1.0,
+        "oscillator-2.level": 0.2,
+        "oscillator-2.sync-mode": "off",
+        "filter.mode": "bandpass",
+        "filter.cutoff-hz": 3200.0,
+        "filter.resonance": 1.8,
+        "filter.drive": 0.0,
+        "filter.keytrack": 0.2,
+        "filter.env-amount": 0.0,
+        "filter.slope-db-per-oct": 12,
+        "envelope.attack-ms": 80.0,
+        "envelope.decay-ms": 400.0,
+        "envelope.sustain": 0.7,
+        "envelope.release-ms": 600.0,
+        "envelope.velocity-amount": 0.4,
+        "effects.reverb-mix": 0.5,
+        "effects.delay-mix": 0.3,
+        "effects.chorus-mix": 0.2,
+        "effects.stereo-width": 1.5,
+        "effects.output-gain-db": -1.5,
+        "effects.distortion-drive": 0.0
+      },
+      "ignored_paths": [],
+      "changed_param_count": 30,
+      "null_param_count": 0,
+      "changed_block_count": 5,
+      "changed_blocks": [
+        "effects",
+        "envelope",
+        "filter",
+        "oscillator-1",
+        "oscillator-2"
+      ],
+      "all_null_noop": false,
+      "null_ratio": 0.0
+    }
+  ]
+}

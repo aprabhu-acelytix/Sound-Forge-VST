@@ -1,0 +1,219 @@
+{
+  "experiment": "Experiment 1.1: The Advanced Brain Sandbox",
+  "run_id": "20260504T044116Z",
+  "run_state": "completed",
+  "timestamp_utc": "20260504T044140Z",
+  "environment": {
+    "python_version": "3.10.12",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35"
+  },
+  "artifacts": {
+    "results_json": "/workspace/Experiments/Experiment 1.1/results/run_20260504T044116Z.json",
+    "latency_csv": "/workspace/Experiments/Experiment 1.1/logs/latency_20260504T044116Z.csv",
+    "status_log": "Experiments/Experiment 1.1/logs/status_qwen3b_smoke.log"
+  },
+  "config": {
+    "model_path": "/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "system_prompt_file": "/workspace/Experiments/Experiment 1.1/prompts/system_prompt_v1_1.txt",
+    "grammar_file": "/workspace/Experiments/Experiment 1.1/grammars/advanced_patch_v1.gbnf",
+    "schema_file": "/workspace/Experiments/Experiment 1.1/schemas/advanced_patch_v1.json",
+    "prompts_file": "/workspace/Experiments/Experiment 1.1/fixtures/baseline_prompts.json",
+    "results_dir": "/workspace/Experiments/Experiment 1.1/results",
+    "logs_dir": "/workspace/Experiments/Experiment 1.1/logs",
+    "status_file": "Experiments/Experiment 1.1/logs/status_qwen3b_smoke.log",
+    "chat_format": null,
+    "n_ctx": 4096,
+    "n_threads": null,
+    "n_gpu_layers": 35,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "repeat_penalty": 1.0,
+    "max_tokens": 640,
+    "seed": 42,
+    "limit": 1,
+    "prompt_id": []
+  },
+  "model": {
+    "model_path": "/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "model_name": "Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "model_file_size": "1.80 GiB",
+    "model_load_ms": 13064.082726999914
+  },
+  "progress": {
+    "completed_runs": 1,
+    "total_runs": 1
+  },
+  "summary": {
+    "total_runs": 1,
+    "syntax_pass_count": 1,
+    "schema_pass_count": 1,
+    "range_pass_count": 1,
+    "key_order_pass_count": 1,
+    "explanation_pass_count": 1,
+    "sparse_pass_count": 1,
+    "overall_pass_count": 1,
+    "syntax_pass_rate": 1.0,
+    "schema_pass_rate": 1.0,
+    "range_pass_rate": 1.0,
+    "key_order_pass_rate": 1.0,
+    "explanation_pass_rate": 1.0,
+    "sparse_pass_rate": 1.0,
+    "overall_pass_rate": 1.0,
+    "latency_ms": {
+      "mean": 10039.928361999046,
+      "median": 10039.928361999046,
+      "min": 10039.928361999046,
+      "max": 10039.928361999046,
+      "p95": 10039.928361999046,
+      "p99": 10039.928361999046
+    },
+    "parse_latency_ms": {
+      "mean": 0.051786002586595714
+    },
+    "validation_latency_ms": {
+      "mean": 0.042382001993246377
+    },
+    "sparse_latency_ms": {
+      "mean": 0.02183099786634557
+    },
+    "explanation_length_chars": {
+      "mean": 80.0,
+      "max": 80
+    },
+    "null_ratio": {
+      "mean": 0.0,
+      "max": 0.0
+    },
+    "changed_param_count": {
+      "mean": 30.0,
+      "max": 30
+    },
+    "all_null_noop_count": 0,
+    "failure_categories": {
+      "pass": 1
+    }
+  },
+  "results": [
+    {
+      "prompt_id": "full_design_pad_001",
+      "prompt": "Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.",
+      "tags": [
+        "baseline",
+        "full-design",
+        "pad"
+      ],
+      "current_patch_context": null,
+      "latency_ms": 10039.928361999046,
+      "parse_latency_ms": 0.051786002586595714,
+      "validation_latency_ms": 0.042382001993246377,
+      "sparse_latency_ms": 0.02183099786634557,
+      "raw_output": "{\n  \"explanation\": \"Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.\",\n  \"oscillator-1\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5\n  ,\n  \"unison-voices\": 4\n  },\n  \"oscillator-2\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 500,\n    \"resonance\": 1.0,\n    \"drive\": 0.5,\n    \"keytrack\": 0.5,\n    \"env-amount\": 0.5\n  ,\n  \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 200,\n    \"decay-ms\": 500,\n    \"sustain\": 0.5,\n    \"release-ms\": 1000,\n    \"velocity-amount\": 0.5\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.5,\n    \"delay-mix\": 0.2,\n    \"chorus-mix\": 0.3,\n    \"stereo-width\": 1.0,\n    \"output-gain-db\": -3,\n    \"distortion-drive\": 0.1\n  }\n}",
+      "trimmed_output": "{\n  \"explanation\": \"Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.\",\n  \"oscillator-1\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5\n  ,\n  \"unison-voices\": 4\n  },\n  \"oscillator-2\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 500,\n    \"resonance\": 1.0,\n    \"drive\": 0.5,\n    \"keytrack\": 0.5,\n    \"env-amount\": 0.5\n  ,\n  \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 200,\n    \"decay-ms\": 500,\n    \"sustain\": 0.5,\n    \"release-ms\": 1000,\n    \"velocity-amount\": 0.5\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.5,\n    \"delay-mix\": 0.2,\n    \"chorus-mix\": 0.3,\n    \"stereo-width\": 1.0,\n    \"output-gain-db\": -3,\n    \"distortion-drive\": 0.1\n  }\n}",
+      "parsed_payload": {
+        "explanation": "Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.",
+        "oscillator-1": {
+          "shape": "sine",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 0,
+          "level": 0.5,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "sine",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 0,
+          "level": 0.5,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 500,
+          "resonance": 1.0,
+          "drive": 0.5,
+          "keytrack": 0.5,
+          "env-amount": 0.5,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 200,
+          "decay-ms": 500,
+          "sustain": 0.5,
+          "release-ms": 1000,
+          "velocity-amount": 0.5
+        },
+        "effects": {
+          "reverb-mix": 0.5,
+          "delay-mix": 0.2,
+          "chorus-mix": 0.3,
+          "stereo-width": 1.0,
+          "output-gain-db": -3,
+          "distortion-drive": 0.1
+        }
+      },
+      "merged_patch_preview": null,
+      "syntax_pass": true,
+      "schema_pass": true,
+      "range_pass": true,
+      "key_order_pass": true,
+      "explanation_pass": true,
+      "sparse_pass": true,
+      "overall_pass": true,
+      "finish_reason": "stop",
+      "prompt_tokens": 1063,
+      "completion_tokens": 372,
+      "total_tokens": 1435,
+      "tokens_per_second": 37.05205720471209,
+      "generation_error": null,
+      "validation_errors": [],
+      "explanation": "Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.",
+      "explanation_length": 80,
+      "changed_paths": {
+        "oscillator-1.shape": "sine",
+        "oscillator-1.octave": -1,
+        "oscillator-1.semitone": 0,
+        "oscillator-1.detune-cents": 0,
+        "oscillator-1.level": 0.5,
+        "oscillator-1.unison-voices": 4,
+        "oscillator-2.shape": "sine",
+        "oscillator-2.octave": -1,
+        "oscillator-2.semitone": 0,
+        "oscillator-2.detune-cents": 0,
+        "oscillator-2.level": 0.5,
+        "oscillator-2.sync-mode": "off",
+        "filter.mode": "lowpass",
+        "filter.cutoff-hz": 500,
+        "filter.resonance": 1.0,
+        "filter.drive": 0.5,
+        "filter.keytrack": 0.5,
+        "filter.env-amount": 0.5,
+        "filter.slope-db-per-oct": 24,
+        "envelope.attack-ms": 200,
+        "envelope.decay-ms": 500,
+        "envelope.sustain": 0.5,
+        "envelope.release-ms": 1000,
+        "envelope.velocity-amount": 0.5,
+        "effects.reverb-mix": 0.5,
+        "effects.delay-mix": 0.2,
+        "effects.chorus-mix": 0.3,
+        "effects.stereo-width": 1.0,
+        "effects.output-gain-db": -3,
+        "effects.distortion-drive": 0.1
+      },
+      "ignored_paths": [],
+      "changed_param_count": 30,
+      "null_param_count": 0,
+      "changed_block_count": 5,
+      "changed_blocks": [
+        "effects",
+        "envelope",
+        "filter",
+        "oscillator-1",
+        "oscillator-2"
+      ],
+      "all_null_noop": false,
+      "null_ratio": 0.0
+    }
+  ]
+}

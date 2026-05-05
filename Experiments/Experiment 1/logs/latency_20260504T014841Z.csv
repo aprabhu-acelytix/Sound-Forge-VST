@@ -1,0 +1,4 @@
+prompt_id,latency_ms,syntax_pass,schema_pass,range_pass,key_order_pass,overall_pass,prompt_tokens,completion_tokens,total_tokens,tokens_per_second,finish_reason,generation_error,validation_errors
+acid_bass_001,1740.245,True,True,True,True,True,410,52,462,29.881,stop,,
+ambient_pad_001,1552.034,True,True,True,True,True,409,53,462,34.149,stop,,
+glass_pluck_001,1315.095,True,True,True,True,True,411,50,461,38.020,stop,,

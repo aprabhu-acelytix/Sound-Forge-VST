@@ -1,0 +1,48 @@
+root ::= ws patch ws
+
+patch ::= "{" ws explanation-pair ws "," ws oscillator-1-pair ws "," ws oscillator-2-pair ws "," ws filter-pair ws "," ws envelope-pair ws "," ws effects-pair ws "}"
+
+explanation-pair ::= "\"explanation\"" ws ":" ws json-string
+oscillator-1-pair ::= "\"oscillator-1\"" ws ":" ws oscillator-1-object
+oscillator-2-pair ::= "\"oscillator-2\"" ws ":" ws oscillator-2-object
+filter-pair ::= "\"filter\"" ws ":" ws filter-object
+envelope-pair ::= "\"envelope\"" ws ":" ws envelope-object
+effects-pair ::= "\"effects\"" ws ":" ws effects-object
+
+oscillator-1-object ::= "{" ws "\"shape\"" ws ":" ws shape-or-null ws "," ws "\"octave\"" ws ":" ws int-or-null ws "," ws "\"semitone\"" ws ":" ws int-or-null ws "," ws "\"detune-cents\"" ws ":" ws float-or-null ws "," ws "\"level\"" ws ":" ws float-or-null ws "," ws "\"unison-voices\"" ws ":" ws int-or-null ws "}"
+
+oscillator-2-object ::= "{" ws "\"shape\"" ws ":" ws shape-or-null ws "," ws "\"octave\"" ws ":" ws int-or-null ws "," ws "\"semitone\"" ws ":" ws int-or-null ws "," ws "\"detune-cents\"" ws ":" ws float-or-null ws "," ws "\"level\"" ws ":" ws float-or-null ws "," ws "\"sync-mode\"" ws ":" ws sync-mode-or-null ws "}"
+
+filter-object ::= "{" ws "\"mode\"" ws ":" ws filter-mode-or-null ws "," ws "\"cutoff-hz\"" ws ":" ws float-or-null ws "," ws "\"resonance\"" ws ":" ws float-or-null ws "," ws "\"drive\"" ws ":" ws float-or-null ws "," ws "\"keytrack\"" ws ":" ws float-or-null ws "," ws "\"env-amount\"" ws ":" ws float-or-null ws "," ws "\"slope-db-per-oct\"" ws ":" ws slope-or-null ws "}"
+
+envelope-object ::= "{" ws "\"attack-ms\"" ws ":" ws float-or-null ws "," ws "\"decay-ms\"" ws ":" ws float-or-null ws "," ws "\"sustain\"" ws ":" ws float-or-null ws "," ws "\"release-ms\"" ws ":" ws float-or-null ws "," ws "\"velocity-amount\"" ws ":" ws float-or-null ws "}"
+
+effects-object ::= "{" ws "\"reverb-mix\"" ws ":" ws float-or-null ws "," ws "\"delay-mix\"" ws ":" ws float-or-null ws "," ws "\"chorus-mix\"" ws ":" ws float-or-null ws "," ws "\"stereo-width\"" ws ":" ws float-or-null ws "," ws "\"output-gain-db\"" ws ":" ws float-or-null ws "," ws "\"distortion-drive\"" ws ":" ws float-or-null ws "}"
+
+shape-or-null ::= shape | "null"
+shape ::= "\"sine\"" | "\"saw\"" | "\"square\""
+
+sync-mode-or-null ::= sync-mode | "null"
+sync-mode ::= "\"off\"" | "\"hard\""
+
+filter-mode-or-null ::= filter-mode | "null"
+filter-mode ::= "\"lowpass\"" | "\"highpass\"" | "\"bandpass\""
+
+slope-or-null ::= slope | "null"
+slope ::= "12" | "24"
+
+float-or-null ::= number | "null"
+int-or-null ::= signed-integer | "null"
+
+number ::= minus? integer fraction?
+signed-integer ::= minus? integer
+integer ::= "0" | [1-9] [0-9]*
+minus ::= "-"
+fraction ::= "." [0-9]+
+
+json-string ::= "\"" string-char* "\""
+string-char ::= [^"\\\n\r] | escape
+escape ::= "\\" (["\\/bfnrt] | "u" hex hex hex hex)
+hex ::= [0-9a-fA-F]
+
+ws ::= [ \t\n\r]*

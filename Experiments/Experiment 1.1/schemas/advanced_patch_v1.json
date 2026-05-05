@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sound Forge Advanced Brain Sandbox Sparse Patch",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "explanation",
+    "oscillator-1",
+    "oscillator-2",
+    "filter",
+    "envelope",
+    "effects"
+  ],
+  "properties": {
+    "explanation": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 280,
+      "description": "Visible reasoning string that explains the acoustic logic before the sparse patch values."
+    },
+    "oscillator-1": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shape",
+        "octave",
+        "semitone",
+        "detune-cents",
+        "level",
+        "unison-voices"
+      ],
+      "properties": {
+        "shape": {"type": ["string", "null"], "enum": ["sine", "saw", "square", null]},
+        "octave": {"type": ["integer", "null"], "minimum": -3, "maximum": 3},
+        "semitone": {"type": ["integer", "null"], "minimum": -12, "maximum": 12},
+        "detune-cents": {"type": ["number", "null"], "minimum": -50.0, "maximum": 50.0},
+        "level": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0},
+        "unison-voices": {"type": ["integer", "null"], "minimum": 1, "maximum": 8}
+      }
+    },
+    "oscillator-2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shape",
+        "octave",
+        "semitone",
+        "detune-cents",
+        "level",
+        "sync-mode"
+      ],
+      "properties": {
+        "shape": {"type": ["string", "null"], "enum": ["sine", "saw", "square", null]},
+        "octave": {"type": ["integer", "null"], "minimum": -3, "maximum": 3},
+        "semitone": {"type": ["integer", "null"], "minimum": -12, "maximum": 12},
+        "detune-cents": {"type": ["number", "null"], "minimum": -50.0, "maximum": 50.0},
+        "level": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0},
+        "sync-mode": {"type": ["string", "null"], "enum": ["off", "hard", null]}
+      }
+    },
+    "filter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "cutoff-hz",
+        "resonance",
+        "drive",
+        "keytrack",
+        "env-amount",
+        "slope-db-per-oct"
+      ],
+      "properties": {
+        "mode": {"type": ["string", "null"], "enum": ["lowpass", "highpass", "bandpass", null]},
+        "cutoff-hz": {"type": ["number", "null"], "minimum": 20.0, "maximum": 20000.0},
+        "resonance": {"type": ["number", "null"], "minimum": 0.1, "maximum": 10.0},
+        "drive": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0},
+        "keytrack": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0},
+        "env-amount": {"type": ["number", "null"], "minimum": -1.0, "maximum": 1.0},
+        "slope-db-per-oct": {"type": ["integer", "null"], "enum": [12, 24, null]}
+      }
+    },
+    "envelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attack-ms",
+        "decay-ms",
+        "sustain",
+        "release-ms",
+        "velocity-amount"
+      ],
+      "properties": {
+        "attack-ms": {"type": ["number", "null"], "minimum": 0.1, "maximum": 5000.0},
+        "decay-ms": {"type": ["number", "null"], "minimum": 1.0, "maximum": 10000.0},
+        "sustain": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0},
+        "release-ms": {"type": ["number", "null"], "minimum": 1.0, "maximum": 15000.0},
+        "velocity-amount": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0}
+      }
+    },
+    "effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reverb-mix",
+        "delay-mix",
+        "chorus-mix",
+        "stereo-width",
+        "output-gain-db",
+        "distortion-drive"
+      ],
+      "properties": {
+        "reverb-mix": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0},
+        "delay-mix": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0},
+        "chorus-mix": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0},
+        "stereo-width": {"type": ["number", "null"], "minimum": 0.0, "maximum": 2.0},
+        "output-gain-db": {"type": ["number", "null"], "minimum": -24.0, "maximum": 12.0},
+        "distortion-drive": {"type": ["number", "null"], "minimum": 0.0, "maximum": 1.0}
+      }
+    }
+  }
+}

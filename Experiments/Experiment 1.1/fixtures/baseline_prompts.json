@@ -1,0 +1,53 @@
+{
+  "description": "Baseline and sparse prompts for Experiment 1.1: The Advanced Brain Sandbox.",
+  "cases": [
+    {
+      "id": "full_design_pad_001",
+      "prompt": "Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.",
+      "tags": ["baseline", "full-design", "pad"],
+      "current_patch_context": null
+    },
+    {
+      "id": "full_design_bass_001",
+      "prompt": "Create an aggressive mono bass with a fast attack, tight decay, and minimal ambience.",
+      "tags": ["baseline", "full-design", "bass"],
+      "current_patch_context": null
+    },
+    {
+      "id": "sparse_brighter_001",
+      "prompt": "Make it brighter without changing the articulation or space.",
+      "tags": ["baseline", "sparse", "filter"],
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 3.0, "level": 0.8, "unison-voices": 4},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": -2.0, "level": 0.4, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 1800.0, "resonance": 1.2, "drive": 0.1, "keytrack": 0.4, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 120.0, "decay-ms": 900.0, "sustain": 0.6, "release-ms": 1200.0, "velocity-amount": 0.5},
+        "effects": {"reverb-mix": 0.35, "delay-mix": 0.1, "chorus-mix": 0.2, "stereo-width": 1.2, "output-gain-db": -3.0, "distortion-drive": 0.0}
+      }
+    },
+    {
+      "id": "sparse_attack_001",
+      "prompt": "Make the attack sharper and more percussive, but leave the tone and effects alone.",
+      "tags": ["baseline", "sparse", "envelope"],
+      "current_patch_context": {
+        "oscillator-1": {"shape": "square", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.7, "unison-voices": 2},
+        "oscillator-2": {"shape": "sine", "octave": -1, "semitone": 0, "detune-cents": 0.0, "level": 0.2, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 2500.0, "resonance": 0.8, "drive": 0.0, "keytrack": 0.3, "env-amount": 0.1, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 220.0, "decay-ms": 600.0, "sustain": 0.4, "release-ms": 500.0, "velocity-amount": 0.3},
+        "effects": {"reverb-mix": 0.15, "delay-mix": 0.0, "chorus-mix": 0.0, "stereo-width": 1.0, "output-gain-db": -2.0, "distortion-drive": 0.0}
+      }
+    },
+    {
+      "id": "sparse_space_001",
+      "prompt": "Add more depth and width, but do not touch the oscillators or filter movement.",
+      "tags": ["baseline", "sparse", "effects"],
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 4.0, "level": 0.8, "unison-voices": 3},
+        "oscillator-2": {"shape": "sine", "octave": 0, "semitone": 12, "detune-cents": 1.0, "level": 0.2, "sync-mode": "off"},
+        "filter": {"mode": "bandpass", "cutoff-hz": 3200.0, "resonance": 1.8, "drive": 0.0, "keytrack": 0.2, "env-amount": 0.0, "slope-db-per-oct": 12},
+        "envelope": {"attack-ms": 80.0, "decay-ms": 400.0, "sustain": 0.7, "release-ms": 600.0, "velocity-amount": 0.4},
+        "effects": {"reverb-mix": 0.2, "delay-mix": 0.1, "chorus-mix": 0.15, "stereo-width": 1.0, "output-gain-db": -1.5, "distortion-drive": 0.0}
+      }
+    }
+  ]
+}

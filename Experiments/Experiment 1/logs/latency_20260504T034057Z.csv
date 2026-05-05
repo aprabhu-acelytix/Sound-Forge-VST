@@ -1,0 +1,11 @@
+prompt_id,latency_ms,syntax_pass,schema_pass,range_pass,key_order_pass,overall_pass,prompt_tokens,completion_tokens,total_tokens,tokens_per_second,finish_reason,generation_error,validation_errors
+acid_bass_001,2322.028,True,True,True,True,True,410,58,468,24.978,stop,,
+ambient_pad_001,2012.554,True,True,True,True,True,409,60,469,29.813,stop,,
+glass_pluck_001,1959.912,True,True,True,True,True,411,58,469,29.593,stop,,
+soft_sub_001,1997.313,True,True,True,True,True,410,58,468,29.039,stop,,
+retro_square_001,2045.059,True,True,True,True,True,409,57,466,27.872,stop,,
+cinematic_swell_001,2284.903,True,True,True,True,True,412,63,475,27.572,stop,,
+dry_stab_001,2116.980,True,True,True,True,True,413,59,472,27.870,stop,,
+mellow_keys_001,2060.460,True,True,True,True,True,412,57,469,27.664,stop,,
+washed_drone_001,2263.997,True,True,True,True,True,408,62,470,27.385,stop,,
+ambiguous_hybrid_001,2170.228,True,True,True,True,True,411,58,469,26.725,stop,,

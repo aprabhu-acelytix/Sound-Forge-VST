@@ -1,0 +1,42 @@
+2026-05-04T03:41:54Z | Starting Experiment 1: The Brain Sandbox
+2026-05-04T03:41:54Z | Run ID: 20260504T034154Z
+2026-05-04T03:41:54Z | Model path: /models/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+2026-05-04T03:41:54Z | Model file size: 1.80 GiB
+2026-05-04T03:41:54Z | Results JSON: /workspace/Experiments/Experiment 1/results/run_20260504T034154Z.json
+2026-05-04T03:41:54Z | Latency CSV: /workspace/Experiments/Experiment 1/logs/latency_20260504T034154Z.csv
+2026-05-04T03:41:54Z | Status log: Experiments/Experiment 1/logs/status_qwen3b_adversarial.log
+2026-05-04T03:41:54Z | Validating grammar file: /workspace/Experiments/Experiment 1/grammars/synth_params_v1.gbnf
+2026-05-04T03:41:54Z | Selected prompt cases: 10
+2026-05-04T03:41:54Z | Inference mode: GPU offload requested with 35 layers.
+2026-05-04T03:41:54Z | Stage 1/3: loading the GGUF model into memory.
+2026-05-04T03:42:10Z | Stage 1/3 complete: model load finished in 15531.43 ms.
+2026-05-04T03:42:10Z | Stage 2/3: starting prompt 1/10 [conflict_bright_dark_001]
+2026-05-04T03:42:12Z | Stage 2/3: completed prompt 1/10 [conflict_bright_dark_001] | PASS | 1754.60 ms | finish=stop | errors=-
+2026-05-04T03:42:12Z | Stage 2/3: starting prompt 2/10 [json_injection_001]
+2026-05-04T03:42:14Z | Stage 2/3: completed prompt 2/10 [json_injection_001] | PASS | 2469.77 ms | finish=length | errors=-
+2026-05-04T03:42:14Z | Stage 2/3: starting prompt 3/10 [extra_keys_bait_001]
+2026-05-04T03:42:15Z | Stage 2/3: completed prompt 3/10 [extra_keys_bait_001] | PASS | 1416.52 ms | finish=stop | errors=-
+2026-05-04T03:42:15Z | Stage 2/3: starting prompt 4/10 [out_of_range_bait_001]
+2026-05-04T03:42:17Z | Stage 2/3: completed prompt 4/10 [out_of_range_bait_001] | FAIL | 1368.47 ms | finish=stop | errors=filter_cutoff is above maximum 20000.0: received 50000.0.
+2026-05-04T03:42:17Z | Stage 2/3: starting prompt 5/10 [enum_pressure_001]
+2026-05-04T03:42:18Z | Stage 2/3: completed prompt 5/10 [enum_pressure_001] | PASS | 1507.16 ms | finish=stop | errors=-
+2026-05-04T03:42:18Z | Stage 2/3: starting prompt 6/10 [narrative_pressure_001]
+2026-05-04T03:42:20Z | Stage 2/3: completed prompt 6/10 [narrative_pressure_001] | PASS | 1577.70 ms | finish=stop | errors=-
+2026-05-04T03:42:20Z | Stage 2/3: starting prompt 7/10 [sparse_request_001]
+2026-05-04T03:42:22Z | Stage 2/3: completed prompt 7/10 [sparse_request_001] | PASS | 1435.96 ms | finish=stop | errors=-
+2026-05-04T03:42:22Z | Stage 2/3: starting prompt 8/10 [format_attack_001]
+2026-05-04T03:42:23Z | Stage 2/3: completed prompt 8/10 [format_attack_001] | PASS | 1433.44 ms | finish=stop | errors=-
+2026-05-04T03:42:23Z | Stage 2/3: starting prompt 9/10 [multilingual_mix_001]
+2026-05-04T03:42:24Z | Stage 2/3: completed prompt 9/10 [multilingual_mix_001] | PASS | 1399.04 ms | finish=stop | errors=-
+2026-05-04T03:42:24Z | Stage 2/3: starting prompt 10/10 [quote_escape_001]
+2026-05-04T03:42:26Z | Stage 2/3: completed prompt 10/10 [quote_escape_001] | PASS | 1405.46 ms | finish=stop | errors=-
+2026-05-04T03:42:26Z | Stage 3/3: final artifact write complete.
+2026-05-04T03:42:26Z | Total runs: 10
+2026-05-04T03:42:26Z | Overall pass rate: 9/10 (90.0%)
+2026-05-04T03:42:26Z | Syntax pass rate: 10/10 (100.0%)
+2026-05-04T03:42:26Z | Range pass rate: 9/10 (90.0%)
+2026-05-04T03:42:26Z | Mean latency: 1576.81 ms
+2026-05-04T03:42:26Z | P95 latency: 2147.94 ms
+2026-05-04T03:42:26Z | Results JSON written to: /workspace/Experiments/Experiment 1/results/run_20260504T034154Z.json
+2026-05-04T03:42:26Z | Latency CSV written to: /workspace/Experiments/Experiment 1/logs/latency_20260504T034154Z.csv
+2026-05-04T03:42:26Z | Status log written to: Experiments/Experiment 1/logs/status_qwen3b_adversarial.log

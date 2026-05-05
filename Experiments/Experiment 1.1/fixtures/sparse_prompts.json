@@ -1,0 +1,53 @@
+{
+  "description": "Sparse-update focused prompts for Experiment 1.1.",
+  "cases": [
+    {
+      "id": "sparse_darker_001",
+      "prompt": "Darken the patch and leave the articulation exactly as it is.",
+      "tags": ["sparse", "filter"],
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 2.0, "level": 0.9, "unison-voices": 4},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": -2.0, "level": 0.35, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 6000.0, "resonance": 0.9, "drive": 0.05, "keytrack": 0.4, "env-amount": 0.15, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 90.0, "decay-ms": 700.0, "sustain": 0.5, "release-ms": 900.0, "velocity-amount": 0.4},
+        "effects": {"reverb-mix": 0.3, "delay-mix": 0.05, "chorus-mix": 0.1, "stereo-width": 1.1, "output-gain-db": -2.0, "distortion-drive": 0.0}
+      }
+    },
+    {
+      "id": "sparse_wider_001",
+      "prompt": "Make it wider and wetter, but do not change the tone generator or the envelope timing.",
+      "tags": ["sparse", "effects"],
+      "current_patch_context": {
+        "oscillator-1": {"shape": "square", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.75, "unison-voices": 2},
+        "oscillator-2": {"shape": "sine", "octave": 0, "semitone": 7, "detune-cents": 0.0, "level": 0.25, "sync-mode": "off"},
+        "filter": {"mode": "bandpass", "cutoff-hz": 2800.0, "resonance": 1.4, "drive": 0.0, "keytrack": 0.2, "env-amount": 0.0, "slope-db-per-oct": 12},
+        "envelope": {"attack-ms": 120.0, "decay-ms": 300.0, "sustain": 0.65, "release-ms": 500.0, "velocity-amount": 0.25},
+        "effects": {"reverb-mix": 0.1, "delay-mix": 0.05, "chorus-mix": 0.0, "stereo-width": 0.9, "output-gain-db": -1.0, "distortion-drive": 0.0}
+      }
+    },
+    {
+      "id": "sparse_more_bite_001",
+      "prompt": "Give it more bite and edge, but keep the room size and stereo image unchanged.",
+      "tags": ["sparse", "filter", "oscillator"],
+      "current_patch_context": {
+        "oscillator-1": {"shape": "sine", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 1},
+        "oscillator-2": {"shape": "sine", "octave": 1, "semitone": 0, "detune-cents": 0.0, "level": 0.2, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 1800.0, "resonance": 0.5, "drive": 0.0, "keytrack": 0.3, "env-amount": 0.1, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 25.0, "decay-ms": 250.0, "sustain": 0.5, "release-ms": 350.0, "velocity-amount": 0.2},
+        "effects": {"reverb-mix": 0.15, "delay-mix": 0.0, "chorus-mix": 0.0, "stereo-width": 1.0, "output-gain-db": -3.0, "distortion-drive": 0.0}
+      }
+    },
+    {
+      "id": "sparse_no_change_001",
+      "prompt": "Actually, leave it exactly as it is.",
+      "tags": ["sparse", "noop"],
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 5.0, "level": 0.7, "unison-voices": 3},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": -3.0, "level": 0.25, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 2200.0, "resonance": 1.1, "drive": 0.05, "keytrack": 0.4, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 60.0, "decay-ms": 500.0, "sustain": 0.55, "release-ms": 750.0, "velocity-amount": 0.35},
+        "effects": {"reverb-mix": 0.25, "delay-mix": 0.1, "chorus-mix": 0.15, "stereo-width": 1.1, "output-gain-db": -2.0, "distortion-drive": 0.05}
+      }
+    }
+  ]
+}

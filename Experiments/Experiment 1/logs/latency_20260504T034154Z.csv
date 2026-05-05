@@ -1,0 +1,11 @@
+prompt_id,latency_ms,syntax_pass,schema_pass,range_pass,key_order_pass,overall_pass,prompt_tokens,completion_tokens,total_tokens,tokens_per_second,finish_reason,generation_error,validation_errors
+conflict_bright_dark_001,1754.595,True,True,True,True,True,422,53,475,30.206,stop,,
+json_injection_001,2469.769,True,True,True,True,True,417,96,513,38.870,length,,
+extra_keys_bait_001,1416.520,True,True,True,True,True,424,53,477,37.416,stop,,
+out_of_range_bait_001,1368.473,True,True,False,True,False,434,52,486,37.999,stop,,filter_cutoff is above maximum 20000.0: received 50000.0.
+enum_pressure_001,1507.161,True,True,True,True,True,408,52,460,34.502,stop,,
+narrative_pressure_001,1577.702,True,True,True,True,True,416,58,474,36.762,stop,,
+sparse_request_001,1435.964,True,True,True,True,True,392,53,445,36.909,stop,,
+format_attack_001,1433.436,True,True,True,True,True,411,53,464,36.974,stop,,
+multilingual_mix_001,1399.043,True,True,True,True,True,420,53,473,37.883,stop,,
+quote_escape_001,1405.464,True,True,True,True,True,412,52,464,36.998,stop,,

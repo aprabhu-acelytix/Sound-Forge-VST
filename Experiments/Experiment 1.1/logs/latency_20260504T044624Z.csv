@@ -1,0 +1,6 @@
+prompt_id,latency_ms,parse_latency_ms,validation_latency_ms,sparse_latency_ms,syntax_pass,schema_pass,range_pass,key_order_pass,explanation_pass,sparse_pass,overall_pass,changed_param_count,null_param_count,null_ratio,changed_block_count,all_null_noop,prompt_tokens,completion_tokens,total_tokens,tokens_per_second,finish_reason,generation_error,validation_errors
+full_design_pad_001,13443.299,0.027,0.041,0.014,True,True,True,True,True,True,True,30,0,0.000000,5,False,1063,389,1452,28.936,stop,,
+full_design_bass_001,11863.266,0.023,0.038,0.014,True,True,True,True,True,True,True,24,6,0.200000,4,False,1063,364,1427,30.683,stop,,
+sparse_brighter_001,9855.797,0.037,0.033,0.021,True,True,True,True,True,True,True,2,28,0.933333,1,False,1419,298,1717,30.236,stop,,
+sparse_attack_001,9739.396,0.024,0.046,0.022,True,True,True,True,True,True,True,1,29,0.966667,1,False,1425,294,1719,30.187,stop,,
+sparse_space_001,9898.418,0.041,0.033,0.020,True,True,True,True,True,True,True,3,27,0.900000,1,False,1425,299,1724,30.207,stop,,

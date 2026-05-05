@@ -1,0 +1,34 @@
+2026-05-04T05:00:47Z | Starting Experiment 1.1: The Advanced Brain Sandbox
+2026-05-04T05:00:47Z | Run ID: 20260504T050047Z
+2026-05-04T05:00:48Z | Model path: /models/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+2026-05-04T05:00:48Z | Model file size: 1.80 GiB
+2026-05-04T05:00:48Z | Results JSON: /workspace/Experiments/Experiment 1.1/results/run_20260504T050047Z.json
+2026-05-04T05:00:48Z | Latency CSV: /workspace/Experiments/Experiment 1.1/logs/latency_20260504T050047Z.csv
+2026-05-04T05:00:48Z | Status log: Experiments/Experiment 1.1/logs/status_qwen3b_adversarial.log
+2026-05-04T05:00:48Z | Validating grammar file: /workspace/Experiments/Experiment 1.1/grammars/advanced_patch_v1.gbnf
+2026-05-04T05:00:48Z | Selected prompt cases: 5
+2026-05-04T05:00:48Z | Inference mode: GPU offload requested with 35 layers.
+2026-05-04T05:00:48Z | Stage 1/3: loading the GGUF model into memory.
+2026-05-04T05:01:03Z | Stage 1/3 complete: model load finished in 15086.76 ms.
+2026-05-04T05:01:03Z | Stage 2/3: starting prompt 1/5 [adv_markdown_001]
+2026-05-04T05:01:11Z | Stage 2/3: completed prompt 1/5 [adv_markdown_001] | PASS | 8023.75 ms | finish=stop | changed=3 | nulls=27 | errors=-
+2026-05-04T05:01:11Z | Stage 2/3: starting prompt 2/5 [adv_extra_keys_001]
+2026-05-04T05:01:22Z | Stage 2/3: completed prompt 2/5 [adv_extra_keys_001] | PASS | 10954.31 ms | finish=stop | changed=30 | nulls=0 | errors=-
+2026-05-04T05:01:22Z | Stage 2/3: starting prompt 3/5 [adv_numeric_pressure_001]
+2026-05-04T05:01:33Z | Stage 2/3: completed prompt 3/5 [adv_numeric_pressure_001] | FAIL | 11034.34 ms | finish=stop | changed=30 | nulls=0 | errors=filter.cutoff-hz is above maximum 20000.0: received 50000.0. | envelope.attack-ms is below minimum 0.1: received 0.0. | envelope.release-ms is above maximum 15000.0: received 999999.0. | effects.reverb-mix is above maximum 1.0: received 2.5. | effects.stereo-width is above maximum 2.0: received 10.0.
+2026-05-04T05:01:33Z | Stage 2/3: starting prompt 4/5 [adv_sparse_pressure_001]
+2026-05-04T05:01:43Z | Stage 2/3: completed prompt 4/5 [adv_sparse_pressure_001] | FAIL | 9624.59 ms | finish=stop | changed=30 | nulls=0 | errors=Sparse update returned no null no-op parameters even though current_patch_context was provided. | oscillator-1.shape matches current_patch_context and should be null in a sparse patch. | oscillator-1.octave matches current_patch_context and should be null in a sparse patch. | oscillator-1.semitone matches current_patch_context and should be null in a sparse patch. | oscillator-1.detune-cents matches current_patch_context and should be null in a sparse patch. | oscillator-1.level matches current_patch_context and should be null in a sparse patch. | oscillator-1.unison-voices matches current_patch_context and should be null in a sparse patch. | oscillator-2.shape matches current_patch_context and should be null in a sparse patch. | oscillator-2.octave matches current_patch_context and should be null in a sparse patch. | oscillator-2.semitone matches current_patch_context and should be null in a sparse patch. | oscillator-2.detune-cents matches current_patch_context and should be null in a sparse patch. | oscillator-2.level matches current_patch_context and should be null in a sparse patch. | oscillator-2.sync-mode matches current_patch_context and should be null in a sparse patch. | filter.mode matches current_patch_context and should be null in a sparse patch. | filter.resonance matches current_patch_context and should be null in a sparse patch. | filter.drive matches current_patch_context and should be null in a sparse patch. | filter.keytrack matches current_patch_context and should be null in a sparse patch. | filter.env-amount matches current_patch_context and should be null in a sparse patch. | filter.slope-db-per-oct matches current_patch_context and should be null in a sparse patch. | envelope.attack-ms matches current_patch_context and should be null in a sparse patch. | envelope.decay-ms matches current_patch_context and should be null in a sparse patch. | envelope.sustain matches current_patch_context and should be null in a sparse patch. | envelope.release-ms matches current_patch_context and should be null in a sparse patch. | envelope.velocity-amount matches current_patch_context and should be null in a sparse patch. | effects.reverb-mix matches current_patch_context and should be null in a sparse patch. | effects.delay-mix matches current_patch_context and should be null in a sparse patch. | effects.chorus-mix matches current_patch_context and should be null in a sparse patch. | effects.stereo-width matches current_patch_context and should be null in a sparse patch. | effects.output-gain-db matches current_patch_context and should be null in a sparse patch. | effects.distortion-drive matches current_patch_context and should be null in a sparse patch.
+2026-05-04T05:01:43Z | Stage 2/3: starting prompt 5/5 [adv_multilingual_001]
+2026-05-04T05:01:54Z | Stage 2/3: completed prompt 5/5 [adv_multilingual_001] | PASS | 11284.23 ms | finish=stop | changed=30 | nulls=0 | errors=-
+2026-05-04T05:01:54Z | Stage 3/3: final artifact write complete.
+2026-05-04T05:01:54Z | Total runs: 5
+2026-05-04T05:01:54Z | Overall pass rate: 3/5 (60.0%)
+2026-05-04T05:01:54Z | Syntax pass rate: 5/5 (100.0%)
+2026-05-04T05:01:54Z | Range pass rate: 4/5 (80.0%)
+2026-05-04T05:01:54Z | Explanation pass rate: 5/5 (100.0%)
+2026-05-04T05:01:54Z | Mean latency: 10184.24 ms
+2026-05-04T05:01:54Z | P95 latency: 11234.25 ms
+2026-05-04T05:01:54Z | Mean null ratio: 0.180
+2026-05-04T05:01:54Z | Results JSON written to: /workspace/Experiments/Experiment 1.1/results/run_20260504T050047Z.json
+2026-05-04T05:01:54Z | Latency CSV written to: /workspace/Experiments/Experiment 1.1/logs/latency_20260504T050047Z.csv
+2026-05-04T05:01:54Z | Status log written to: Experiments/Experiment 1.1/logs/status_qwen3b_adversarial.log

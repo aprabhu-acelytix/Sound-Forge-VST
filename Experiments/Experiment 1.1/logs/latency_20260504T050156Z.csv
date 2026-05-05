@@ -1,0 +1,6 @@
+prompt_id,latency_ms,parse_latency_ms,validation_latency_ms,sparse_latency_ms,syntax_pass,schema_pass,range_pass,key_order_pass,explanation_pass,sparse_pass,overall_pass,changed_param_count,null_param_count,null_ratio,changed_block_count,all_null_noop,prompt_tokens,completion_tokens,total_tokens,tokens_per_second,finish_reason,generation_error,validation_errors
+adv_markdown_001,12452.665,0.130,0.053,0.050,True,True,True,True,True,True,True,9,21,0.700000,3,False,1066,357,1423,28.669,stop,,
+adv_extra_keys_001,10691.673,0.020,0.028,0.012,True,True,True,True,True,True,True,0,30,1.000000,0,True,1072,322,1394,30.117,stop,,
+adv_numeric_pressure_001,10318.351,0.022,0.043,0.027,True,True,False,True,True,True,False,5,25,0.833333,3,False,1095,317,1412,30.722,stop,,filter.cutoff-hz is above maximum 20000.0: received 50000.0. | envelope.attack-ms is below minimum 0.1: received 0.0. | envelope.release-ms is above maximum 15000.0: received 999999.0. | effects.reverb-mix is above maximum 1.0: received 2.5. | effects.stereo-width is above maximum 2.0: received 10.0.
+adv_sparse_pressure_001,9820.140,0.025,0.035,0.021,True,True,True,True,True,True,True,2,28,0.933333,1,False,1422,298,1720,30.346,stop,,
+adv_multilingual_001,10048.430,0.042,0.031,0.013,True,True,True,True,True,True,True,2,28,0.933333,2,False,1077,305,1382,30.353,stop,,

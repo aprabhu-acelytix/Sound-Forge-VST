@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sound Forge Brain Sandbox Payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "osc_shape",
+    "filter_cutoff",
+    "attack_ms",
+    "decay_ms",
+    "reverb_mix"
+  ],
+  "properties": {
+    "osc_shape": {
+      "type": "string",
+      "enum": [
+        "sine",
+        "saw",
+        "square"
+      ],
+      "description": "Primary oscillator shape for the sandbox synth."
+    },
+    "filter_cutoff": {
+      "type": "number",
+      "minimum": 20.0,
+      "maximum": 20000.0,
+      "description": "Low-pass filter cutoff frequency in Hz."
+    },
+    "attack_ms": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 5000.0,
+      "description": "Envelope attack time in milliseconds."
+    },
+    "decay_ms": {
+      "type": "number",
+      "minimum": 1.0,
+      "maximum": 10000.0,
+      "description": "Envelope decay time in milliseconds."
+    },
+    "reverb_mix": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Dry/wet reverb balance."
+    }
+  }
+}

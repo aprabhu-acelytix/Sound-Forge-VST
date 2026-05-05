@@ -1,0 +1,2 @@
+prompt_id,latency_ms,parse_latency_ms,validation_latency_ms,sparse_latency_ms,syntax_pass,schema_pass,range_pass,key_order_pass,explanation_pass,sparse_pass,overall_pass,changed_param_count,null_param_count,null_ratio,changed_block_count,all_null_noop,prompt_tokens,completion_tokens,total_tokens,tokens_per_second,finish_reason,generation_error,validation_errors
+full_design_pad_001,10039.928,0.052,0.042,0.022,True,True,True,True,True,True,True,30,0,0.000000,5,False,1063,372,1435,37.052,stop,,

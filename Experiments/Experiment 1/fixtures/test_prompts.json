@@ -1,0 +1,55 @@
+{
+  "description": "Baseline prompt set for Experiment 1: The Brain Sandbox.",
+  "cases": [
+    {
+      "id": "acid_bass_001",
+      "prompt": "Design an aggressive acid bass that hits immediately, stays fairly tight, and only uses a little room around it.",
+      "tags": ["bass", "aggressive", "tight"]
+    },
+    {
+      "id": "ambient_pad_001",
+      "prompt": "Make a dark ambient pad that swells in gently, hangs in the air, and feels very spacious.",
+      "tags": ["pad", "dark", "spacious"]
+    },
+    {
+      "id": "glass_pluck_001",
+      "prompt": "Create a bright glassy pluck with a fast onset, short body, and only a touch of reverb.",
+      "tags": ["pluck", "bright", "short"]
+    },
+    {
+      "id": "soft_sub_001",
+      "prompt": "I want a pure, rounded sub bass with a gentle start, restrained brightness, and almost no reverb.",
+      "tags": ["sub", "pure", "dry"]
+    },
+    {
+      "id": "retro_square_001",
+      "prompt": "Give me a hollow retro lead with a quick attack, medium decay, and a moderate amount of space.",
+      "tags": ["lead", "retro", "hollow"]
+    },
+    {
+      "id": "cinematic_swell_001",
+      "prompt": "Build a huge cinematic synth swell that blooms slowly, stays open on the top end, and washes the whole room.",
+      "tags": ["cinematic", "swell", "wet"]
+    },
+    {
+      "id": "dry_stab_001",
+      "prompt": "Create a punchy synth stab that starts instantly, decays quickly, sounds bright enough to cut, and stays very dry.",
+      "tags": ["stab", "punchy", "dry"]
+    },
+    {
+      "id": "mellow_keys_001",
+      "prompt": "Make mellow synth keys with a soft front edge, medium decay, a darker filter, and a little ambience.",
+      "tags": ["keys", "mellow", "dark"]
+    },
+    {
+      "id": "washed_drone_001",
+      "prompt": "I need a washed-out drone that evolves slowly, keeps ringing, and feels soaked in reverb.",
+      "tags": ["drone", "slow", "wet"]
+    },
+    {
+      "id": "ambiguous_hybrid_001",
+      "prompt": "Make it bright but also soft, percussive yet smooth, with enough space to feel big without losing focus.",
+      "tags": ["ambiguous", "hybrid", "mixed-intent"]
+    }
+  ]
+}

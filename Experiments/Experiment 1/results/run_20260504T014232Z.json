@@ -1,0 +1,69 @@
+{
+  "experiment": "Experiment 1: The Brain Sandbox",
+  "run_id": "20260504T014232Z",
+  "run_state": "running",
+  "timestamp_utc": "20260504T014247Z",
+  "environment": {
+    "python_version": "3.10.12",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35"
+  },
+  "artifacts": {
+    "results_json": "/workspace/Experiments/Experiment 1/results/run_20260504T014232Z.json",
+    "latency_csv": "/workspace/Experiments/Experiment 1/logs/latency_20260504T014232Z.csv",
+    "status_log": "Experiments/Experiment 1/logs/status_latest.log"
+  },
+  "config": {
+    "model_path": "/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "system_prompt_file": "/workspace/Experiments/Experiment 1/prompts/system_prompt_v1.txt",
+    "grammar_file": "/workspace/Experiments/Experiment 1/grammars/synth_params_v1.gbnf",
+    "schema_file": "/workspace/Experiments/Experiment 1/schemas/synth_params_v1.json",
+    "prompts_file": "/workspace/Experiments/Experiment 1/fixtures/test_prompts.json",
+    "results_dir": "/workspace/Experiments/Experiment 1/results",
+    "logs_dir": "/workspace/Experiments/Experiment 1/logs",
+    "status_file": "Experiments/Experiment 1/logs/status_latest.log",
+    "chat_format": null,
+    "n_ctx": 4096,
+    "n_threads": null,
+    "n_gpu_layers": 35,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "repeat_penalty": 1.0,
+    "max_tokens": 96,
+    "seed": 42,
+    "limit": 3,
+    "prompt_id": []
+  },
+  "model": {
+    "model_path": "/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "model_name": "Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "model_file_size": "1.80 GiB",
+    "model_load_ms": 14547.70791899955
+  },
+  "progress": {
+    "completed_runs": 0,
+    "total_runs": 0
+  },
+  "summary": {
+    "total_runs": 0,
+    "syntax_pass_count": 0,
+    "schema_pass_count": 0,
+    "range_pass_count": 0,
+    "key_order_pass_count": 0,
+    "overall_pass_count": 0,
+    "syntax_pass_rate": 0.0,
+    "schema_pass_rate": 0.0,
+    "range_pass_rate": 0.0,
+    "key_order_pass_rate": 0.0,
+    "overall_pass_rate": 0.0,
+    "latency_ms": {
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null,
+      "p95": null,
+      "p99": null
+    },
+    "failure_categories": {}
+  },
+  "results": []
+}

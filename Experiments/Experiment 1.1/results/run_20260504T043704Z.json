@@ -1,0 +1,142 @@
+{
+  "experiment": "Experiment 1.1: The Advanced Brain Sandbox",
+  "run_id": "20260504T043704Z",
+  "run_state": "completed",
+  "timestamp_utc": "20260504T043727Z",
+  "environment": {
+    "python_version": "3.10.12",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35"
+  },
+  "artifacts": {
+    "results_json": "/workspace/Experiments/Experiment 1.1/results/run_20260504T043704Z.json",
+    "latency_csv": "/workspace/Experiments/Experiment 1.1/logs/latency_20260504T043704Z.csv",
+    "status_log": "Experiments/Experiment 1.1/logs/status_qwen3b_smoke.log"
+  },
+  "config": {
+    "model_path": "/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "system_prompt_file": "/workspace/Experiments/Experiment 1.1/prompts/system_prompt_v1_1.txt",
+    "grammar_file": "/workspace/Experiments/Experiment 1.1/grammars/advanced_patch_v1.gbnf",
+    "schema_file": "/workspace/Experiments/Experiment 1.1/schemas/advanced_patch_v1.json",
+    "prompts_file": "/workspace/Experiments/Experiment 1.1/fixtures/baseline_prompts.json",
+    "results_dir": "/workspace/Experiments/Experiment 1.1/results",
+    "logs_dir": "/workspace/Experiments/Experiment 1.1/logs",
+    "status_file": "Experiments/Experiment 1.1/logs/status_qwen3b_smoke.log",
+    "chat_format": null,
+    "n_ctx": 4096,
+    "n_threads": null,
+    "n_gpu_layers": 35,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "repeat_penalty": 1.0,
+    "max_tokens": 320,
+    "seed": 42,
+    "limit": 1,
+    "prompt_id": []
+  },
+  "model": {
+    "model_path": "/models/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "model_name": "Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "model_file_size": "1.80 GiB",
+    "model_load_ms": 13765.060391000588
+  },
+  "progress": {
+    "completed_runs": 1,
+    "total_runs": 1
+  },
+  "summary": {
+    "total_runs": 1,
+    "syntax_pass_count": 0,
+    "schema_pass_count": 0,
+    "range_pass_count": 0,
+    "key_order_pass_count": 0,
+    "explanation_pass_count": 0,
+    "sparse_pass_count": 0,
+    "overall_pass_count": 0,
+    "syntax_pass_rate": 0.0,
+    "schema_pass_rate": 0.0,
+    "range_pass_rate": 0.0,
+    "key_order_pass_rate": 0.0,
+    "explanation_pass_rate": 0.0,
+    "sparse_pass_rate": 0.0,
+    "overall_pass_rate": 0.0,
+    "latency_ms": {
+      "mean": 8735.646627999813,
+      "median": 8735.646627999813,
+      "min": 8735.646627999813,
+      "max": 8735.646627999813,
+      "p95": 8735.646627999813,
+      "p99": 8735.646627999813
+    },
+    "parse_latency_ms": {
+      "mean": 0.07573899893031921
+    },
+    "validation_latency_ms": {
+      "mean": null
+    },
+    "sparse_latency_ms": {
+      "mean": null
+    },
+    "explanation_length_chars": {
+      "mean": null,
+      "max": null
+    },
+    "null_ratio": {
+      "mean": null,
+      "max": null
+    },
+    "changed_param_count": {
+      "mean": 0.0,
+      "max": 0
+    },
+    "all_null_noop_count": 0,
+    "failure_categories": {
+      "syntax_fail": 1
+    }
+  },
+  "results": [
+    {
+      "prompt_id": "full_design_pad_001",
+      "prompt": "Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.",
+      "tags": [
+        "baseline",
+        "full-design",
+        "pad"
+      ],
+      "current_patch_context": null,
+      "latency_ms": 8735.646627999813,
+      "parse_latency_ms": 0.07573899893031921,
+      "validation_latency_ms": null,
+      "sparse_latency_ms": null,
+      "raw_output": "{\n  \"explanation\": \"Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.\",\n  \"oscillator-1\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5\n  ,\n  \"unison-voices\": 4\n  },\n  \"oscillator-2\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 500,\n    \"resonance\": 1.0,\n    \"drive\": 0.5,\n    \"keytrack\": 0.5,\n    \"env-amount\": 0.5\n   ,\n  \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 200,\n    \"decay-ms\": 500,\n    \"sustain\": 0.5,\n    \"release-ms\": 1000,\n    \"velocity-amount\": 0.5\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.5,\n    \"delay-mix\":",
+      "trimmed_output": "{\n  \"explanation\": \"Design a wide cinematic pad with a soft swell, warm filter tone, and lush space.\",\n  \"oscillator-1\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5\n  ,\n  \"unison-voices\": 4\n  },\n  \"oscillator-2\": {\n    \"shape\": \"sine\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 0,\n    \"level\": 0.5,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 500,\n    \"resonance\": 1.0,\n    \"drive\": 0.5,\n    \"keytrack\": 0.5,\n    \"env-amount\": 0.5\n   ,\n  \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 200,\n    \"decay-ms\": 500,\n    \"sustain\": 0.5,\n    \"release-ms\": 1000,\n    \"velocity-amount\": 0.5\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.5,\n    \"delay-mix\":",
+      "parsed_payload": null,
+      "merged_patch_preview": null,
+      "syntax_pass": false,
+      "schema_pass": false,
+      "range_pass": false,
+      "key_order_pass": false,
+      "explanation_pass": false,
+      "sparse_pass": false,
+      "overall_pass": false,
+      "finish_reason": "length",
+      "prompt_tokens": 1056,
+      "completion_tokens": 320,
+      "total_tokens": 1376,
+      "tokens_per_second": 36.63151837831035,
+      "generation_error": null,
+      "validation_errors": [
+        "Invalid JSON: Expecting value at line 39, column 17."
+      ],
+      "explanation": null,
+      "explanation_length": null,
+      "changed_paths": {},
+      "ignored_paths": [],
+      "changed_param_count": 0,
+      "null_param_count": 0,
+      "changed_block_count": 0,
+      "changed_blocks": [],
+      "all_null_noop": false,
+      "null_ratio": null
+    }
+  ]
+}
