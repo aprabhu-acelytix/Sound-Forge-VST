@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "id": "latency_patch_only_001",
+      "prompt": "Create a bright pluck with a fast attack and a little resonance.",
+      "tags": ["latency", "baseline", "pluck"]
+    },
+    {
+      "id": "latency_bass_dark_001",
+      "prompt": "Create a dark, rounded bass with a soft top end and almost no space.",
+      "tags": ["latency", "baseline", "bass", "dark"]
+    },
+    {
+      "id": "latency_pad_complex_001",
+      "prompt": "Make a wide, airy pad with a slow fade-in, gentle chorus, more reverb, and a brighter open top.",
+      "tags": ["latency", "complex", "pad", "wide"]
+    },
+    {
+      "id": "latency_perc_tight_001",
+      "prompt": "Make it tighter and more percussive with a sharper transient and shorter tail.",
+      "tags": ["latency", "baseline", "percussive"]
+    },
+    {
+      "id": "latency_space_only_001",
+      "prompt": "Keep the core tone mostly the same but make it feel larger and more distant.",
+      "tags": ["latency", "effects-focused", "space"]
+    },
+    {
+      "id": "latency_stream_supersede_001",
+      "prompt": "Start from the current patch and make it darker and softer.",
+      "tags": ["latency", "streaming", "supersede"]
+    },
+    {
+      "id": "latency_stream_supersede_002",
+      "prompt": "Actually make it sharper, brighter, and more percussive instead.",
+      "tags": ["latency", "streaming", "supersede"]
+    },
+    {
+      "id": "latency_stream_supersede_003",
+      "prompt": "No, strip the effects back down and make it punchier and drier right away.",
+      "tags": ["latency", "streaming", "supersede"]
+    }
+  ]
+}

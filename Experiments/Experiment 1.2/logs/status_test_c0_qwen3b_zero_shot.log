@@ -1,0 +1,42 @@
+2026-05-07T02:50:07Z | Starting Experiment 1.2: Patch-Only Async Pipeline Sandbox
+2026-05-07T02:50:07Z | Run ID: 20260507T025007Z
+2026-05-07T02:50:07Z | Patch contract: sparse_patch_only
+2026-05-07T02:50:07Z | Explanation mode: off
+2026-05-07T02:50:07Z | Patch model path: /models_patch/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+2026-05-07T02:50:07Z | Results JSON: /workspace/Experiments/Experiment 1.2/results/run_20260507T025007Z.json
+2026-05-07T02:50:07Z | Latency CSV: /workspace/Experiments/Experiment 1.2/logs/latency_20260507T025007Z.csv
+2026-05-07T02:50:07Z | Clamp events JSONL: /workspace/Experiments/Experiment 1.2/logs/clamp_events_20260507T025007Z.jsonl
+2026-05-07T02:50:07Z | Status log: Experiments/Experiment 1.2/logs/status_test_c0_qwen3b_zero_shot.log
+2026-05-07T02:50:07Z | Selected prompt cases: 8
+2026-05-07T02:50:07Z | Few-shot examples loaded: 0
+2026-05-07T02:50:07Z | Validating patch grammar file: /workspace/Experiments/Experiment 1.2/grammars/sparse_patch_only_v1.gbnf
+2026-05-07T02:50:08Z | Inference mode: GPU offload requested.
+2026-05-07T02:50:08Z | Loading patch model: /models_patch/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+2026-05-07T02:50:29Z | Loaded patch model in 21352.29 ms
+2026-05-07T02:50:29Z | Submitting prompt cases into the async pipeline.
+2026-05-07T02:50:38Z | Completed [sparse_single_change_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=9315.800 ms | patch_applied=9316.214 ms | explanation_ready= ms
+2026-05-07T02:50:39Z | Progress: 1/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:50:47Z | Completed [sparse_filter_width_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=18172.076 ms | patch_applied=18172.512 ms | explanation_ready= ms
+2026-05-07T02:50:47Z | Progress: 2/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:50:56Z | Completed [sparse_skip_same_shape_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=27156.863 ms | patch_applied=27157.269 ms | explanation_ready= ms
+2026-05-07T02:50:56Z | Progress: 3/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:51:05Z | Completed [sparse_same_value_noop_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=36035.405 ms | patch_applied=36035.898 ms | explanation_ready= ms
+2026-05-07T02:51:05Z | Progress: 4/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:51:14Z | Completed [sparse_exact_multi_block_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=45020.833 ms | patch_applied=45021.219 ms | explanation_ready= ms
+2026-05-07T02:51:14Z | Progress: 5/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:51:23Z | Completed [sparse_dual_env_exact_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=54020.355 ms | patch_applied=54020.788 ms | explanation_ready= ms
+2026-05-07T02:51:23Z | Progress: 6/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:51:33Z | Completed [sparse_shape_unison_exact_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=63630.473 ms | patch_applied=63630.858 ms | explanation_ready= ms
+2026-05-07T02:51:33Z | Progress: 7/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:51:43Z | Completed [sparse_gain_width_exact_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=73358.855 ms | patch_applied=73359.185 ms | explanation_ready= ms
+2026-05-07T02:51:43Z | Progress: 8/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:51:43Z | Async pipeline completed.
+2026-05-07T02:51:43Z | Patch pipeline pass rate: 8/8 (100.0%)
+2026-05-07T02:51:43Z | Raw range pass rate: 8/8 (100.0%)
+2026-05-07T02:51:43Z | Clamp intervention rate: 0/8 (0.0%)
+2026-05-07T02:51:43Z | Mean patch ready latency: 40838.83 ms
+2026-05-07T02:51:43Z | Mean patch applied latency: 40839.24 ms
+2026-05-07T02:51:43Z | Results JSON written to: /workspace/Experiments/Experiment 1.2/results/run_20260507T025007Z.json
+2026-05-07T02:51:43Z | Latency CSV written to: /workspace/Experiments/Experiment 1.2/logs/latency_20260507T025007Z.csv
+2026-05-07T02:51:43Z | Clamp events JSONL written to: /workspace/Experiments/Experiment 1.2/logs/clamp_events_20260507T025007Z.jsonl
+2026-05-07T02:51:43Z | Status log written to: Experiments/Experiment 1.2/logs/status_test_c0_qwen3b_zero_shot.log

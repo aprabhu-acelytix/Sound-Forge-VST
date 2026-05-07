@@ -1,0 +1,3475 @@
+{
+  "experiment": "Experiment 1.2: Patch-Only Async Pipeline Sandbox",
+  "run_id": "20260507T022639Z",
+  "run_state": "completed",
+  "timestamp_utc": "20260507T022816Z",
+  "environment": {
+    "python_version": "3.10.12",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35"
+  },
+  "artifacts": {
+    "results_json": "/workspace/Experiments/Experiment 1.2/results/run_20260507T022639Z.json",
+    "latency_csv": "/workspace/Experiments/Experiment 1.2/logs/latency_20260507T022639Z.csv",
+    "status_log": "Experiments/Experiment 1.2/logs/status_test_a3_qwen7b_compact_delta.log",
+    "clamp_events_jsonl": "/workspace/Experiments/Experiment 1.2/logs/clamp_events_20260507T022639Z.jsonl"
+  },
+  "config": {
+    "patch_model_path": "/models_patch/Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+    "explainer_model_path": null,
+    "patch_contract": "compact_delta",
+    "explanation_mode": "off",
+    "explanation_runtime_mode": "isolated",
+    "patch_system_prompt_file": null,
+    "explanation_system_prompt_file": null,
+    "few_shot_file": null,
+    "few_shot_count": 0,
+    "patch_grammar_file": null,
+    "patch_schema_file": null,
+    "explanation_grammar_file": "/workspace/Experiments/Experiment 1.2/grammars/explanation_response_v1.gbnf",
+    "explanation_schema_file": "/workspace/Experiments/Experiment 1.2/schemas/explanation_response_v1.json",
+    "parameter_registry_file": "/workspace/Experiments/Experiment 1.2/configs/parameter_registry_v1.json",
+    "prompts_file": "Experiments/Experiment 1.2/fixtures/test_a_latency_prompts.json",
+    "results_dir": "/workspace/Experiments/Experiment 1.2/results",
+    "logs_dir": "/workspace/Experiments/Experiment 1.2/logs",
+    "status_file": "Experiments/Experiment 1.2/logs/status_test_a3_qwen7b_compact_delta.log",
+    "patch_chat_format": null,
+    "explainer_chat_format": null,
+    "patch_n_ctx": 4096,
+    "explainer_n_ctx": 2048,
+    "patch_n_threads": null,
+    "explainer_n_threads": null,
+    "patch_n_gpu_layers": 35,
+    "explainer_n_gpu_layers": 35,
+    "patch_temperature": 0.0,
+    "explainer_temperature": 0.0,
+    "patch_top_p": 1.0,
+    "explainer_top_p": 1.0,
+    "patch_repeat_penalty": 1.0,
+    "explainer_repeat_penalty": 1.0,
+    "patch_max_tokens": 640,
+    "explainer_max_tokens": 96,
+    "seed": 42,
+    "limit": null,
+    "prompt_id": [],
+    "worker_queue_size": 64
+  },
+  "models": {
+    "patch_model": {
+      "model_path": "/models_patch/Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+      "model_name": "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+      "model_file_size": "4.36 GiB",
+      "model_load_ms": 47553.515634004725
+    },
+    "explainer_model": null
+  },
+  "progress": {
+    "completed_runs": 8,
+    "total_runs": 8
+  },
+  "summary": {
+    "total_runs": 8,
+    "raw_syntax_pass_count": 8,
+    "raw_schema_pass_count": 8,
+    "raw_key_order_pass_count": 8,
+    "raw_range_pass_count": 8,
+    "raw_semantic_pass_count": 8,
+    "post_clamp_apply_pass_count": 8,
+    "patch_pipeline_pass_count": 8,
+    "explanation_requested_count": 0,
+    "explanation_available_count": 0,
+    "explanation_pass_count": 0,
+    "explanation_cancelled_count": 0,
+    "explanation_discard_count": 0,
+    "clamp_intervention_count": 0,
+    "clamp_event_count_total": 0,
+    "raw_false_edit_count_total": 3,
+    "sanitized_false_edit_count_total": 0,
+    "latency_ms": {
+      "patch_ready": {
+        "mean": 27145.15449100145,
+        "median": 26110.967137999978,
+        "min": 3049.6805330039933,
+        "max": 49168.68037600216,
+        "p95": 47416.101667702605,
+        "p99": 48818.16463434225
+      },
+      "patch_applied": {
+        "mean": 27145.44396587644,
+        "median": 26111.250388501503,
+        "min": 3049.944159000006,
+        "max": 49168.901272001676,
+        "p95": 47416.377211652434,
+        "p99": 48818.39645993183
+      },
+      "explanation_ready": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      },
+      "ui_gap": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      },
+      "patch_queue_wait": {
+        "mean": 20999.131548998776,
+        "median": 22590.118268497463,
+        "min": 0.16767699707997963,
+        "max": 44161.35936099454,
+        "p95": 39940.759075697126,
+        "p99": 43317.23930393506
+      },
+      "apply_queue_wait": {
+        "mean": 0.19543137477739947,
+        "median": 0.18813250062521547,
+        "min": 0.1162350017693825,
+        "max": 0.2537439941079356,
+        "p95": 0.2448900446324842,
+        "p99": 0.2519732042128453
+      },
+      "explanation_queue_wait": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      },
+      "patch_generation": {
+        "mean": 6145.912954622872,
+        "median": 4961.175299496972,
+        "min": 2073.58912199561,
+        "max": 13301.405617996352,
+        "p95": 12866.436512797009,
+        "p99": 13214.411796956483
+      },
+      "apply": {
+        "mean": 0.07376487519650254,
+        "median": 0.061676499171881005,
+        "min": 0.044405998778529465,
+        "max": 0.1259580021724105,
+        "p95": 0.11950925145356449,
+        "p99": 0.12466825202864129
+      },
+      "explanation_generation": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      }
+    },
+    "throughput": {
+      "patch_tokens_per_second": {
+        "mean": 28.531384712683913,
+        "median": 28.78030032360338,
+        "min": 24.922689816204286,
+        "max": 29.9570154334877,
+        "p95": 29.76821743996795,
+        "p99": 29.91925583478375
+      },
+      "explanation_tokens_per_second": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      }
+    },
+    "changed_param_count": {
+      "raw_mean": 8.125,
+      "raw_max": 18,
+      "sanitized_mean": 7.75,
+      "sanitized_max": 16
+    },
+    "null_ratio": {
+      "raw_mean": 0.0,
+      "raw_max": 0.0,
+      "sanitized_mean": 0.0,
+      "sanitized_max": 0.0
+    },
+    "omitted_ratio": {
+      "raw_mean": 0.7291666666666667,
+      "raw_max": 0.9,
+      "sanitized_mean": 0.7416666666666667,
+      "sanitized_max": 0.9
+    },
+    "queue_backlog_max": {
+      "patch_input": 9,
+      "apply": 2,
+      "explanation": 0,
+      "completion": 2
+    },
+    "clamp_intervention_rate": 0.0,
+    "clamp_expectation_pass_rate": 1.0,
+    "mean_clamp_events_per_prompt": 0.0,
+    "per_path_clamp_frequency": {},
+    "sparse_exact_match_rate": {
+      "raw": 0.0,
+      "sanitized": 0.0
+    },
+    "noop_exact_pass_rate": {
+      "raw": 1.0,
+      "sanitized": 1.0
+    },
+    "failure_categories": {
+      "pass": 8
+    },
+    "raw_syntax_pass_rate": 1.0,
+    "raw_schema_pass_rate": 1.0,
+    "raw_key_order_pass_rate": 1.0,
+    "raw_range_pass_rate": 1.0,
+    "raw_semantic_pass_rate": 1.0,
+    "post_clamp_apply_pass_rate": 1.0,
+    "patch_pipeline_pass_rate": 1.0,
+    "explanation_available_rate": null,
+    "explanation_pass_rate": null
+  },
+  "results": [
+    {
+      "prompt_id": "latency_patch_only_001",
+      "stream_id": "latency-stream-1",
+      "submitted_index": 1,
+      "prompt": "Create a bright pluck with a fast attack and a little resonance.",
+      "tags": [
+        "latency",
+        "baseline",
+        "pluck"
+      ],
+      "expected_changed_paths": [
+        "filter.cutoff-hz",
+        "envelope.attack-ms"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false,
+      "patch_contract": "compact_delta",
+      "explanation_mode": "off",
+      "current_patch_context": null,
+      "patch_queue_wait_ms": 0.16767699707997963,
+      "apply_queue_wait_ms": 0.18609700055094436,
+      "explanation_queue_wait_ms": null,
+      "patch_latency_ms": 3049.430079998274,
+      "patch_parse_latency_ms": 0.031925999792292714,
+      "patch_validation_latency_ms": 0.03550700057530776,
+      "apply_latency_ms": 0.055912998504936695,
+      "explanation_latency_ms": null,
+      "patch_ready_ms": 3049.6805330039933,
+      "patch_applied_ms": 3049.944159000006,
+      "explanation_ready_ms": null,
+      "ui_gap_ms": null,
+      "patch_raw_output": "{\n  \"changes\": [\n    {\n      \"path\": \"filter.mode\",\n      \"value\": \"highpass\"\n    },\n    {\n      \"path\": \"filter.resonance\",\n      \"value\": 1.0\n    },\n    {\n      \"path\": \"envelope.attack-ms\",\n      \"value\": 50.0\n    }\n  ]\n}",
+      "patch_trimmed_output": "{\n  \"changes\": [\n    {\n      \"path\": \"filter.mode\",\n      \"value\": \"highpass\"\n    },\n    {\n      \"path\": \"filter.resonance\",\n      \"value\": 1.0\n    },\n    {\n      \"path\": \"envelope.attack-ms\",\n      \"value\": 50.0\n    }\n  ]\n}",
+      "patch_parsed_payload": {
+        "changes": [
+          {
+            "path": "filter.mode",
+            "value": "highpass"
+          },
+          {
+            "path": "filter.resonance",
+            "value": 1.0
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 50.0
+          }
+        ]
+      },
+      "patch_generation_error": null,
+      "patch_finish_reason": "stop",
+      "patch_prompt_tokens": 680,
+      "patch_completion_tokens": 76,
+      "patch_total_tokens": 756,
+      "patch_tokens_per_second": 24.922689816204286,
+      "raw_syntax_pass": true,
+      "raw_schema_pass": true,
+      "raw_key_order_pass": true,
+      "raw_range_pass": true,
+      "raw_semantic_pass": true,
+      "raw_validation_errors": [],
+      "raw_changed_paths": {
+        "filter.mode": "highpass",
+        "filter.resonance": 1.0,
+        "envelope.attack-ms": 50.0
+      },
+      "raw_ignored_paths": [
+        "oscillator-1.shape",
+        "oscillator-1.octave",
+        "oscillator-1.semitone",
+        "oscillator-1.detune-cents",
+        "oscillator-1.level",
+        "oscillator-1.unison-voices",
+        "oscillator-2.shape",
+        "oscillator-2.octave",
+        "oscillator-2.semitone",
+        "oscillator-2.detune-cents",
+        "oscillator-2.level",
+        "oscillator-2.sync-mode",
+        "filter.cutoff-hz",
+        "filter.drive",
+        "filter.keytrack",
+        "filter.env-amount",
+        "filter.slope-db-per-oct",
+        "envelope.decay-ms",
+        "envelope.sustain",
+        "envelope.release-ms",
+        "envelope.velocity-amount",
+        "effects.reverb-mix",
+        "effects.delay-mix",
+        "effects.chorus-mix",
+        "effects.stereo-width",
+        "effects.output-gain-db",
+        "effects.distortion-drive"
+      ],
+      "raw_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": "highpass",
+          "cutoff-hz": null,
+          "resonance": 1.0,
+          "drive": null,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": 50.0,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": null,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": null,
+          "delay-mix": null,
+          "chorus-mix": null,
+          "stereo-width": null,
+          "output-gain-db": null,
+          "distortion-drive": null
+        }
+      },
+      "raw_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "filter.mode",
+            "value": "highpass"
+          },
+          {
+            "path": "filter.resonance",
+            "value": 1.0
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 50.0
+          }
+        ]
+      },
+      "raw_changed_param_count": 3,
+      "raw_changed_block_count": 2,
+      "raw_changed_blocks": [
+        "envelope",
+        "filter"
+      ],
+      "raw_null_param_count": 0,
+      "raw_null_ratio": 0.0,
+      "raw_omitted_param_count": 27,
+      "raw_omitted_ratio": 0.9,
+      "raw_all_null_noop": false,
+      "raw_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "filter.cutoff-hz"
+        ],
+        "unexpected_changed_paths": [
+          "filter.mode",
+          "filter.resonance"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "apply_errors": [],
+      "apply_success": true,
+      "post_clamp_apply_pass": true,
+      "apply_noop_paths": [],
+      "clamp_events": [],
+      "clamp_event_count": 0,
+      "clamp_intervention": false,
+      "clamped_paths": [],
+      "clamp_expectation_pass": true,
+      "missing_expected_clamped_paths": [],
+      "unexpected_clamped_paths": [],
+      "sanitized_changed_paths": {
+        "filter.mode": "highpass",
+        "filter.resonance": 1.0,
+        "envelope.attack-ms": 50.0
+      },
+      "sanitized_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": "highpass",
+          "cutoff-hz": null,
+          "resonance": 1.0,
+          "drive": null,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": 50.0,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": null,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": null,
+          "delay-mix": null,
+          "chorus-mix": null,
+          "stereo-width": null,
+          "output-gain-db": null,
+          "distortion-drive": null
+        }
+      },
+      "sanitized_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "filter.mode",
+            "value": "highpass"
+          },
+          {
+            "path": "filter.resonance",
+            "value": 1.0
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 50.0
+          }
+        ]
+      },
+      "merged_patch_preview": null,
+      "sanitized_changed_param_count": 3,
+      "sanitized_changed_block_count": 2,
+      "sanitized_changed_blocks": [
+        "envelope",
+        "filter"
+      ],
+      "sanitized_null_param_count": 0,
+      "sanitized_null_ratio": 0.0,
+      "sanitized_omitted_param_count": 27,
+      "sanitized_omitted_ratio": 0.9,
+      "sanitized_all_null_noop": false,
+      "sanitized_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "filter.cutoff-hz"
+        ],
+        "unexpected_changed_paths": [
+          "filter.mode",
+          "filter.resonance"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "patch_pipeline_pass": true,
+      "explanation_requested": false,
+      "explanation_available": false,
+      "explanation_pass": false,
+      "explanation_cancelled": false,
+      "explanation_discarded": false,
+      "explanation_errors": [],
+      "explanation_generation_error": null,
+      "explanation_finish_reason": null,
+      "explanation_prompt_tokens": null,
+      "explanation_completion_tokens": null,
+      "explanation_total_tokens": null,
+      "explanation_tokens_per_second": null,
+      "explanation_raw_output": "",
+      "explanation_trimmed_output": "",
+      "explanation_payload": null,
+      "explanation_text": null
+    },
+    {
+      "prompt_id": "latency_bass_dark_001",
+      "stream_id": "latency-stream-2",
+      "submitted_index": 2,
+      "prompt": "Create a dark, rounded bass with a soft top end and almost no space.",
+      "tags": [
+        "latency",
+        "baseline",
+        "bass",
+        "dark"
+      ],
+      "expected_changed_paths": [
+        "filter.cutoff-hz",
+        "oscillator-1.shape",
+        "effects.reverb-mix"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false,
+      "patch_contract": "compact_delta",
+      "explanation_mode": "off",
+      "current_patch_context": null,
+      "patch_queue_wait_ms": 3049.674011999741,
+      "apply_queue_wait_ms": 0.1852180066634901,
+      "explanation_queue_wait_ms": null,
+      "patch_latency_ms": 13301.405617996352,
+      "patch_parse_latency_ms": 0.023457003408111632,
+      "patch_validation_latency_ms": 0.05113399674883112,
+      "apply_latency_ms": 0.06743999983882532,
+      "explanation_latency_ms": null,
+      "patch_ready_ms": 16351.164298997901,
+      "patch_applied_ms": 16351.440379999985,
+      "explanation_ready_ms": null,
+      "ui_gap_ms": null,
+      "patch_raw_output": "{\n  \"changes\": [\n    {\n      \"path\": \"oscillator-1.shape\",\n      \"value\": \"saw\"\n    },\n    {\n      \"path\": \"oscillator-1.octave\",\n      \"value\": -2\n    },\n    {\n      \"path\": \"oscillator-1.semitone\",\n      \"value\": -6\n    },\n    {\n      \"path\": \"oscillator-1.level\",\n      \"value\": 0.8\n    },\n    {\n      \"path\": \"oscillator-1.unison-voices\",\n      \"value\": 4\n    },\n    {\n      \"path\": \"oscillator-2.shape\",\n      \"value\": \"sine\"\n    },\n    {\n      \"path\": \"oscillator-2.octave\",\n      \"value\": -1\n    },\n    {\n      \"path\": \"oscillator-2.semitone\",\n      \"value\": 0\n    },\n    {\n      \"path\": \"oscillator-2.level\",\n      \"value\": 0.2\n    },\n    {\n      \"path\": \"filter.mode\",\n      \"value\": \"highpass\"\n    },\n    {\n      \"path\": \"filter.cutoff-hz\",\n      \"value\": 3000.0\n    },\n    {\n      \"path\": \"filter.resonance\",\n      \"value\": 1.0\n    },\n    {\n      \"path\": \"effects.reverb-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.delay-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.chorus-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.stereo-width\",\n      \"value\": 0.0\n    }\n  ]\n}",
+      "patch_trimmed_output": "{\n  \"changes\": [\n    {\n      \"path\": \"oscillator-1.shape\",\n      \"value\": \"saw\"\n    },\n    {\n      \"path\": \"oscillator-1.octave\",\n      \"value\": -2\n    },\n    {\n      \"path\": \"oscillator-1.semitone\",\n      \"value\": -6\n    },\n    {\n      \"path\": \"oscillator-1.level\",\n      \"value\": 0.8\n    },\n    {\n      \"path\": \"oscillator-1.unison-voices\",\n      \"value\": 4\n    },\n    {\n      \"path\": \"oscillator-2.shape\",\n      \"value\": \"sine\"\n    },\n    {\n      \"path\": \"oscillator-2.octave\",\n      \"value\": -1\n    },\n    {\n      \"path\": \"oscillator-2.semitone\",\n      \"value\": 0\n    },\n    {\n      \"path\": \"oscillator-2.level\",\n      \"value\": 0.2\n    },\n    {\n      \"path\": \"filter.mode\",\n      \"value\": \"highpass\"\n    },\n    {\n      \"path\": \"filter.cutoff-hz\",\n      \"value\": 3000.0\n    },\n    {\n      \"path\": \"filter.resonance\",\n      \"value\": 1.0\n    },\n    {\n      \"path\": \"effects.reverb-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.delay-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.chorus-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.stereo-width\",\n      \"value\": 0.0\n    }\n  ]\n}",
+      "patch_parsed_payload": {
+        "changes": [
+          {
+            "path": "oscillator-1.shape",
+            "value": "saw"
+          },
+          {
+            "path": "oscillator-1.octave",
+            "value": -2
+          },
+          {
+            "path": "oscillator-1.semitone",
+            "value": -6
+          },
+          {
+            "path": "oscillator-1.level",
+            "value": 0.8
+          },
+          {
+            "path": "oscillator-1.unison-voices",
+            "value": 4
+          },
+          {
+            "path": "oscillator-2.shape",
+            "value": "sine"
+          },
+          {
+            "path": "oscillator-2.octave",
+            "value": -1
+          },
+          {
+            "path": "oscillator-2.semitone",
+            "value": 0
+          },
+          {
+            "path": "oscillator-2.level",
+            "value": 0.2
+          },
+          {
+            "path": "filter.mode",
+            "value": "highpass"
+          },
+          {
+            "path": "filter.cutoff-hz",
+            "value": 3000.0
+          },
+          {
+            "path": "filter.resonance",
+            "value": 1.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.delay-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.stereo-width",
+            "value": 0.0
+          }
+        ]
+      },
+      "patch_generation_error": null,
+      "patch_finish_reason": "stop",
+      "patch_prompt_tokens": 682,
+      "patch_completion_tokens": 388,
+      "patch_total_tokens": 1070,
+      "patch_tokens_per_second": 29.16984949884162,
+      "raw_syntax_pass": true,
+      "raw_schema_pass": true,
+      "raw_key_order_pass": true,
+      "raw_range_pass": true,
+      "raw_semantic_pass": true,
+      "raw_validation_errors": [],
+      "raw_changed_paths": {
+        "oscillator-1.shape": "saw",
+        "oscillator-1.octave": -2,
+        "oscillator-1.semitone": -6,
+        "oscillator-1.level": 0.8,
+        "oscillator-1.unison-voices": 4,
+        "oscillator-2.shape": "sine",
+        "oscillator-2.octave": -1,
+        "oscillator-2.semitone": 0,
+        "oscillator-2.level": 0.2,
+        "filter.mode": "highpass",
+        "filter.cutoff-hz": 3000.0,
+        "filter.resonance": 1.0,
+        "effects.reverb-mix": 0.0,
+        "effects.delay-mix": 0.0,
+        "effects.chorus-mix": 0.0,
+        "effects.stereo-width": 0.0
+      },
+      "raw_ignored_paths": [
+        "oscillator-1.detune-cents",
+        "oscillator-2.detune-cents",
+        "oscillator-2.sync-mode",
+        "filter.drive",
+        "filter.keytrack",
+        "filter.env-amount",
+        "filter.slope-db-per-oct",
+        "envelope.attack-ms",
+        "envelope.decay-ms",
+        "envelope.sustain",
+        "envelope.release-ms",
+        "envelope.velocity-amount",
+        "effects.output-gain-db",
+        "effects.distortion-drive"
+      ],
+      "raw_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": -2,
+          "semitone": -6,
+          "detune-cents": null,
+          "level": 0.8,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "sine",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": null,
+          "level": 0.2,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": "highpass",
+          "cutoff-hz": 3000.0,
+          "resonance": 1.0,
+          "drive": null,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": null,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": null,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": 0.0,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 0.0,
+          "output-gain-db": null,
+          "distortion-drive": null
+        }
+      },
+      "raw_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "oscillator-1.shape",
+            "value": "saw"
+          },
+          {
+            "path": "oscillator-1.octave",
+            "value": -2
+          },
+          {
+            "path": "oscillator-1.semitone",
+            "value": -6
+          },
+          {
+            "path": "oscillator-1.level",
+            "value": 0.8
+          },
+          {
+            "path": "oscillator-1.unison-voices",
+            "value": 4
+          },
+          {
+            "path": "oscillator-2.shape",
+            "value": "sine"
+          },
+          {
+            "path": "oscillator-2.octave",
+            "value": -1
+          },
+          {
+            "path": "oscillator-2.semitone",
+            "value": 0
+          },
+          {
+            "path": "oscillator-2.level",
+            "value": 0.2
+          },
+          {
+            "path": "filter.mode",
+            "value": "highpass"
+          },
+          {
+            "path": "filter.cutoff-hz",
+            "value": 3000.0
+          },
+          {
+            "path": "filter.resonance",
+            "value": 1.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.delay-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.stereo-width",
+            "value": 0.0
+          }
+        ]
+      },
+      "raw_changed_param_count": 16,
+      "raw_changed_block_count": 4,
+      "raw_changed_blocks": [
+        "effects",
+        "filter",
+        "oscillator-1",
+        "oscillator-2"
+      ],
+      "raw_null_param_count": 0,
+      "raw_null_ratio": 0.0,
+      "raw_omitted_param_count": 14,
+      "raw_omitted_ratio": 0.4666666666666667,
+      "raw_all_null_noop": false,
+      "raw_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [],
+        "unexpected_changed_paths": [
+          "effects.chorus-mix",
+          "effects.delay-mix",
+          "effects.stereo-width",
+          "filter.mode",
+          "filter.resonance",
+          "oscillator-1.level",
+          "oscillator-1.octave",
+          "oscillator-1.semitone",
+          "oscillator-1.unison-voices",
+          "oscillator-2.level",
+          "oscillator-2.octave",
+          "oscillator-2.semitone",
+          "oscillator-2.shape"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "apply_errors": [],
+      "apply_success": true,
+      "post_clamp_apply_pass": true,
+      "apply_noop_paths": [],
+      "clamp_events": [],
+      "clamp_event_count": 0,
+      "clamp_intervention": false,
+      "clamped_paths": [],
+      "clamp_expectation_pass": true,
+      "missing_expected_clamped_paths": [],
+      "unexpected_clamped_paths": [],
+      "sanitized_changed_paths": {
+        "oscillator-1.shape": "saw",
+        "oscillator-1.octave": -2,
+        "oscillator-1.semitone": -6,
+        "oscillator-1.level": 0.8,
+        "oscillator-1.unison-voices": 4,
+        "oscillator-2.shape": "sine",
+        "oscillator-2.octave": -1,
+        "oscillator-2.semitone": 0,
+        "oscillator-2.level": 0.2,
+        "filter.mode": "highpass",
+        "filter.cutoff-hz": 3000.0,
+        "filter.resonance": 1.0,
+        "effects.reverb-mix": 0.0,
+        "effects.delay-mix": 0.0,
+        "effects.chorus-mix": 0.0,
+        "effects.stereo-width": 0.0
+      },
+      "sanitized_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": -2,
+          "semitone": -6,
+          "detune-cents": null,
+          "level": 0.8,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "sine",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": null,
+          "level": 0.2,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": "highpass",
+          "cutoff-hz": 3000.0,
+          "resonance": 1.0,
+          "drive": null,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": null,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": null,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": 0.0,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 0.0,
+          "output-gain-db": null,
+          "distortion-drive": null
+        }
+      },
+      "sanitized_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "oscillator-1.shape",
+            "value": "saw"
+          },
+          {
+            "path": "oscillator-1.octave",
+            "value": -2
+          },
+          {
+            "path": "oscillator-1.semitone",
+            "value": -6
+          },
+          {
+            "path": "oscillator-1.level",
+            "value": 0.8
+          },
+          {
+            "path": "oscillator-1.unison-voices",
+            "value": 4
+          },
+          {
+            "path": "oscillator-2.shape",
+            "value": "sine"
+          },
+          {
+            "path": "oscillator-2.octave",
+            "value": -1
+          },
+          {
+            "path": "oscillator-2.semitone",
+            "value": 0
+          },
+          {
+            "path": "oscillator-2.level",
+            "value": 0.2
+          },
+          {
+            "path": "filter.mode",
+            "value": "highpass"
+          },
+          {
+            "path": "filter.cutoff-hz",
+            "value": 3000.0
+          },
+          {
+            "path": "filter.resonance",
+            "value": 1.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.delay-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.stereo-width",
+            "value": 0.0
+          }
+        ]
+      },
+      "merged_patch_preview": null,
+      "sanitized_changed_param_count": 16,
+      "sanitized_changed_block_count": 4,
+      "sanitized_changed_blocks": [
+        "effects",
+        "filter",
+        "oscillator-1",
+        "oscillator-2"
+      ],
+      "sanitized_null_param_count": 0,
+      "sanitized_null_ratio": 0.0,
+      "sanitized_omitted_param_count": 14,
+      "sanitized_omitted_ratio": 0.4666666666666667,
+      "sanitized_all_null_noop": false,
+      "sanitized_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [],
+        "unexpected_changed_paths": [
+          "effects.chorus-mix",
+          "effects.delay-mix",
+          "effects.stereo-width",
+          "filter.mode",
+          "filter.resonance",
+          "oscillator-1.level",
+          "oscillator-1.octave",
+          "oscillator-1.semitone",
+          "oscillator-1.unison-voices",
+          "oscillator-2.level",
+          "oscillator-2.octave",
+          "oscillator-2.semitone",
+          "oscillator-2.shape"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "patch_pipeline_pass": true,
+      "explanation_requested": false,
+      "explanation_available": false,
+      "explanation_pass": false,
+      "explanation_cancelled": false,
+      "explanation_discarded": false,
+      "explanation_errors": [],
+      "explanation_generation_error": null,
+      "explanation_finish_reason": null,
+      "explanation_prompt_tokens": null,
+      "explanation_completion_tokens": null,
+      "explanation_total_tokens": null,
+      "explanation_tokens_per_second": null,
+      "explanation_raw_output": "",
+      "explanation_trimmed_output": "",
+      "explanation_payload": null,
+      "explanation_text": null
+    },
+    {
+      "prompt_id": "latency_pad_complex_001",
+      "stream_id": "latency-stream-3",
+      "submitted_index": 3,
+      "prompt": "Make a wide, airy pad with a slow fade-in, gentle chorus, more reverb, and a brighter open top.",
+      "tags": [
+        "latency",
+        "complex",
+        "pad",
+        "wide"
+      ],
+      "expected_changed_paths": [
+        "envelope.attack-ms",
+        "effects.reverb-mix",
+        "effects.chorus-mix",
+        "effects.stereo-width",
+        "filter.cutoff-hz"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false,
+      "patch_contract": "compact_delta",
+      "explanation_mode": "off",
+      "current_patch_context": null,
+      "patch_queue_wait_ms": 16351.221252996766,
+      "apply_queue_wait_ms": 0.19016800069948658,
+      "explanation_queue_wait_ms": null,
+      "patch_latency_ms": 3754.7170980033115,
+      "patch_parse_latency_ms": 0.03427599585847929,
+      "patch_validation_latency_ms": 0.03622400254243985,
+      "apply_latency_ms": 0.05275200237520039,
+      "explanation_latency_ms": null,
+      "patch_ready_ms": 20106.017104000784,
+      "patch_applied_ms": 20106.279273000837,
+      "explanation_ready_ms": null,
+      "ui_gap_ms": null,
+      "patch_raw_output": "{\n  \"changes\": [\n    {\n      \"path\": \"envelope.attack-ms\",\n      \"value\": 5000.0\n    },\n    {\n      \"path\": \"effects.chorus-mix\",\n      \"value\": 0.5\n    },\n    {\n      \"path\": \"effects.reverb-mix\",\n      \"value\": 1.0\n    },\n    {\n      \"path\": \"filter.slope-db-per-oct\",\n      \"value\": 24\n    }\n  ]\n}",
+      "patch_trimmed_output": "{\n  \"changes\": [\n    {\n      \"path\": \"envelope.attack-ms\",\n      \"value\": 5000.0\n    },\n    {\n      \"path\": \"effects.chorus-mix\",\n      \"value\": 0.5\n    },\n    {\n      \"path\": \"effects.reverb-mix\",\n      \"value\": 1.0\n    },\n    {\n      \"path\": \"filter.slope-db-per-oct\",\n      \"value\": 24\n    }\n  ]\n}",
+      "patch_parsed_payload": {
+        "changes": [
+          {
+            "path": "envelope.attack-ms",
+            "value": 5000.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.5
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 1.0
+          },
+          {
+            "path": "filter.slope-db-per-oct",
+            "value": 24
+          }
+        ]
+      },
+      "patch_generation_error": null,
+      "patch_finish_reason": "stop",
+      "patch_prompt_tokens": 691,
+      "patch_completion_tokens": 108,
+      "patch_total_tokens": 799,
+      "patch_tokens_per_second": 28.76381820016011,
+      "raw_syntax_pass": true,
+      "raw_schema_pass": true,
+      "raw_key_order_pass": true,
+      "raw_range_pass": true,
+      "raw_semantic_pass": true,
+      "raw_validation_errors": [],
+      "raw_changed_paths": {
+        "envelope.attack-ms": 5000.0,
+        "effects.chorus-mix": 0.5,
+        "effects.reverb-mix": 1.0,
+        "filter.slope-db-per-oct": 24
+      },
+      "raw_ignored_paths": [
+        "oscillator-1.shape",
+        "oscillator-1.octave",
+        "oscillator-1.semitone",
+        "oscillator-1.detune-cents",
+        "oscillator-1.level",
+        "oscillator-1.unison-voices",
+        "oscillator-2.shape",
+        "oscillator-2.octave",
+        "oscillator-2.semitone",
+        "oscillator-2.detune-cents",
+        "oscillator-2.level",
+        "oscillator-2.sync-mode",
+        "filter.mode",
+        "filter.cutoff-hz",
+        "filter.resonance",
+        "filter.drive",
+        "filter.keytrack",
+        "filter.env-amount",
+        "envelope.decay-ms",
+        "envelope.sustain",
+        "envelope.release-ms",
+        "envelope.velocity-amount",
+        "effects.delay-mix",
+        "effects.stereo-width",
+        "effects.output-gain-db",
+        "effects.distortion-drive"
+      ],
+      "raw_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": null,
+          "cutoff-hz": null,
+          "resonance": null,
+          "drive": null,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 5000.0,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": null,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": 1.0,
+          "delay-mix": null,
+          "chorus-mix": 0.5,
+          "stereo-width": null,
+          "output-gain-db": null,
+          "distortion-drive": null
+        }
+      },
+      "raw_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "filter.slope-db-per-oct",
+            "value": 24
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 5000.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 1.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.5
+          }
+        ]
+      },
+      "raw_changed_param_count": 4,
+      "raw_changed_block_count": 3,
+      "raw_changed_blocks": [
+        "effects",
+        "envelope",
+        "filter"
+      ],
+      "raw_null_param_count": 0,
+      "raw_null_ratio": 0.0,
+      "raw_omitted_param_count": 26,
+      "raw_omitted_ratio": 0.8666666666666667,
+      "raw_all_null_noop": false,
+      "raw_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "effects.stereo-width",
+          "filter.cutoff-hz"
+        ],
+        "unexpected_changed_paths": [
+          "filter.slope-db-per-oct"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "apply_errors": [],
+      "apply_success": true,
+      "post_clamp_apply_pass": true,
+      "apply_noop_paths": [],
+      "clamp_events": [],
+      "clamp_event_count": 0,
+      "clamp_intervention": false,
+      "clamped_paths": [],
+      "clamp_expectation_pass": true,
+      "missing_expected_clamped_paths": [],
+      "unexpected_clamped_paths": [],
+      "sanitized_changed_paths": {
+        "filter.slope-db-per-oct": 24,
+        "envelope.attack-ms": 5000.0,
+        "effects.reverb-mix": 1.0,
+        "effects.chorus-mix": 0.5
+      },
+      "sanitized_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": null,
+          "cutoff-hz": null,
+          "resonance": null,
+          "drive": null,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 5000.0,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": null,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": 1.0,
+          "delay-mix": null,
+          "chorus-mix": 0.5,
+          "stereo-width": null,
+          "output-gain-db": null,
+          "distortion-drive": null
+        }
+      },
+      "sanitized_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "filter.slope-db-per-oct",
+            "value": 24
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 5000.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 1.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.5
+          }
+        ]
+      },
+      "merged_patch_preview": null,
+      "sanitized_changed_param_count": 4,
+      "sanitized_changed_block_count": 3,
+      "sanitized_changed_blocks": [
+        "effects",
+        "envelope",
+        "filter"
+      ],
+      "sanitized_null_param_count": 0,
+      "sanitized_null_ratio": 0.0,
+      "sanitized_omitted_param_count": 26,
+      "sanitized_omitted_ratio": 0.8666666666666667,
+      "sanitized_all_null_noop": false,
+      "sanitized_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "effects.stereo-width",
+          "filter.cutoff-hz"
+        ],
+        "unexpected_changed_paths": [
+          "filter.slope-db-per-oct"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "patch_pipeline_pass": true,
+      "explanation_requested": false,
+      "explanation_available": false,
+      "explanation_pass": false,
+      "explanation_cancelled": false,
+      "explanation_discarded": false,
+      "explanation_errors": [],
+      "explanation_generation_error": null,
+      "explanation_finish_reason": null,
+      "explanation_prompt_tokens": null,
+      "explanation_completion_tokens": null,
+      "explanation_total_tokens": null,
+      "explanation_tokens_per_second": null,
+      "explanation_raw_output": "",
+      "explanation_trimmed_output": "",
+      "explanation_payload": null,
+      "explanation_text": null
+    },
+    {
+      "prompt_id": "latency_perc_tight_001",
+      "stream_id": "latency-stream-4",
+      "submitted_index": 4,
+      "prompt": "Make it tighter and more percussive with a sharper transient and shorter tail.",
+      "tags": [
+        "latency",
+        "baseline",
+        "percussive"
+      ],
+      "expected_changed_paths": [
+        "envelope.attack-ms",
+        "envelope.decay-ms",
+        "envelope.release-ms"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false,
+      "patch_contract": "compact_delta",
+      "explanation_mode": "off",
+      "current_patch_context": null,
+      "patch_queue_wait_ms": 20106.072584996582,
+      "apply_queue_wait_ms": 0.18001299758907408,
+      "explanation_queue_wait_ms": null,
+      "patch_latency_ms": 4967.943705996731,
+      "patch_parse_latency_ms": 0.03717300569405779,
+      "patch_validation_latency_ms": 0.04307999915909022,
+      "apply_latency_ms": 0.04942999657941982,
+      "explanation_latency_ms": null,
+      "patch_ready_ms": 25074.105348998273,
+      "patch_applied_ms": 25074.355263001053,
+      "explanation_ready_ms": null,
+      "ui_gap_ms": null,
+      "patch_raw_output": "{\"changes\": [{\"path\": \"filter.resonance\", \"value\": 1.0}, {\"path\": \"filter.drive\", \"value\": 0.5}, {\"path\": \"envelope.attack-ms\", \"value\": 50.0}, {\"path\": \"envelope.release-ms\", \"value\": 100.0}, {\"path\": \"effects.reverb-mix\", \"value\": 0.0}, {\"path\": \"effects.delay-mix\", \"value\": 0.0}, {\"path\": \"effects.chorus-mix\", \"value\": 0.0}, {\"path\": \"effects.stereo-width\", \"value\": 0.0}]}",
+      "patch_trimmed_output": "{\"changes\": [{\"path\": \"filter.resonance\", \"value\": 1.0}, {\"path\": \"filter.drive\", \"value\": 0.5}, {\"path\": \"envelope.attack-ms\", \"value\": 50.0}, {\"path\": \"envelope.release-ms\", \"value\": 100.0}, {\"path\": \"effects.reverb-mix\", \"value\": 0.0}, {\"path\": \"effects.delay-mix\", \"value\": 0.0}, {\"path\": \"effects.chorus-mix\", \"value\": 0.0}, {\"path\": \"effects.stereo-width\", \"value\": 0.0}]}",
+      "patch_parsed_payload": {
+        "changes": [
+          {
+            "path": "filter.resonance",
+            "value": 1.0
+          },
+          {
+            "path": "filter.drive",
+            "value": 0.5
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 50.0
+          },
+          {
+            "path": "envelope.release-ms",
+            "value": 100.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.delay-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.stereo-width",
+            "value": 0.0
+          }
+        ]
+      },
+      "patch_generation_error": null,
+      "patch_finish_reason": "stop",
+      "patch_prompt_tokens": 682,
+      "patch_completion_tokens": 143,
+      "patch_total_tokens": 825,
+      "patch_tokens_per_second": 28.78454516853458,
+      "raw_syntax_pass": true,
+      "raw_schema_pass": true,
+      "raw_key_order_pass": true,
+      "raw_range_pass": true,
+      "raw_semantic_pass": true,
+      "raw_validation_errors": [],
+      "raw_changed_paths": {
+        "filter.resonance": 1.0,
+        "filter.drive": 0.5,
+        "envelope.attack-ms": 50.0,
+        "envelope.release-ms": 100.0,
+        "effects.reverb-mix": 0.0,
+        "effects.delay-mix": 0.0,
+        "effects.chorus-mix": 0.0,
+        "effects.stereo-width": 0.0
+      },
+      "raw_ignored_paths": [
+        "oscillator-1.shape",
+        "oscillator-1.octave",
+        "oscillator-1.semitone",
+        "oscillator-1.detune-cents",
+        "oscillator-1.level",
+        "oscillator-1.unison-voices",
+        "oscillator-2.shape",
+        "oscillator-2.octave",
+        "oscillator-2.semitone",
+        "oscillator-2.detune-cents",
+        "oscillator-2.level",
+        "oscillator-2.sync-mode",
+        "filter.mode",
+        "filter.cutoff-hz",
+        "filter.keytrack",
+        "filter.env-amount",
+        "filter.slope-db-per-oct",
+        "envelope.decay-ms",
+        "envelope.sustain",
+        "envelope.velocity-amount",
+        "effects.output-gain-db",
+        "effects.distortion-drive"
+      ],
+      "raw_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": null,
+          "cutoff-hz": null,
+          "resonance": 1.0,
+          "drive": 0.5,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": 50.0,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": 100.0,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": 0.0,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 0.0,
+          "output-gain-db": null,
+          "distortion-drive": null
+        }
+      },
+      "raw_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "filter.resonance",
+            "value": 1.0
+          },
+          {
+            "path": "filter.drive",
+            "value": 0.5
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 50.0
+          },
+          {
+            "path": "envelope.release-ms",
+            "value": 100.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.delay-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.stereo-width",
+            "value": 0.0
+          }
+        ]
+      },
+      "raw_changed_param_count": 8,
+      "raw_changed_block_count": 3,
+      "raw_changed_blocks": [
+        "effects",
+        "envelope",
+        "filter"
+      ],
+      "raw_null_param_count": 0,
+      "raw_null_ratio": 0.0,
+      "raw_omitted_param_count": 22,
+      "raw_omitted_ratio": 0.7333333333333333,
+      "raw_all_null_noop": false,
+      "raw_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "envelope.decay-ms"
+        ],
+        "unexpected_changed_paths": [
+          "effects.chorus-mix",
+          "effects.delay-mix",
+          "effects.reverb-mix",
+          "effects.stereo-width",
+          "filter.drive",
+          "filter.resonance"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "apply_errors": [],
+      "apply_success": true,
+      "post_clamp_apply_pass": true,
+      "apply_noop_paths": [],
+      "clamp_events": [],
+      "clamp_event_count": 0,
+      "clamp_intervention": false,
+      "clamped_paths": [],
+      "clamp_expectation_pass": true,
+      "missing_expected_clamped_paths": [],
+      "unexpected_clamped_paths": [],
+      "sanitized_changed_paths": {
+        "filter.resonance": 1.0,
+        "filter.drive": 0.5,
+        "envelope.attack-ms": 50.0,
+        "envelope.release-ms": 100.0,
+        "effects.reverb-mix": 0.0,
+        "effects.delay-mix": 0.0,
+        "effects.chorus-mix": 0.0,
+        "effects.stereo-width": 0.0
+      },
+      "sanitized_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": null,
+          "cutoff-hz": null,
+          "resonance": 1.0,
+          "drive": 0.5,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": 50.0,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": 100.0,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": 0.0,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 0.0,
+          "output-gain-db": null,
+          "distortion-drive": null
+        }
+      },
+      "sanitized_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "filter.resonance",
+            "value": 1.0
+          },
+          {
+            "path": "filter.drive",
+            "value": 0.5
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 50.0
+          },
+          {
+            "path": "envelope.release-ms",
+            "value": 100.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.delay-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.stereo-width",
+            "value": 0.0
+          }
+        ]
+      },
+      "merged_patch_preview": null,
+      "sanitized_changed_param_count": 8,
+      "sanitized_changed_block_count": 3,
+      "sanitized_changed_blocks": [
+        "effects",
+        "envelope",
+        "filter"
+      ],
+      "sanitized_null_param_count": 0,
+      "sanitized_null_ratio": 0.0,
+      "sanitized_omitted_param_count": 22,
+      "sanitized_omitted_ratio": 0.7333333333333333,
+      "sanitized_all_null_noop": false,
+      "sanitized_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "envelope.decay-ms"
+        ],
+        "unexpected_changed_paths": [
+          "effects.chorus-mix",
+          "effects.delay-mix",
+          "effects.reverb-mix",
+          "effects.stereo-width",
+          "filter.drive",
+          "filter.resonance"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "patch_pipeline_pass": true,
+      "explanation_requested": false,
+      "explanation_available": false,
+      "explanation_pass": false,
+      "explanation_cancelled": false,
+      "explanation_discarded": false,
+      "explanation_errors": [],
+      "explanation_generation_error": null,
+      "explanation_finish_reason": null,
+      "explanation_prompt_tokens": null,
+      "explanation_completion_tokens": null,
+      "explanation_total_tokens": null,
+      "explanation_tokens_per_second": null,
+      "explanation_raw_output": "",
+      "explanation_trimmed_output": "",
+      "explanation_payload": null,
+      "explanation_text": null
+    },
+    {
+      "prompt_id": "latency_space_only_001",
+      "stream_id": "latency-stream-5",
+      "submitted_index": 5,
+      "prompt": "Keep the core tone mostly the same but make it feel larger and more distant.",
+      "tags": [
+        "latency",
+        "effects-focused",
+        "space"
+      ],
+      "expected_changed_paths": [
+        "effects.reverb-mix",
+        "effects.delay-mix"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false,
+      "patch_contract": "compact_delta",
+      "explanation_mode": "off",
+      "current_patch_context": null,
+      "patch_queue_wait_ms": 25074.163951998344,
+      "apply_queue_wait_ms": 0.2537439941079356,
+      "explanation_queue_wait_ms": null,
+      "patch_latency_ms": 2073.58912199561,
+      "patch_parse_latency_ms": 0.035164004657417536,
+      "patch_validation_latency_ms": 0.03213500167476013,
+      "apply_latency_ms": 0.044405998778529465,
+      "explanation_latency_ms": null,
+      "patch_ready_ms": 27147.828927001683,
+      "patch_applied_ms": 27148.145514001953,
+      "explanation_ready_ms": null,
+      "ui_gap_ms": null,
+      "patch_raw_output": "{\"changes\": [{\"path\": \"filter.cutoff-hz\", \"value\": 1000.0}, {\"path\": \"effects.reverb-mix\", \"value\": 0.8}, {\"path\": \"effects.output-gain-db\", \"value\": -3.0}]}",
+      "patch_trimmed_output": "{\"changes\": [{\"path\": \"filter.cutoff-hz\", \"value\": 1000.0}, {\"path\": \"effects.reverb-mix\", \"value\": 0.8}, {\"path\": \"effects.output-gain-db\", \"value\": -3.0}]}",
+      "patch_parsed_payload": {
+        "changes": [
+          {
+            "path": "filter.cutoff-hz",
+            "value": 1000.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.8
+          },
+          {
+            "path": "effects.output-gain-db",
+            "value": -3.0
+          }
+        ]
+      },
+      "patch_generation_error": null,
+      "patch_finish_reason": "stop",
+      "patch_prompt_tokens": 682,
+      "patch_completion_tokens": 61,
+      "patch_total_tokens": 743,
+      "patch_tokens_per_second": 29.41759259485985,
+      "raw_syntax_pass": true,
+      "raw_schema_pass": true,
+      "raw_key_order_pass": true,
+      "raw_range_pass": true,
+      "raw_semantic_pass": true,
+      "raw_validation_errors": [],
+      "raw_changed_paths": {
+        "filter.cutoff-hz": 1000.0,
+        "effects.reverb-mix": 0.8,
+        "effects.output-gain-db": -3.0
+      },
+      "raw_ignored_paths": [
+        "oscillator-1.shape",
+        "oscillator-1.octave",
+        "oscillator-1.semitone",
+        "oscillator-1.detune-cents",
+        "oscillator-1.level",
+        "oscillator-1.unison-voices",
+        "oscillator-2.shape",
+        "oscillator-2.octave",
+        "oscillator-2.semitone",
+        "oscillator-2.detune-cents",
+        "oscillator-2.level",
+        "oscillator-2.sync-mode",
+        "filter.mode",
+        "filter.resonance",
+        "filter.drive",
+        "filter.keytrack",
+        "filter.env-amount",
+        "filter.slope-db-per-oct",
+        "envelope.attack-ms",
+        "envelope.decay-ms",
+        "envelope.sustain",
+        "envelope.release-ms",
+        "envelope.velocity-amount",
+        "effects.delay-mix",
+        "effects.chorus-mix",
+        "effects.stereo-width",
+        "effects.distortion-drive"
+      ],
+      "raw_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": null,
+          "cutoff-hz": 1000.0,
+          "resonance": null,
+          "drive": null,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": null,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": null,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": 0.8,
+          "delay-mix": null,
+          "chorus-mix": null,
+          "stereo-width": null,
+          "output-gain-db": -3.0,
+          "distortion-drive": null
+        }
+      },
+      "raw_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "filter.cutoff-hz",
+            "value": 1000.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.8
+          },
+          {
+            "path": "effects.output-gain-db",
+            "value": -3.0
+          }
+        ]
+      },
+      "raw_changed_param_count": 3,
+      "raw_changed_block_count": 2,
+      "raw_changed_blocks": [
+        "effects",
+        "filter"
+      ],
+      "raw_null_param_count": 0,
+      "raw_null_ratio": 0.0,
+      "raw_omitted_param_count": 27,
+      "raw_omitted_ratio": 0.9,
+      "raw_all_null_noop": false,
+      "raw_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "effects.delay-mix"
+        ],
+        "unexpected_changed_paths": [
+          "effects.output-gain-db",
+          "filter.cutoff-hz"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "apply_errors": [],
+      "apply_success": true,
+      "post_clamp_apply_pass": true,
+      "apply_noop_paths": [],
+      "clamp_events": [],
+      "clamp_event_count": 0,
+      "clamp_intervention": false,
+      "clamped_paths": [],
+      "clamp_expectation_pass": true,
+      "missing_expected_clamped_paths": [],
+      "unexpected_clamped_paths": [],
+      "sanitized_changed_paths": {
+        "filter.cutoff-hz": 1000.0,
+        "effects.reverb-mix": 0.8,
+        "effects.output-gain-db": -3.0
+      },
+      "sanitized_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": null,
+          "cutoff-hz": 1000.0,
+          "resonance": null,
+          "drive": null,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": null,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": null,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": 0.8,
+          "delay-mix": null,
+          "chorus-mix": null,
+          "stereo-width": null,
+          "output-gain-db": -3.0,
+          "distortion-drive": null
+        }
+      },
+      "sanitized_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "filter.cutoff-hz",
+            "value": 1000.0
+          },
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.8
+          },
+          {
+            "path": "effects.output-gain-db",
+            "value": -3.0
+          }
+        ]
+      },
+      "merged_patch_preview": null,
+      "sanitized_changed_param_count": 3,
+      "sanitized_changed_block_count": 2,
+      "sanitized_changed_blocks": [
+        "effects",
+        "filter"
+      ],
+      "sanitized_null_param_count": 0,
+      "sanitized_null_ratio": 0.0,
+      "sanitized_omitted_param_count": 27,
+      "sanitized_omitted_ratio": 0.9,
+      "sanitized_all_null_noop": false,
+      "sanitized_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "effects.delay-mix"
+        ],
+        "unexpected_changed_paths": [
+          "effects.output-gain-db",
+          "filter.cutoff-hz"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "patch_pipeline_pass": true,
+      "explanation_requested": false,
+      "explanation_available": false,
+      "explanation_pass": false,
+      "explanation_cancelled": false,
+      "explanation_discarded": false,
+      "explanation_errors": [],
+      "explanation_generation_error": null,
+      "explanation_finish_reason": null,
+      "explanation_prompt_tokens": null,
+      "explanation_completion_tokens": null,
+      "explanation_total_tokens": null,
+      "explanation_tokens_per_second": null,
+      "explanation_raw_output": "",
+      "explanation_trimmed_output": "",
+      "explanation_payload": null,
+      "explanation_text": null
+    },
+    {
+      "prompt_id": "latency_stream_supersede_001",
+      "stream_id": "latency-shared-stream",
+      "submitted_index": 6,
+      "prompt": "Start from the current patch and make it darker and softer.",
+      "tags": [
+        "latency",
+        "streaming",
+        "supersede"
+      ],
+      "expected_changed_paths": [
+        "filter.cutoff-hz",
+        "envelope.attack-ms"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false,
+      "patch_contract": "compact_delta",
+      "explanation_mode": "off",
+      "current_patch_context": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.8,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 3.0,
+          "level": 0.35,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 6400.0,
+          "resonance": 2.0,
+          "drive": 0.1,
+          "keytrack": 0.5,
+          "env-amount": 0.2,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 12.0,
+          "decay-ms": 240.0,
+          "sustain": 0.45,
+          "release-ms": 600.0,
+          "velocity-amount": 0.6
+        },
+        "effects": {
+          "reverb-mix": 0.15,
+          "delay-mix": 0.08,
+          "chorus-mix": 0.0,
+          "stereo-width": 1.1,
+          "output-gain-db": -3.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "patch_queue_wait_ms": 27147.8921490052,
+      "apply_queue_wait_ms": 0.22352900123223662,
+      "explanation_queue_wait_ms": null,
+      "patch_latency_ms": 4954.406892997213,
+      "patch_parse_latency_ms": 0.0358380057150498,
+      "patch_validation_latency_ms": 0.048556001274846494,
+      "apply_latency_ms": 0.10753300011856481,
+      "explanation_latency_ms": null,
+      "patch_ready_ms": 32102.446702003363,
+      "patch_applied_ms": 32102.796195002156,
+      "explanation_ready_ms": null,
+      "ui_gap_ms": null,
+      "patch_raw_output": "{\n  \"changes\": [\n    {\"path\": \"filter.resonance\", \"value\": 3.0},\n    {\"path\": \"filter.drive\", \"value\": 0.2},\n    {\"path\": \"envelope.attack-ms\", \"value\": 24.0},\n    {\"path\": \"envelope.decay-ms\", \"value\": 480.0},\n    {\"path\": \"envelope.sustain\", \"value\": 0.6},\n    {\"path\": \"envelope.release-ms\", \"value\": 1200.0},\n    {\"path\": \"effects.output-gain-db\", \"value\": -6.0}\n  ]\n}",
+      "patch_trimmed_output": "{\n  \"changes\": [\n    {\"path\": \"filter.resonance\", \"value\": 3.0},\n    {\"path\": \"filter.drive\", \"value\": 0.2},\n    {\"path\": \"envelope.attack-ms\", \"value\": 24.0},\n    {\"path\": \"envelope.decay-ms\", \"value\": 480.0},\n    {\"path\": \"envelope.sustain\", \"value\": 0.6},\n    {\"path\": \"envelope.release-ms\", \"value\": 1200.0},\n    {\"path\": \"effects.output-gain-db\", \"value\": -6.0}\n  ]\n}",
+      "patch_parsed_payload": {
+        "changes": [
+          {
+            "path": "filter.resonance",
+            "value": 3.0
+          },
+          {
+            "path": "filter.drive",
+            "value": 0.2
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 24.0
+          },
+          {
+            "path": "envelope.decay-ms",
+            "value": 480.0
+          },
+          {
+            "path": "envelope.sustain",
+            "value": 0.6
+          },
+          {
+            "path": "envelope.release-ms",
+            "value": 1200.0
+          },
+          {
+            "path": "effects.output-gain-db",
+            "value": -6.0
+          }
+        ]
+      },
+      "patch_generation_error": null,
+      "patch_finish_reason": "stop",
+      "patch_prompt_tokens": 1042,
+      "patch_completion_tokens": 141,
+      "patch_total_tokens": 1183,
+      "patch_tokens_per_second": 28.459511510710982,
+      "raw_syntax_pass": true,
+      "raw_schema_pass": true,
+      "raw_key_order_pass": true,
+      "raw_range_pass": true,
+      "raw_semantic_pass": true,
+      "raw_validation_errors": [],
+      "raw_changed_paths": {
+        "filter.resonance": 3.0,
+        "filter.drive": 0.2,
+        "envelope.attack-ms": 24.0,
+        "envelope.decay-ms": 480.0,
+        "envelope.sustain": 0.6,
+        "envelope.release-ms": 1200.0,
+        "effects.output-gain-db": -6.0
+      },
+      "raw_ignored_paths": [
+        "oscillator-1.shape",
+        "oscillator-1.octave",
+        "oscillator-1.semitone",
+        "oscillator-1.detune-cents",
+        "oscillator-1.level",
+        "oscillator-1.unison-voices",
+        "oscillator-2.shape",
+        "oscillator-2.octave",
+        "oscillator-2.semitone",
+        "oscillator-2.detune-cents",
+        "oscillator-2.level",
+        "oscillator-2.sync-mode",
+        "filter.mode",
+        "filter.cutoff-hz",
+        "filter.keytrack",
+        "filter.env-amount",
+        "filter.slope-db-per-oct",
+        "envelope.velocity-amount",
+        "effects.reverb-mix",
+        "effects.delay-mix",
+        "effects.chorus-mix",
+        "effects.stereo-width",
+        "effects.distortion-drive"
+      ],
+      "raw_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": null,
+          "cutoff-hz": null,
+          "resonance": 3.0,
+          "drive": 0.2,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": 24.0,
+          "decay-ms": 480.0,
+          "sustain": 0.6,
+          "release-ms": 1200.0,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": null,
+          "delay-mix": null,
+          "chorus-mix": null,
+          "stereo-width": null,
+          "output-gain-db": -6.0,
+          "distortion-drive": null
+        }
+      },
+      "raw_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "filter.resonance",
+            "value": 3.0
+          },
+          {
+            "path": "filter.drive",
+            "value": 0.2
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 24.0
+          },
+          {
+            "path": "envelope.decay-ms",
+            "value": 480.0
+          },
+          {
+            "path": "envelope.sustain",
+            "value": 0.6
+          },
+          {
+            "path": "envelope.release-ms",
+            "value": 1200.0
+          },
+          {
+            "path": "effects.output-gain-db",
+            "value": -6.0
+          }
+        ]
+      },
+      "raw_changed_param_count": 7,
+      "raw_changed_block_count": 3,
+      "raw_changed_blocks": [
+        "effects",
+        "envelope",
+        "filter"
+      ],
+      "raw_null_param_count": 0,
+      "raw_null_ratio": 0.0,
+      "raw_omitted_param_count": 23,
+      "raw_omitted_ratio": 0.7666666666666667,
+      "raw_all_null_noop": false,
+      "raw_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "filter.cutoff-hz"
+        ],
+        "unexpected_changed_paths": [
+          "effects.output-gain-db",
+          "envelope.decay-ms",
+          "envelope.release-ms",
+          "envelope.sustain",
+          "filter.drive",
+          "filter.resonance"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "apply_errors": [],
+      "apply_success": true,
+      "post_clamp_apply_pass": true,
+      "apply_noop_paths": [],
+      "clamp_events": [],
+      "clamp_event_count": 0,
+      "clamp_intervention": false,
+      "clamped_paths": [],
+      "clamp_expectation_pass": true,
+      "missing_expected_clamped_paths": [],
+      "unexpected_clamped_paths": [],
+      "sanitized_changed_paths": {
+        "filter.resonance": 3.0,
+        "filter.drive": 0.2,
+        "envelope.attack-ms": 24.0,
+        "envelope.decay-ms": 480.0,
+        "envelope.sustain": 0.6,
+        "envelope.release-ms": 1200.0,
+        "effects.output-gain-db": -6.0
+      },
+      "sanitized_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": null,
+          "cutoff-hz": null,
+          "resonance": 3.0,
+          "drive": 0.2,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": 24.0,
+          "decay-ms": 480.0,
+          "sustain": 0.6,
+          "release-ms": 1200.0,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": null,
+          "delay-mix": null,
+          "chorus-mix": null,
+          "stereo-width": null,
+          "output-gain-db": -6.0,
+          "distortion-drive": null
+        }
+      },
+      "sanitized_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "filter.resonance",
+            "value": 3.0
+          },
+          {
+            "path": "filter.drive",
+            "value": 0.2
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 24.0
+          },
+          {
+            "path": "envelope.decay-ms",
+            "value": 480.0
+          },
+          {
+            "path": "envelope.sustain",
+            "value": 0.6
+          },
+          {
+            "path": "envelope.release-ms",
+            "value": 1200.0
+          },
+          {
+            "path": "effects.output-gain-db",
+            "value": -6.0
+          }
+        ]
+      },
+      "merged_patch_preview": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.8,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 3.0,
+          "level": 0.35,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 6400.0,
+          "resonance": 3.0,
+          "drive": 0.2,
+          "keytrack": 0.5,
+          "env-amount": 0.2,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 24.0,
+          "decay-ms": 480.0,
+          "sustain": 0.6,
+          "release-ms": 1200.0,
+          "velocity-amount": 0.6
+        },
+        "effects": {
+          "reverb-mix": 0.15,
+          "delay-mix": 0.08,
+          "chorus-mix": 0.0,
+          "stereo-width": 1.1,
+          "output-gain-db": -6.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "sanitized_changed_param_count": 7,
+      "sanitized_changed_block_count": 3,
+      "sanitized_changed_blocks": [
+        "effects",
+        "envelope",
+        "filter"
+      ],
+      "sanitized_null_param_count": 0,
+      "sanitized_null_ratio": 0.0,
+      "sanitized_omitted_param_count": 23,
+      "sanitized_omitted_ratio": 0.7666666666666667,
+      "sanitized_all_null_noop": false,
+      "sanitized_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "filter.cutoff-hz"
+        ],
+        "unexpected_changed_paths": [
+          "effects.output-gain-db",
+          "envelope.decay-ms",
+          "envelope.release-ms",
+          "envelope.sustain",
+          "filter.drive",
+          "filter.resonance"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "patch_pipeline_pass": true,
+      "explanation_requested": false,
+      "explanation_available": false,
+      "explanation_pass": false,
+      "explanation_cancelled": false,
+      "explanation_discarded": false,
+      "explanation_errors": [],
+      "explanation_generation_error": null,
+      "explanation_finish_reason": null,
+      "explanation_prompt_tokens": null,
+      "explanation_completion_tokens": null,
+      "explanation_total_tokens": null,
+      "explanation_tokens_per_second": null,
+      "explanation_raw_output": "",
+      "explanation_trimmed_output": "",
+      "explanation_payload": null,
+      "explanation_text": null
+    },
+    {
+      "prompt_id": "latency_stream_supersede_002",
+      "stream_id": "latency-shared-stream",
+      "submitted_index": 7,
+      "prompt": "Actually make it sharper, brighter, and more percussive instead.",
+      "tags": [
+        "latency",
+        "streaming",
+        "supersede"
+      ],
+      "expected_changed_paths": [
+        "filter.cutoff-hz",
+        "envelope.attack-ms",
+        "envelope.decay-ms"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false,
+      "patch_contract": "compact_delta",
+      "explanation_mode": "off",
+      "current_patch_context": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.8,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 3.0,
+          "level": 0.35,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 6400.0,
+          "resonance": 2.0,
+          "drive": 0.1,
+          "keytrack": 0.5,
+          "env-amount": 0.2,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 12.0,
+          "decay-ms": 240.0,
+          "sustain": 0.45,
+          "release-ms": 600.0,
+          "velocity-amount": 0.6
+        },
+        "effects": {
+          "reverb-mix": 0.15,
+          "delay-mix": 0.08,
+          "chorus-mix": 0.0,
+          "stereo-width": 1.1,
+          "output-gain-db": -3.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "patch_queue_wait_ms": 32102.501403001952,
+      "apply_queue_wait_ms": 0.22844699560664594,
+      "explanation_queue_wait_ms": null,
+      "patch_latency_ms": 12058.636745998228,
+      "patch_parse_latency_ms": 0.0513420018251054,
+      "patch_validation_latency_ms": 0.07269300112966448,
+      "apply_latency_ms": 0.1259580021724105,
+      "explanation_latency_ms": null,
+      "patch_ready_ms": 44161.31263800344,
+      "patch_applied_ms": 44161.68967100384,
+      "explanation_ready_ms": null,
+      "ui_gap_ms": null,
+      "patch_raw_output": "{\n  \"changes\": [\n    {\"path\": \"oscillator-1.shape\", \"value\": \"square\"},\n    {\"path\": \"oscillator-1.octave\", \"value\": 1},\n    {\"path\": \"oscillator-1.semitone\", \"value\": 0},\n    {\"path\": \"oscillator-1.detune-cents\", \"value\": -10.0},\n    {\"path\": \"oscillator-1.level\", \"value\": 1.0},\n    {\"path\": \"oscillator-1.unison-voices\", \"value\": 8},\n    {\"path\": \"filter.mode\", \"value\": \"highpass\"},\n    {\"path\": \"filter.cutoff-hz\", \"value\": 8000.0},\n    {\"path\": \"filter.resonance\", \"value\": 5.0},\n    {\"path\": \"filter.drive\", \"value\": 0.5},\n    {\"path\": \"filter.keytrack\", \"value\": 1.0},\n    {\"path\": \"filter.env-amount\", \"value\": 1.0},\n    {\"path\": \"filter.slope-db-per-oct\", \"value\": 24},\n    {\"path\": \"envelope.attack-ms\", \"value\": 2.0},\n    {\"path\": \"envelope.decay-ms\", \"value\": 50.0},\n    {\"path\": \"envelope.sustain\", \"value\": 0.0},\n    {\"path\": \"envelope.release-ms\", \"value\": 100.0},\n    {\"path\": \"envelope.velocity-amount\", \"value\": 1.0}\n  ]\n}",
+      "patch_trimmed_output": "{\n  \"changes\": [\n    {\"path\": \"oscillator-1.shape\", \"value\": \"square\"},\n    {\"path\": \"oscillator-1.octave\", \"value\": 1},\n    {\"path\": \"oscillator-1.semitone\", \"value\": 0},\n    {\"path\": \"oscillator-1.detune-cents\", \"value\": -10.0},\n    {\"path\": \"oscillator-1.level\", \"value\": 1.0},\n    {\"path\": \"oscillator-1.unison-voices\", \"value\": 8},\n    {\"path\": \"filter.mode\", \"value\": \"highpass\"},\n    {\"path\": \"filter.cutoff-hz\", \"value\": 8000.0},\n    {\"path\": \"filter.resonance\", \"value\": 5.0},\n    {\"path\": \"filter.drive\", \"value\": 0.5},\n    {\"path\": \"filter.keytrack\", \"value\": 1.0},\n    {\"path\": \"filter.env-amount\", \"value\": 1.0},\n    {\"path\": \"filter.slope-db-per-oct\", \"value\": 24},\n    {\"path\": \"envelope.attack-ms\", \"value\": 2.0},\n    {\"path\": \"envelope.decay-ms\", \"value\": 50.0},\n    {\"path\": \"envelope.sustain\", \"value\": 0.0},\n    {\"path\": \"envelope.release-ms\", \"value\": 100.0},\n    {\"path\": \"envelope.velocity-amount\", \"value\": 1.0}\n  ]\n}",
+      "patch_parsed_payload": {
+        "changes": [
+          {
+            "path": "oscillator-1.shape",
+            "value": "square"
+          },
+          {
+            "path": "oscillator-1.octave",
+            "value": 1
+          },
+          {
+            "path": "oscillator-1.semitone",
+            "value": 0
+          },
+          {
+            "path": "oscillator-1.detune-cents",
+            "value": -10.0
+          },
+          {
+            "path": "oscillator-1.level",
+            "value": 1.0
+          },
+          {
+            "path": "oscillator-1.unison-voices",
+            "value": 8
+          },
+          {
+            "path": "filter.mode",
+            "value": "highpass"
+          },
+          {
+            "path": "filter.cutoff-hz",
+            "value": 8000.0
+          },
+          {
+            "path": "filter.resonance",
+            "value": 5.0
+          },
+          {
+            "path": "filter.drive",
+            "value": 0.5
+          },
+          {
+            "path": "filter.keytrack",
+            "value": 1.0
+          },
+          {
+            "path": "filter.env-amount",
+            "value": 1.0
+          },
+          {
+            "path": "filter.slope-db-per-oct",
+            "value": 24
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 2.0
+          },
+          {
+            "path": "envelope.decay-ms",
+            "value": 50.0
+          },
+          {
+            "path": "envelope.sustain",
+            "value": 0.0
+          },
+          {
+            "path": "envelope.release-ms",
+            "value": 100.0
+          },
+          {
+            "path": "envelope.velocity-amount",
+            "value": 1.0
+          }
+        ]
+      },
+      "patch_generation_error": null,
+      "patch_finish_reason": "stop",
+      "patch_prompt_tokens": 1044,
+      "patch_completion_tokens": 347,
+      "patch_total_tokens": 1391,
+      "patch_tokens_per_second": 28.77605547867218,
+      "raw_syntax_pass": true,
+      "raw_schema_pass": true,
+      "raw_key_order_pass": true,
+      "raw_range_pass": true,
+      "raw_semantic_pass": true,
+      "raw_validation_errors": [],
+      "raw_changed_paths": {
+        "oscillator-1.shape": "square",
+        "oscillator-1.octave": 1,
+        "oscillator-1.semitone": 0,
+        "oscillator-1.detune-cents": -10.0,
+        "oscillator-1.level": 1.0,
+        "oscillator-1.unison-voices": 8,
+        "filter.mode": "highpass",
+        "filter.cutoff-hz": 8000.0,
+        "filter.resonance": 5.0,
+        "filter.drive": 0.5,
+        "filter.keytrack": 1.0,
+        "filter.env-amount": 1.0,
+        "filter.slope-db-per-oct": 24,
+        "envelope.attack-ms": 2.0,
+        "envelope.decay-ms": 50.0,
+        "envelope.sustain": 0.0,
+        "envelope.release-ms": 100.0,
+        "envelope.velocity-amount": 1.0
+      },
+      "raw_ignored_paths": [
+        "oscillator-2.shape",
+        "oscillator-2.octave",
+        "oscillator-2.semitone",
+        "oscillator-2.detune-cents",
+        "oscillator-2.level",
+        "oscillator-2.sync-mode",
+        "effects.reverb-mix",
+        "effects.delay-mix",
+        "effects.chorus-mix",
+        "effects.stereo-width",
+        "effects.output-gain-db",
+        "effects.distortion-drive"
+      ],
+      "raw_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": "square",
+          "octave": 1,
+          "semitone": 0,
+          "detune-cents": -10.0,
+          "level": 1.0,
+          "unison-voices": 8
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": "highpass",
+          "cutoff-hz": 8000.0,
+          "resonance": 5.0,
+          "drive": 0.5,
+          "keytrack": 1.0,
+          "env-amount": 1.0,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 2.0,
+          "decay-ms": 50.0,
+          "sustain": 0.0,
+          "release-ms": 100.0,
+          "velocity-amount": 1.0
+        },
+        "effects": {
+          "reverb-mix": null,
+          "delay-mix": null,
+          "chorus-mix": null,
+          "stereo-width": null,
+          "output-gain-db": null,
+          "distortion-drive": null
+        }
+      },
+      "raw_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "oscillator-1.shape",
+            "value": "square"
+          },
+          {
+            "path": "oscillator-1.octave",
+            "value": 1
+          },
+          {
+            "path": "oscillator-1.semitone",
+            "value": 0
+          },
+          {
+            "path": "oscillator-1.detune-cents",
+            "value": -10.0
+          },
+          {
+            "path": "oscillator-1.level",
+            "value": 1.0
+          },
+          {
+            "path": "oscillator-1.unison-voices",
+            "value": 8
+          },
+          {
+            "path": "filter.mode",
+            "value": "highpass"
+          },
+          {
+            "path": "filter.cutoff-hz",
+            "value": 8000.0
+          },
+          {
+            "path": "filter.resonance",
+            "value": 5.0
+          },
+          {
+            "path": "filter.drive",
+            "value": 0.5
+          },
+          {
+            "path": "filter.keytrack",
+            "value": 1.0
+          },
+          {
+            "path": "filter.env-amount",
+            "value": 1.0
+          },
+          {
+            "path": "filter.slope-db-per-oct",
+            "value": 24
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 2.0
+          },
+          {
+            "path": "envelope.decay-ms",
+            "value": 50.0
+          },
+          {
+            "path": "envelope.sustain",
+            "value": 0.0
+          },
+          {
+            "path": "envelope.release-ms",
+            "value": 100.0
+          },
+          {
+            "path": "envelope.velocity-amount",
+            "value": 1.0
+          }
+        ]
+      },
+      "raw_changed_param_count": 18,
+      "raw_changed_block_count": 3,
+      "raw_changed_blocks": [
+        "envelope",
+        "filter",
+        "oscillator-1"
+      ],
+      "raw_null_param_count": 0,
+      "raw_null_ratio": 0.0,
+      "raw_omitted_param_count": 12,
+      "raw_omitted_ratio": 0.4,
+      "raw_all_null_noop": false,
+      "raw_sparse_fidelity": {
+        "unchanged_non_null_paths": [
+          "filter.slope-db-per-oct",
+          "oscillator-1.semitone"
+        ],
+        "false_edit_count": 2,
+        "expected_missing_paths": [],
+        "unexpected_changed_paths": [
+          "envelope.release-ms",
+          "envelope.sustain",
+          "envelope.velocity-amount",
+          "filter.drive",
+          "filter.env-amount",
+          "filter.keytrack",
+          "filter.mode",
+          "filter.resonance",
+          "filter.slope-db-per-oct",
+          "oscillator-1.detune-cents",
+          "oscillator-1.level",
+          "oscillator-1.octave",
+          "oscillator-1.semitone",
+          "oscillator-1.shape",
+          "oscillator-1.unison-voices"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "apply_errors": [],
+      "apply_success": true,
+      "post_clamp_apply_pass": true,
+      "apply_noop_paths": [
+        "oscillator-1.semitone",
+        "filter.slope-db-per-oct"
+      ],
+      "clamp_events": [],
+      "clamp_event_count": 0,
+      "clamp_intervention": false,
+      "clamped_paths": [],
+      "clamp_expectation_pass": true,
+      "missing_expected_clamped_paths": [],
+      "unexpected_clamped_paths": [],
+      "sanitized_changed_paths": {
+        "oscillator-1.shape": "square",
+        "oscillator-1.octave": 1,
+        "oscillator-1.detune-cents": -10.0,
+        "oscillator-1.level": 1.0,
+        "oscillator-1.unison-voices": 8,
+        "filter.mode": "highpass",
+        "filter.cutoff-hz": 8000.0,
+        "filter.resonance": 5.0,
+        "filter.drive": 0.5,
+        "filter.keytrack": 1.0,
+        "filter.env-amount": 1.0,
+        "envelope.attack-ms": 2.0,
+        "envelope.decay-ms": 50.0,
+        "envelope.sustain": 0.0,
+        "envelope.release-ms": 100.0,
+        "envelope.velocity-amount": 1.0
+      },
+      "sanitized_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": "square",
+          "octave": 1,
+          "semitone": null,
+          "detune-cents": -10.0,
+          "level": 1.0,
+          "unison-voices": 8
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": "highpass",
+          "cutoff-hz": 8000.0,
+          "resonance": 5.0,
+          "drive": 0.5,
+          "keytrack": 1.0,
+          "env-amount": 1.0,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": 2.0,
+          "decay-ms": 50.0,
+          "sustain": 0.0,
+          "release-ms": 100.0,
+          "velocity-amount": 1.0
+        },
+        "effects": {
+          "reverb-mix": null,
+          "delay-mix": null,
+          "chorus-mix": null,
+          "stereo-width": null,
+          "output-gain-db": null,
+          "distortion-drive": null
+        }
+      },
+      "sanitized_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "oscillator-1.shape",
+            "value": "square"
+          },
+          {
+            "path": "oscillator-1.octave",
+            "value": 1
+          },
+          {
+            "path": "oscillator-1.detune-cents",
+            "value": -10.0
+          },
+          {
+            "path": "oscillator-1.level",
+            "value": 1.0
+          },
+          {
+            "path": "oscillator-1.unison-voices",
+            "value": 8
+          },
+          {
+            "path": "filter.mode",
+            "value": "highpass"
+          },
+          {
+            "path": "filter.cutoff-hz",
+            "value": 8000.0
+          },
+          {
+            "path": "filter.resonance",
+            "value": 5.0
+          },
+          {
+            "path": "filter.drive",
+            "value": 0.5
+          },
+          {
+            "path": "filter.keytrack",
+            "value": 1.0
+          },
+          {
+            "path": "filter.env-amount",
+            "value": 1.0
+          },
+          {
+            "path": "envelope.attack-ms",
+            "value": 2.0
+          },
+          {
+            "path": "envelope.decay-ms",
+            "value": 50.0
+          },
+          {
+            "path": "envelope.sustain",
+            "value": 0.0
+          },
+          {
+            "path": "envelope.release-ms",
+            "value": 100.0
+          },
+          {
+            "path": "envelope.velocity-amount",
+            "value": 1.0
+          }
+        ]
+      },
+      "merged_patch_preview": {
+        "oscillator-1": {
+          "shape": "square",
+          "octave": 1,
+          "semitone": 0,
+          "detune-cents": -10.0,
+          "level": 1.0,
+          "unison-voices": 8
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 3.0,
+          "level": 0.35,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "highpass",
+          "cutoff-hz": 8000.0,
+          "resonance": 5.0,
+          "drive": 0.5,
+          "keytrack": 1.0,
+          "env-amount": 1.0,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 2.0,
+          "decay-ms": 50.0,
+          "sustain": 0.0,
+          "release-ms": 100.0,
+          "velocity-amount": 1.0
+        },
+        "effects": {
+          "reverb-mix": 0.15,
+          "delay-mix": 0.08,
+          "chorus-mix": 0.0,
+          "stereo-width": 1.1,
+          "output-gain-db": -3.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "sanitized_changed_param_count": 16,
+      "sanitized_changed_block_count": 3,
+      "sanitized_changed_blocks": [
+        "envelope",
+        "filter",
+        "oscillator-1"
+      ],
+      "sanitized_null_param_count": 0,
+      "sanitized_null_ratio": 0.0,
+      "sanitized_omitted_param_count": 14,
+      "sanitized_omitted_ratio": 0.4666666666666667,
+      "sanitized_all_null_noop": false,
+      "sanitized_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [],
+        "unexpected_changed_paths": [
+          "envelope.release-ms",
+          "envelope.sustain",
+          "envelope.velocity-amount",
+          "filter.drive",
+          "filter.env-amount",
+          "filter.keytrack",
+          "filter.mode",
+          "filter.resonance",
+          "oscillator-1.detune-cents",
+          "oscillator-1.level",
+          "oscillator-1.octave",
+          "oscillator-1.shape",
+          "oscillator-1.unison-voices"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "patch_pipeline_pass": true,
+      "explanation_requested": false,
+      "explanation_available": false,
+      "explanation_pass": false,
+      "explanation_cancelled": false,
+      "explanation_discarded": false,
+      "explanation_errors": [],
+      "explanation_generation_error": null,
+      "explanation_finish_reason": null,
+      "explanation_prompt_tokens": null,
+      "explanation_completion_tokens": null,
+      "explanation_total_tokens": null,
+      "explanation_tokens_per_second": null,
+      "explanation_raw_output": "",
+      "explanation_trimmed_output": "",
+      "explanation_payload": null,
+      "explanation_text": null
+    },
+    {
+      "prompt_id": "latency_stream_supersede_003",
+      "stream_id": "latency-shared-stream",
+      "submitted_index": 8,
+      "prompt": "No, strip the effects back down and make it punchier and drier right away.",
+      "tags": [
+        "latency",
+        "streaming",
+        "supersede"
+      ],
+      "expected_changed_paths": [
+        "effects.reverb-mix",
+        "effects.delay-mix",
+        "envelope.attack-ms",
+        "envelope.release-ms"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false,
+      "patch_contract": "compact_delta",
+      "explanation_mode": "off",
+      "current_patch_context": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.8,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 3.0,
+          "level": 0.35,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 6400.0,
+          "resonance": 2.0,
+          "drive": 0.1,
+          "keytrack": 0.5,
+          "env-amount": 0.2,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 12.0,
+          "decay-ms": 240.0,
+          "sustain": 0.45,
+          "release-ms": 600.0,
+          "velocity-amount": 0.6
+        },
+        "effects": {
+          "reverb-mix": 0.15,
+          "delay-mix": 0.08,
+          "chorus-mix": 0.0,
+          "stereo-width": 1.1,
+          "output-gain-db": -3.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "patch_queue_wait_ms": 44161.35936099454,
+      "apply_queue_wait_ms": 0.1162350017693825,
+      "explanation_queue_wait_ms": null,
+      "patch_latency_ms": 5007.174373997259,
+      "patch_parse_latency_ms": 0.04407700180308893,
+      "patch_validation_latency_ms": 0.047362002078443766,
+      "apply_latency_ms": 0.08668700320413336,
+      "explanation_latency_ms": null,
+      "patch_ready_ms": 49168.68037600216,
+      "patch_applied_ms": 49168.901272001676,
+      "explanation_ready_ms": null,
+      "ui_gap_ms": null,
+      "patch_raw_output": "{\n  \"changes\": [\n    {\n      \"path\": \"effects.reverb-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.delay-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.chorus-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.stereo-width\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.output-gain-db\",\n      \"value\": -6.0\n    },\n    {\n      \"path\": \"effects.distortion-drive\",\n      \"value\": 0.2\n    }\n  ]\n}",
+      "patch_trimmed_output": "{\n  \"changes\": [\n    {\n      \"path\": \"effects.reverb-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.delay-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.chorus-mix\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.stereo-width\",\n      \"value\": 0.0\n    },\n    {\n      \"path\": \"effects.output-gain-db\",\n      \"value\": -6.0\n    },\n    {\n      \"path\": \"effects.distortion-drive\",\n      \"value\": 0.2\n    }\n  ]\n}",
+      "patch_parsed_payload": {
+        "changes": [
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.delay-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.stereo-width",
+            "value": 0.0
+          },
+          {
+            "path": "effects.output-gain-db",
+            "value": -6.0
+          },
+          {
+            "path": "effects.distortion-drive",
+            "value": 0.2
+          }
+        ]
+      },
+      "patch_generation_error": null,
+      "patch_finish_reason": "stop",
+      "patch_prompt_tokens": 1048,
+      "patch_completion_tokens": 150,
+      "patch_total_tokens": 1198,
+      "patch_tokens_per_second": 29.9570154334877,
+      "raw_syntax_pass": true,
+      "raw_schema_pass": true,
+      "raw_key_order_pass": true,
+      "raw_range_pass": true,
+      "raw_semantic_pass": true,
+      "raw_validation_errors": [],
+      "raw_changed_paths": {
+        "effects.reverb-mix": 0.0,
+        "effects.delay-mix": 0.0,
+        "effects.chorus-mix": 0.0,
+        "effects.stereo-width": 0.0,
+        "effects.output-gain-db": -6.0,
+        "effects.distortion-drive": 0.2
+      },
+      "raw_ignored_paths": [
+        "oscillator-1.shape",
+        "oscillator-1.octave",
+        "oscillator-1.semitone",
+        "oscillator-1.detune-cents",
+        "oscillator-1.level",
+        "oscillator-1.unison-voices",
+        "oscillator-2.shape",
+        "oscillator-2.octave",
+        "oscillator-2.semitone",
+        "oscillator-2.detune-cents",
+        "oscillator-2.level",
+        "oscillator-2.sync-mode",
+        "filter.mode",
+        "filter.cutoff-hz",
+        "filter.resonance",
+        "filter.drive",
+        "filter.keytrack",
+        "filter.env-amount",
+        "filter.slope-db-per-oct",
+        "envelope.attack-ms",
+        "envelope.decay-ms",
+        "envelope.sustain",
+        "envelope.release-ms",
+        "envelope.velocity-amount"
+      ],
+      "raw_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": null,
+          "cutoff-hz": null,
+          "resonance": null,
+          "drive": null,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": null,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": null,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": 0.0,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 0.0,
+          "output-gain-db": -6.0,
+          "distortion-drive": 0.2
+        }
+      },
+      "raw_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.delay-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.chorus-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.stereo-width",
+            "value": 0.0
+          },
+          {
+            "path": "effects.output-gain-db",
+            "value": -6.0
+          },
+          {
+            "path": "effects.distortion-drive",
+            "value": 0.2
+          }
+        ]
+      },
+      "raw_changed_param_count": 6,
+      "raw_changed_block_count": 1,
+      "raw_changed_blocks": [
+        "effects"
+      ],
+      "raw_null_param_count": 0,
+      "raw_null_ratio": 0.0,
+      "raw_omitted_param_count": 24,
+      "raw_omitted_ratio": 0.8,
+      "raw_all_null_noop": false,
+      "raw_sparse_fidelity": {
+        "unchanged_non_null_paths": [
+          "effects.chorus-mix"
+        ],
+        "false_edit_count": 1,
+        "expected_missing_paths": [
+          "envelope.attack-ms",
+          "envelope.release-ms"
+        ],
+        "unexpected_changed_paths": [
+          "effects.chorus-mix",
+          "effects.distortion-drive",
+          "effects.output-gain-db",
+          "effects.stereo-width"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "apply_errors": [],
+      "apply_success": true,
+      "post_clamp_apply_pass": true,
+      "apply_noop_paths": [
+        "effects.chorus-mix"
+      ],
+      "clamp_events": [],
+      "clamp_event_count": 0,
+      "clamp_intervention": false,
+      "clamped_paths": [],
+      "clamp_expectation_pass": true,
+      "missing_expected_clamped_paths": [],
+      "unexpected_clamped_paths": [],
+      "sanitized_changed_paths": {
+        "effects.reverb-mix": 0.0,
+        "effects.delay-mix": 0.0,
+        "effects.stereo-width": 0.0,
+        "effects.output-gain-db": -6.0,
+        "effects.distortion-drive": 0.2
+      },
+      "sanitized_sparse_patch_preview": {
+        "oscillator-1": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "unison-voices": null
+        },
+        "oscillator-2": {
+          "shape": null,
+          "octave": null,
+          "semitone": null,
+          "detune-cents": null,
+          "level": null,
+          "sync-mode": null
+        },
+        "filter": {
+          "mode": null,
+          "cutoff-hz": null,
+          "resonance": null,
+          "drive": null,
+          "keytrack": null,
+          "env-amount": null,
+          "slope-db-per-oct": null
+        },
+        "envelope": {
+          "attack-ms": null,
+          "decay-ms": null,
+          "sustain": null,
+          "release-ms": null,
+          "velocity-amount": null
+        },
+        "effects": {
+          "reverb-mix": 0.0,
+          "delay-mix": 0.0,
+          "chorus-mix": null,
+          "stereo-width": 0.0,
+          "output-gain-db": -6.0,
+          "distortion-drive": 0.2
+        }
+      },
+      "sanitized_compact_delta_preview": {
+        "changes": [
+          {
+            "path": "effects.reverb-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.delay-mix",
+            "value": 0.0
+          },
+          {
+            "path": "effects.stereo-width",
+            "value": 0.0
+          },
+          {
+            "path": "effects.output-gain-db",
+            "value": -6.0
+          },
+          {
+            "path": "effects.distortion-drive",
+            "value": 0.2
+          }
+        ]
+      },
+      "merged_patch_preview": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.8,
+          "unison-voices": 4
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 3.0,
+          "level": 0.35,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 6400.0,
+          "resonance": 2.0,
+          "drive": 0.1,
+          "keytrack": 0.5,
+          "env-amount": 0.2,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 12.0,
+          "decay-ms": 240.0,
+          "sustain": 0.45,
+          "release-ms": 600.0,
+          "velocity-amount": 0.6
+        },
+        "effects": {
+          "reverb-mix": 0.0,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 0.0,
+          "output-gain-db": -6.0,
+          "distortion-drive": 0.2
+        }
+      },
+      "sanitized_changed_param_count": 5,
+      "sanitized_changed_block_count": 1,
+      "sanitized_changed_blocks": [
+        "effects"
+      ],
+      "sanitized_null_param_count": 0,
+      "sanitized_null_ratio": 0.0,
+      "sanitized_omitted_param_count": 25,
+      "sanitized_omitted_ratio": 0.8333333333333334,
+      "sanitized_all_null_noop": false,
+      "sanitized_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [
+          "envelope.attack-ms",
+          "envelope.release-ms"
+        ],
+        "unexpected_changed_paths": [
+          "effects.distortion-drive",
+          "effects.output-gain-db",
+          "effects.stereo-width"
+        ],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": false,
+        "noop_exact_pass": true
+      },
+      "patch_pipeline_pass": true,
+      "explanation_requested": false,
+      "explanation_available": false,
+      "explanation_pass": false,
+      "explanation_cancelled": false,
+      "explanation_discarded": false,
+      "explanation_errors": [],
+      "explanation_generation_error": null,
+      "explanation_finish_reason": null,
+      "explanation_prompt_tokens": null,
+      "explanation_completion_tokens": null,
+      "explanation_total_tokens": null,
+      "explanation_tokens_per_second": null,
+      "explanation_raw_output": "",
+      "explanation_trimmed_output": "",
+      "explanation_payload": null,
+      "explanation_text": null
+    }
+  ]
+}

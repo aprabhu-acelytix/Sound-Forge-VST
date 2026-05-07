@@ -1,0 +1,403 @@
+{
+  "experiment": "Experiment 1.2: Patch-Only Async Pipeline Sandbox",
+  "run_id": "20260506T032717Z",
+  "run_state": "completed",
+  "timestamp_utc": "20260506T032821Z",
+  "environment": {
+    "python_version": "3.10.12",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35"
+  },
+  "artifacts": {
+    "results_json": "/workspace/Experiments/Experiment 1.2/results/run_20260506T032717Z.json",
+    "latency_csv": "/workspace/Experiments/Experiment 1.2/logs/latency_20260506T032717Z.csv",
+    "status_log": "Experiments/Experiment 1.2/logs/status_smoke_test.log",
+    "clamp_events_jsonl": "/workspace/Experiments/Experiment 1.2/logs/clamp_events_20260506T032717Z.jsonl"
+  },
+  "config": {
+    "patch_model_path": "/models_patch/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+    "explainer_model_path": null,
+    "patch_contract": "sparse_patch_only",
+    "explanation_mode": "deterministic",
+    "explanation_runtime_mode": "isolated",
+    "patch_system_prompt_file": null,
+    "explanation_system_prompt_file": null,
+    "few_shot_file": null,
+    "few_shot_count": 0,
+    "patch_grammar_file": null,
+    "patch_schema_file": null,
+    "explanation_grammar_file": "/workspace/Experiments/Experiment 1.2/grammars/explanation_response_v1.gbnf",
+    "explanation_schema_file": "/workspace/Experiments/Experiment 1.2/schemas/explanation_response_v1.json",
+    "parameter_registry_file": "/workspace/Experiments/Experiment 1.2/configs/parameter_registry_v1.json",
+    "prompts_file": "Experiments/Experiment 1.2/fixtures/smoke_test_prompts.json",
+    "results_dir": "/workspace/Experiments/Experiment 1.2/results",
+    "logs_dir": "/workspace/Experiments/Experiment 1.2/logs",
+    "status_file": "Experiments/Experiment 1.2/logs/status_smoke_test.log",
+    "patch_chat_format": null,
+    "explainer_chat_format": null,
+    "patch_n_ctx": 4096,
+    "explainer_n_ctx": 2048,
+    "patch_n_threads": null,
+    "explainer_n_threads": null,
+    "patch_n_gpu_layers": 35,
+    "explainer_n_gpu_layers": 35,
+    "patch_temperature": 0.0,
+    "explainer_temperature": 0.0,
+    "patch_top_p": 1.0,
+    "explainer_top_p": 1.0,
+    "patch_repeat_penalty": 1.0,
+    "explainer_repeat_penalty": 1.0,
+    "patch_max_tokens": 192,
+    "explainer_max_tokens": 96,
+    "seed": 42,
+    "limit": null,
+    "prompt_id": [],
+    "worker_queue_size": 8
+  },
+  "models": {
+    "patch_model": {
+      "model_path": "/models_patch/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+      "model_name": "Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+      "model_file_size": "1.80 GiB",
+      "model_load_ms": 55588.29278899999
+    },
+    "explainer_model": null
+  },
+  "progress": {
+    "completed_runs": 1,
+    "total_runs": 1
+  },
+  "summary": {
+    "total_runs": 1,
+    "raw_syntax_pass_count": 0,
+    "raw_schema_pass_count": 0,
+    "raw_key_order_pass_count": 0,
+    "raw_range_pass_count": 0,
+    "raw_semantic_pass_count": 0,
+    "post_clamp_apply_pass_count": 0,
+    "patch_pipeline_pass_count": 0,
+    "explanation_requested_count": 1,
+    "explanation_available_count": 0,
+    "explanation_pass_count": 0,
+    "explanation_cancelled_count": 0,
+    "explanation_discard_count": 0,
+    "clamp_intervention_count": 0,
+    "clamp_event_count_total": 0,
+    "raw_false_edit_count_total": 0,
+    "sanitized_false_edit_count_total": 0,
+    "latency_ms": {
+      "patch_ready": {
+        "mean": 6812.595418000001,
+        "median": 6812.595418000001,
+        "min": 6812.595418000001,
+        "max": 6812.595418000001,
+        "p95": 6812.595418000001,
+        "p99": 6812.595418000001
+      },
+      "patch_applied": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      },
+      "explanation_ready": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      },
+      "ui_gap": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      },
+      "patch_queue_wait": {
+        "mean": 0.08124100000372891,
+        "median": 0.08124100000372891,
+        "min": 0.08124100000372891,
+        "max": 0.08124100000372891,
+        "p95": 0.08124100000372891,
+        "p99": 0.08124100000372891
+      },
+      "apply_queue_wait": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      },
+      "explanation_queue_wait": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      },
+      "patch_generation": {
+        "mean": 6812.391208999998,
+        "median": 6812.391208999998,
+        "min": 6812.391208999998,
+        "max": 6812.391208999998,
+        "p95": 6812.391208999998,
+        "p99": 6812.391208999998
+      },
+      "apply": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      },
+      "explanation_generation": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      }
+    },
+    "throughput": {
+      "patch_tokens_per_second": {
+        "mean": 28.18393631686105,
+        "median": 28.18393631686105,
+        "min": 28.18393631686105,
+        "max": 28.18393631686105,
+        "p95": 28.18393631686105,
+        "p99": 28.18393631686105
+      },
+      "explanation_tokens_per_second": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "p95": null,
+        "p99": null
+      }
+    },
+    "changed_param_count": {
+      "raw_mean": 0.0,
+      "raw_max": 0,
+      "sanitized_mean": 0.0,
+      "sanitized_max": 0
+    },
+    "null_ratio": {
+      "raw_mean": null,
+      "raw_max": null,
+      "sanitized_mean": null,
+      "sanitized_max": null
+    },
+    "omitted_ratio": {
+      "raw_mean": null,
+      "raw_max": null,
+      "sanitized_mean": null,
+      "sanitized_max": null
+    },
+    "queue_backlog_max": {
+      "patch_input": 2,
+      "apply": 1,
+      "explanation": 1,
+      "completion": 1
+    },
+    "clamp_intervention_rate": 0.0,
+    "clamp_expectation_pass_rate": null,
+    "mean_clamp_events_per_prompt": 0.0,
+    "per_path_clamp_frequency": {},
+    "sparse_exact_match_rate": {
+      "raw": null,
+      "sanitized": null
+    },
+    "noop_exact_pass_rate": {
+      "raw": null,
+      "sanitized": null
+    },
+    "failure_categories": {
+      "patch_syntax_fail": 1
+    },
+    "raw_syntax_pass_rate": 0.0,
+    "raw_schema_pass_rate": 0.0,
+    "raw_key_order_pass_rate": 0.0,
+    "raw_range_pass_rate": 0.0,
+    "raw_semantic_pass_rate": 0.0,
+    "post_clamp_apply_pass_rate": 0.0,
+    "patch_pipeline_pass_rate": 0.0,
+    "explanation_available_rate": 0.0,
+    "explanation_pass_rate": 0.0
+  },
+  "results": [
+    {
+      "prompt_id": "smoke_darker_filter_001",
+      "stream_id": "smoke-stream-1",
+      "submitted_index": 1,
+      "prompt": "Make the filter a bit darker.",
+      "tags": [
+        "smoke",
+        "latency",
+        "filter"
+      ],
+      "expected_changed_paths": [
+        "filter.cutoff-hz"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [
+        "oscillator-1.shape",
+        "oscillator-2.shape",
+        "effects.reverb-mix"
+      ],
+      "expected_clamped_paths": [],
+      "expected_noop": false,
+      "patch_contract": "sparse_patch_only",
+      "explanation_mode": "deterministic",
+      "current_patch_context": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.8,
+          "unison-voices": 2
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 4.0,
+          "level": 0.25,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 4200.0,
+          "resonance": 1.8,
+          "drive": 0.0,
+          "keytrack": 0.4,
+          "env-amount": 0.2,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 15.0,
+          "decay-ms": 200.0,
+          "sustain": 0.5,
+          "release-ms": 500.0,
+          "velocity-amount": 0.7
+        },
+        "effects": {
+          "reverb-mix": 0.1,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 1.0,
+          "output-gain-db": -2.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "patch_queue_wait_ms": 0.08124100000372891,
+      "apply_queue_wait_ms": null,
+      "explanation_queue_wait_ms": null,
+      "patch_latency_ms": 6812.391208999998,
+      "patch_parse_latency_ms": 0.04456300000299507,
+      "patch_validation_latency_ms": null,
+      "apply_latency_ms": null,
+      "explanation_latency_ms": null,
+      "patch_ready_ms": 6812.595418000001,
+      "patch_applied_ms": null,
+      "explanation_ready_ms": null,
+      "ui_gap_ms": null,
+      "patch_raw_output": "{\n  \"oscillator-1\": {\n    \"shape\": \"saw\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 0.0,\n    \"level\": 0.8,\n    \"unison-voices\": 2\n  },\n  \"oscillator-2\": {\n    \"shape\": \"square\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 4.0,\n    \"level\": 0.25,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 4200.0,\n    \"resonance\": 2.0,\n    \"drive\": 0.0,\n    \"keytrack\": 0.4,\n    \"env",
+      "patch_trimmed_output": "{\n  \"oscillator-1\": {\n    \"shape\": \"saw\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 0.0,\n    \"level\": 0.8,\n    \"unison-voices\": 2\n  },\n  \"oscillator-2\": {\n    \"shape\": \"square\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 4.0,\n    \"level\": 0.25,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 4200.0,\n    \"resonance\": 2.0,\n    \"drive\": 0.0,\n    \"keytrack\": 0.4,\n    \"env",
+      "patch_parsed_payload": null,
+      "patch_generation_error": null,
+      "patch_finish_reason": "length",
+      "patch_prompt_tokens": 1130,
+      "patch_completion_tokens": 192,
+      "patch_total_tokens": 1322,
+      "patch_tokens_per_second": 28.18393631686105,
+      "raw_syntax_pass": false,
+      "raw_schema_pass": false,
+      "raw_key_order_pass": false,
+      "raw_range_pass": false,
+      "raw_semantic_pass": false,
+      "raw_validation_errors": [
+        "Invalid JSON: Unterminated string starting at at line 24, column 5."
+      ],
+      "raw_changed_paths": {},
+      "raw_ignored_paths": [],
+      "raw_sparse_patch_preview": null,
+      "raw_compact_delta_preview": null,
+      "raw_changed_param_count": 0,
+      "raw_changed_block_count": 0,
+      "raw_changed_blocks": [],
+      "raw_null_param_count": 0,
+      "raw_null_ratio": null,
+      "raw_omitted_param_count": 0,
+      "raw_omitted_ratio": null,
+      "raw_all_null_noop": false,
+      "raw_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [],
+        "unexpected_changed_paths": [],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": null,
+        "noop_exact_pass": null
+      },
+      "apply_errors": [],
+      "apply_success": false,
+      "post_clamp_apply_pass": false,
+      "apply_noop_paths": [],
+      "clamp_events": [],
+      "clamp_event_count": 0,
+      "clamp_intervention": false,
+      "clamped_paths": [],
+      "clamp_expectation_pass": null,
+      "missing_expected_clamped_paths": [],
+      "unexpected_clamped_paths": [],
+      "sanitized_changed_paths": {},
+      "sanitized_sparse_patch_preview": null,
+      "sanitized_compact_delta_preview": null,
+      "merged_patch_preview": null,
+      "sanitized_changed_param_count": 0,
+      "sanitized_changed_block_count": 0,
+      "sanitized_changed_blocks": [],
+      "sanitized_null_param_count": 0,
+      "sanitized_null_ratio": null,
+      "sanitized_omitted_param_count": 0,
+      "sanitized_omitted_ratio": null,
+      "sanitized_all_null_noop": false,
+      "sanitized_sparse_fidelity": {
+        "unchanged_non_null_paths": [],
+        "false_edit_count": 0,
+        "expected_missing_paths": [],
+        "unexpected_changed_paths": [],
+        "mismatched_value_paths": [],
+        "sparse_exact_match": null,
+        "noop_exact_pass": null
+      },
+      "patch_pipeline_pass": false,
+      "explanation_requested": true,
+      "explanation_available": false,
+      "explanation_pass": false,
+      "explanation_cancelled": false,
+      "explanation_discarded": false,
+      "explanation_errors": [],
+      "explanation_generation_error": null,
+      "explanation_finish_reason": null,
+      "explanation_prompt_tokens": null,
+      "explanation_completion_tokens": null,
+      "explanation_total_tokens": null,
+      "explanation_tokens_per_second": null,
+      "explanation_raw_output": "",
+      "explanation_trimmed_output": "",
+      "explanation_payload": null,
+      "explanation_text": null
+    }
+  ]
+}

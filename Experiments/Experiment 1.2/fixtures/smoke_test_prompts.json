@@ -1,0 +1,65 @@
+{
+  "suite": "smoke_test_prompts",
+  "description": "Single-case smoke test for the Experiment 1.2 async patch/apply/explanation pipeline.",
+  "cases": [
+    {
+      "id": "smoke_darker_filter_001",
+      "prompt": "Make the filter a bit darker.",
+      "tags": ["smoke", "latency", "filter"],
+      "stream_id": "smoke-stream-1",
+      "current_patch_context": {
+        "oscillator-1": {
+          "shape": "saw",
+          "octave": 0,
+          "semitone": 0,
+          "detune-cents": 0.0,
+          "level": 0.8,
+          "unison-voices": 2
+        },
+        "oscillator-2": {
+          "shape": "square",
+          "octave": -1,
+          "semitone": 0,
+          "detune-cents": 4.0,
+          "level": 0.25,
+          "sync-mode": "off"
+        },
+        "filter": {
+          "mode": "lowpass",
+          "cutoff-hz": 4200.0,
+          "resonance": 1.8,
+          "drive": 0.0,
+          "keytrack": 0.4,
+          "env-amount": 0.2,
+          "slope-db-per-oct": 24
+        },
+        "envelope": {
+          "attack-ms": 15.0,
+          "decay-ms": 200.0,
+          "sustain": 0.5,
+          "release-ms": 500.0,
+          "velocity-amount": 0.7
+        },
+        "effects": {
+          "reverb-mix": 0.1,
+          "delay-mix": 0.0,
+          "chorus-mix": 0.0,
+          "stereo-width": 1.0,
+          "output-gain-db": -2.0,
+          "distortion-drive": 0.0
+        }
+      },
+      "expected_changed_paths": [
+        "filter.cutoff-hz"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [
+        "oscillator-1.shape",
+        "oscillator-2.shape",
+        "effects.reverb-mix"
+      ],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    }
+  ]
+}

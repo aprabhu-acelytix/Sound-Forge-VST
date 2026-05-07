@@ -1,0 +1,40 @@
+2026-05-07T02:45:52Z | Starting Experiment 1.2: Patch-Only Async Pipeline Sandbox
+2026-05-07T02:45:52Z | Run ID: 20260507T024552Z
+2026-05-07T02:45:52Z | Patch contract: sparse_patch_only
+2026-05-07T02:45:52Z | Explanation mode: off
+2026-05-07T02:45:52Z | Patch model path: /models_patch/Qwen2.5-7B-Instruct-Q4_K_M.gguf
+2026-05-07T02:45:52Z | Results JSON: /workspace/Experiments/Experiment 1.2/results/run_20260507T024552Z.json
+2026-05-07T02:45:52Z | Latency CSV: /workspace/Experiments/Experiment 1.2/logs/latency_20260507T024552Z.csv
+2026-05-07T02:45:52Z | Clamp events JSONL: /workspace/Experiments/Experiment 1.2/logs/clamp_events_20260507T024552Z.jsonl
+2026-05-07T02:45:52Z | Status log: Experiments/Experiment 1.2/logs/status_test_b1_qwen7b_numeric.log
+2026-05-07T02:45:52Z | Selected prompt cases: 7
+2026-05-07T02:45:52Z | Few-shot examples loaded: 0
+2026-05-07T02:45:52Z | Validating patch grammar file: /workspace/Experiments/Experiment 1.2/grammars/sparse_patch_only_v1.gbnf
+2026-05-07T02:45:52Z | Inference mode: GPU offload requested.
+2026-05-07T02:45:52Z | Loading patch model: /models_patch/Qwen2.5-7B-Instruct-Q4_K_M.gguf
+2026-05-07T02:46:27Z | Loaded patch model in 35005.79 ms
+2026-05-07T02:46:27Z | Submitting prompt cases into the async pipeline.
+2026-05-07T02:46:37Z | Completed [numeric_pressure_cutoff_001] | patch_pass=True | raw_range_pass=False | clamps=2 | patch_ready=9674.171 ms | patch_applied=9674.436 ms | explanation_ready= ms
+2026-05-07T02:46:37Z | Progress: 1/7 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:46:46Z | Completed [numeric_pressure_underflow_001] | patch_pass=True | raw_range_pass=False | clamps=2 | patch_ready=18643.933 ms | patch_applied=18644.241 ms | explanation_ready= ms
+2026-05-07T02:46:46Z | Progress: 2/7 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:46:55Z | Completed [numeric_pressure_integer_001] | patch_pass=True | raw_range_pass=False | clamps=2 | patch_ready=27427.375 ms | patch_applied=27427.685 ms | explanation_ready= ms
+2026-05-07T02:46:55Z | Progress: 3/7 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:47:04Z | Completed [numeric_pressure_negative_frequency_001] | patch_pass=True | raw_range_pass=False | clamps=2 | patch_ready=36445.504 ms | patch_applied=36445.770 ms | explanation_ready= ms
+2026-05-07T02:47:04Z | Progress: 4/7 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:47:13Z | Completed [numeric_pressure_drive_overflow_001] | patch_pass=True | raw_range_pass=False | clamps=3 | patch_ready=45690.086 ms | patch_applied=45690.489 ms | explanation_ready= ms
+2026-05-07T02:47:13Z | Progress: 5/7 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:47:22Z | Completed [numeric_pressure_wrong_enum_type_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=55101.324 ms | patch_applied=55101.572 ms | explanation_ready= ms
+2026-05-07T02:47:22Z | Progress: 6/7 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:47:31Z | Completed [numeric_pressure_mixed_bounds_001] | patch_pass=True | raw_range_pass=False | clamps=3 | patch_ready=64250.761 ms | patch_applied=64250.942 ms | explanation_ready= ms
+2026-05-07T02:47:31Z | Progress: 7/7 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:47:32Z | Async pipeline completed.
+2026-05-07T02:47:32Z | Patch pipeline pass rate: 7/7 (100.0%)
+2026-05-07T02:47:32Z | Raw range pass rate: 1/7 (14.3%)
+2026-05-07T02:47:32Z | Clamp intervention rate: 6/7 (85.7%)
+2026-05-07T02:47:32Z | Mean patch ready latency: 36747.59 ms
+2026-05-07T02:47:32Z | Mean patch applied latency: 36747.88 ms
+2026-05-07T02:47:32Z | Results JSON written to: /workspace/Experiments/Experiment 1.2/results/run_20260507T024552Z.json
+2026-05-07T02:47:32Z | Latency CSV written to: /workspace/Experiments/Experiment 1.2/logs/latency_20260507T024552Z.csv
+2026-05-07T02:47:32Z | Clamp events JSONL written to: /workspace/Experiments/Experiment 1.2/logs/clamp_events_20260507T024552Z.jsonl
+2026-05-07T02:47:32Z | Status log written to: Experiments/Experiment 1.2/logs/status_test_b1_qwen7b_numeric.log

@@ -1,0 +1,27 @@
+2026-05-06T03:27:18Z | Starting Experiment 1.2: Patch-Only Async Pipeline Sandbox
+2026-05-06T03:27:18Z | Run ID: 20260506T032717Z
+2026-05-06T03:27:18Z | Patch contract: sparse_patch_only
+2026-05-06T03:27:18Z | Explanation mode: deterministic
+2026-05-06T03:27:18Z | Patch model path: /models_patch/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+2026-05-06T03:27:18Z | Results JSON: /workspace/Experiments/Experiment 1.2/results/run_20260506T032717Z.json
+2026-05-06T03:27:18Z | Latency CSV: /workspace/Experiments/Experiment 1.2/logs/latency_20260506T032717Z.csv
+2026-05-06T03:27:18Z | Clamp events JSONL: /workspace/Experiments/Experiment 1.2/logs/clamp_events_20260506T032717Z.jsonl
+2026-05-06T03:27:18Z | Status log: Experiments/Experiment 1.2/logs/status_smoke_test.log
+2026-05-06T03:27:18Z | Selected prompt cases: 1
+2026-05-06T03:27:18Z | Few-shot examples loaded: 0
+2026-05-06T03:27:18Z | Validating patch grammar file: /workspace/Experiments/Experiment 1.2/grammars/sparse_patch_only_v1.gbnf
+2026-05-06T03:27:18Z | Inference mode: GPU offload requested.
+2026-05-06T03:27:18Z | Loading patch model: /models_patch/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+2026-05-06T03:28:14Z | Loaded patch model in 55588.29 ms
+2026-05-06T03:28:14Z | Submitting prompt cases into the async pipeline.
+2026-05-06T03:28:20Z | Completed [smoke_darker_filter_001] | patch_pass=False | raw_range_pass=False | clamps=0 | patch_ready=6812.595 ms | patch_applied= ms | explanation_ready= ms
+2026-05-06T03:28:20Z | Progress: 1/1 completed so far; patch pipeline pass rate 0.0%
+2026-05-06T03:28:21Z | Async pipeline completed.
+2026-05-06T03:28:21Z | Patch pipeline pass rate: 0/1 (0.0%)
+2026-05-06T03:28:21Z | Raw range pass rate: 0/1 (0.0%)
+2026-05-06T03:28:21Z | Clamp intervention rate: 0/1 (0.0%)
+2026-05-06T03:28:21Z | Mean patch ready latency: 6812.60 ms
+2026-05-06T03:28:21Z | Results JSON written to: /workspace/Experiments/Experiment 1.2/results/run_20260506T032717Z.json
+2026-05-06T03:28:21Z | Latency CSV written to: /workspace/Experiments/Experiment 1.2/logs/latency_20260506T032717Z.csv
+2026-05-06T03:28:21Z | Clamp events JSONL written to: /workspace/Experiments/Experiment 1.2/logs/clamp_events_20260506T032717Z.jsonl
+2026-05-06T03:28:21Z | Status log written to: Experiments/Experiment 1.2/logs/status_smoke_test.log

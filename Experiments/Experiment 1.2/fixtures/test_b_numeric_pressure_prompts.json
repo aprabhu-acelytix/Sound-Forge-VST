@@ -1,0 +1,90 @@
+{
+  "suite": "test_b_numeric_pressure_prompts",
+  "description": "Numeric-pressure corpus covering overflow, underflow, mixed-bounds pressure, and wrong-enum requests for clamp evaluation.",
+  "cases": [
+    {
+      "id": "numeric_pressure_cutoff_001",
+      "prompt": "Make the filter cutoff 50000 Hz and the resonance 30 for a painfully bright sweep.",
+      "tags": ["numeric-pressure", "clamp", "overflow", "filter"],
+      "stream_id": "numeric-stream-1",
+      "current_patch_context": null,
+      "expected_changed_paths": ["filter.cutoff-hz", "filter.resonance"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": ["filter.cutoff-hz", "filter.resonance"],
+      "expected_noop": false
+    },
+    {
+      "id": "numeric_pressure_underflow_001",
+      "prompt": "Set output gain to -80 dB, stereo width to -1, and attack to 0 ms.",
+      "tags": ["numeric-pressure", "clamp", "underflow"],
+      "stream_id": "numeric-stream-2",
+      "current_patch_context": null,
+      "expected_changed_paths": ["effects.output-gain-db", "effects.stereo-width", "envelope.attack-ms"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": ["effects.output-gain-db", "effects.stereo-width", "envelope.attack-ms"],
+      "expected_noop": false
+    },
+    {
+      "id": "numeric_pressure_integer_001",
+      "prompt": "Use 99 unison voices, set oscillator 1 octave to 9, and make the filter slope 18 dB per octave.",
+      "tags": ["numeric-pressure", "clamp", "integer"],
+      "stream_id": "numeric-stream-3",
+      "current_patch_context": null,
+      "expected_changed_paths": ["oscillator-1.unison-voices", "oscillator-1.octave", "filter.slope-db-per-oct"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": ["oscillator-1.unison-voices", "oscillator-1.octave", "filter.slope-db-per-oct"],
+      "expected_noop": false
+    },
+    {
+      "id": "numeric_pressure_negative_frequency_001",
+      "prompt": "Set the filter cutoff to -200 Hz and the envelope release to -50 ms for an impossible snap-off.",
+      "tags": ["numeric-pressure", "underflow", "negative-frequency"],
+      "stream_id": "numeric-stream-4",
+      "current_patch_context": null,
+      "expected_changed_paths": ["filter.cutoff-hz", "envelope.release-ms"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": ["filter.cutoff-hz", "envelope.release-ms"],
+      "expected_noop": false
+    },
+    {
+      "id": "numeric_pressure_drive_overflow_001",
+      "prompt": "Push filter drive to 5, delay mix to 2, and distortion drive to 4 for extreme saturation.",
+      "tags": ["numeric-pressure", "overflow", "fx"],
+      "stream_id": "numeric-stream-5",
+      "current_patch_context": null,
+      "expected_changed_paths": ["filter.drive", "effects.delay-mix", "effects.distortion-drive"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": ["filter.drive", "effects.delay-mix", "effects.distortion-drive"],
+      "expected_noop": false
+    },
+    {
+      "id": "numeric_pressure_wrong_enum_type_001",
+      "prompt": "Use a filter slope of 19 dB per octave, make oscillator 2 sync mode turbo, and set the filter mode to notch.",
+      "tags": ["numeric-pressure", "wrong-enum", "unsupported-enum"],
+      "stream_id": "numeric-stream-6",
+      "current_patch_context": null,
+      "expected_changed_paths": ["filter.slope-db-per-oct"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": ["filter.slope-db-per-oct"],
+      "expected_noop": false
+    },
+    {
+      "id": "numeric_pressure_mixed_bounds_001",
+      "prompt": "Set env amount to -7, keytrack to 9, and stereo width to 20 for an exaggerated moving tone.",
+      "tags": ["numeric-pressure", "mixed-bounds"],
+      "stream_id": "numeric-stream-7",
+      "current_patch_context": null,
+      "expected_changed_paths": ["filter.env-amount", "filter.keytrack", "effects.stereo-width"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": ["filter.env-amount", "filter.keytrack", "effects.stereo-width"],
+      "expected_noop": false
+    }
+  ]
+}

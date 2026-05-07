@@ -60,8 +60,10 @@ class PromptCase:
     tags: list[str]
     stream_id: str
     current_patch_context: dict[str, Any] | None
-    expected_changed_paths: dict[str, Any] | None
+    expected_changed_paths: list[str] | None
+    expected_exact_values: dict[str, Any] | None
     expected_null_paths: list[str] | None
+    expected_clamped_paths: list[str] | None
     expected_noop: bool | None
 
 
@@ -393,7 +395,9 @@ def load_prompt_cases(path: Path, selected_ids: set[str], limit: int | None) -> 
         stream_id = item.get("stream_id", case_id)
         current_patch_context = item.get("current_patch_context")
         expected_changed_paths = item.get("expected_changed_paths")
+        expected_exact_values = item.get("expected_exact_values")
         expected_null_paths = item.get("expected_null_paths")
+        expected_clamped_paths = item.get("expected_clamped_paths")
         expected_noop = item.get("expected_noop")
 
         if not isinstance(case_id, str) or not case_id:
@@ -408,9 +412,16 @@ def load_prompt_cases(path: Path, selected_ids: set[str], limit: int | None) -> 
             raise ValueError(
                 f"Prompt case 'current_patch_context' must be an object when present: {item!r}"
             )
-        if expected_changed_paths is not None and not isinstance(expected_changed_paths, dict):
+        if expected_changed_paths is not None and (
+            not isinstance(expected_changed_paths, list)
+            or not all(isinstance(path_value, str) for path_value in expected_changed_paths)
+        ):
             raise ValueError(
-                f"Prompt case 'expected_changed_paths' must be an object when present: {item!r}"
+                f"Prompt case 'expected_changed_paths' must be a list of strings when present: {item!r}"
+            )
+        if expected_exact_values is not None and not isinstance(expected_exact_values, dict):
+            raise ValueError(
+                f"Prompt case 'expected_exact_values' must be an object when present: {item!r}"
             )
         if expected_null_paths is not None and (
             not isinstance(expected_null_paths, list)
@@ -418,6 +429,13 @@ def load_prompt_cases(path: Path, selected_ids: set[str], limit: int | None) -> 
         ):
             raise ValueError(
                 f"Prompt case 'expected_null_paths' must be a list of strings when present: {item!r}"
+            )
+        if expected_clamped_paths is not None and (
+            not isinstance(expected_clamped_paths, list)
+            or not all(isinstance(path_value, str) for path_value in expected_clamped_paths)
+        ):
+            raise ValueError(
+                f"Prompt case 'expected_clamped_paths' must be a list of strings when present: {item!r}"
             )
         if expected_noop is not None and not isinstance(expected_noop, bool):
             raise ValueError(f"Prompt case 'expected_noop' must be a bool when present: {item!r}")
@@ -432,8 +450,10 @@ def load_prompt_cases(path: Path, selected_ids: set[str], limit: int | None) -> 
                 tags=tags,
                 stream_id=stream_id,
                 current_patch_context=deep_copy_json(current_patch_context),
-                expected_changed_paths=deep_copy_json(expected_changed_paths),
+                expected_changed_paths=list(expected_changed_paths) if expected_changed_paths is not None else None,
+                expected_exact_values=deep_copy_json(expected_exact_values),
                 expected_null_paths=list(expected_null_paths) if expected_null_paths is not None else None,
+                expected_clamped_paths=list(expected_clamped_paths) if expected_clamped_paths is not None else None,
                 expected_noop=expected_noop,
             )
         )
@@ -990,17 +1010,25 @@ def evaluate_sparse_fidelity(
     unexpected_changed_paths: list[str] = []
     mismatched_value_paths: list[str] = []
     sparse_exact_match: bool | None = None
-    if prompt_case.expected_changed_paths is not None:
+    expected_changed_path_set: set[str] | None = None
+    if prompt_case.expected_changed_paths is not None or prompt_case.expected_exact_values is not None:
+        expected_changed_path_set = set(prompt_case.expected_changed_paths or [])
+        if prompt_case.expected_exact_values is not None:
+            expected_changed_path_set.update(prompt_case.expected_exact_values.keys())
         sparse_exact_match = True
-        for expected_path, expected_value in prompt_case.expected_changed_paths.items():
+        for expected_path in sorted(expected_changed_path_set):
             if expected_path not in changed_paths:
                 expected_missing_paths.append(expected_path)
                 sparse_exact_match = False
-            elif not values_equal_for_path(expected_path, changed_paths[expected_path], expected_value, registry):
-                mismatched_value_paths.append(expected_path)
-                sparse_exact_match = False
+        if prompt_case.expected_exact_values is not None:
+            for expected_path, expected_value in prompt_case.expected_exact_values.items():
+                if expected_path not in changed_paths:
+                    continue
+                if not values_equal_for_path(expected_path, changed_paths[expected_path], expected_value, registry):
+                    mismatched_value_paths.append(expected_path)
+                    sparse_exact_match = False
         for actual_path in changed_paths:
-            if actual_path not in prompt_case.expected_changed_paths:
+            if actual_path not in expected_changed_path_set:
                 unexpected_changed_paths.append(actual_path)
                 sparse_exact_match = False
 
@@ -1442,6 +1470,11 @@ def initialize_record(
         "submitted_index": submitted_index,
         "prompt": prompt_case.prompt,
         "tags": prompt_case.tags,
+        "expected_changed_paths": prompt_case.expected_changed_paths,
+        "expected_exact_values": prompt_case.expected_exact_values,
+        "expected_null_paths": prompt_case.expected_null_paths,
+        "expected_clamped_paths": prompt_case.expected_clamped_paths,
+        "expected_noop": prompt_case.expected_noop,
         "patch_contract": patch_contract,
         "explanation_mode": explanation_mode,
         "current_patch_context": prompt_case.current_patch_context,
@@ -1501,6 +1534,9 @@ def initialize_record(
         "clamp_event_count": 0,
         "clamp_intervention": False,
         "clamped_paths": [],
+        "clamp_expectation_pass": None,
+        "missing_expected_clamped_paths": [],
+        "unexpected_clamped_paths": [],
         "sanitized_changed_paths": {},
         "sanitized_sparse_patch_preview": None,
         "sanitized_compact_delta_preview": None,
@@ -1732,6 +1768,15 @@ def apply_worker_loop(
         record["clamp_event_count"] = len(apply_result["clamp_events"])
         record["clamp_intervention"] = bool(apply_result["clamp_events"])
         record["clamped_paths"] = apply_result["clamped_paths"]
+        if item.prompt_case.expected_clamped_paths is not None:
+            expected_clamped = set(item.prompt_case.expected_clamped_paths)
+            actual_clamped = set(record["clamped_paths"])
+            record["missing_expected_clamped_paths"] = sorted(expected_clamped - actual_clamped)
+            record["unexpected_clamped_paths"] = sorted(actual_clamped - expected_clamped)
+            record["clamp_expectation_pass"] = (
+                not record["missing_expected_clamped_paths"]
+                and not record["unexpected_clamped_paths"]
+            )
         record["sanitized_changed_paths"] = apply_result["sanitized_changed_paths"]
         record["sanitized_sparse_patch_preview"] = apply_result["sanitized_sparse_patch_preview"]
         record["sanitized_compact_delta_preview"] = apply_result["sanitized_compact_delta_preview"]
@@ -2049,6 +2094,11 @@ def build_summary(records: list[dict[str, Any]], queue_backlog_max: dict[str, in
         for record in records
         if record["sanitized_sparse_fidelity"]["sparse_exact_match"] is not None
     ]
+    clamp_expectation_values = [
+        record["clamp_expectation_pass"]
+        for record in records
+        if record["clamp_expectation_pass"] is not None
+    ]
     raw_noop_exact_values = [
         record["raw_sparse_fidelity"]["noop_exact_pass"]
         for record in records
@@ -2122,6 +2172,11 @@ def build_summary(records: list[dict[str, Any]], queue_backlog_max: dict[str, in
             if records
             else 0.0
         ),
+        "clamp_expectation_pass_rate": (
+            sum(1 for value in clamp_expectation_values if value) / len(clamp_expectation_values)
+        )
+        if clamp_expectation_values
+        else None,
         "mean_clamp_events_per_prompt": (
             statistics.fmean([record["clamp_event_count"] for record in records]) if records else None
         ),

@@ -1,0 +1,126 @@
+{
+  "suite": "test_a_latency_prompts",
+  "description": "Latency corpus for patch-ready versus explanation-ready comparisons across simple, medium, complex, and superseding prompt flows.",
+  "cases": [
+    {
+      "id": "latency_patch_only_001",
+      "prompt": "Create a bright pluck with a fast attack and a little resonance.",
+      "tags": ["latency", "baseline", "pluck"],
+      "stream_id": "latency-stream-1",
+      "current_patch_context": null,
+      "expected_changed_paths": ["filter.cutoff-hz", "envelope.attack-ms"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "latency_bass_dark_001",
+      "prompt": "Create a dark, rounded bass with a soft top end and almost no space.",
+      "tags": ["latency", "baseline", "bass", "dark"],
+      "stream_id": "latency-stream-2",
+      "current_patch_context": null,
+      "expected_changed_paths": ["filter.cutoff-hz", "oscillator-1.shape", "effects.reverb-mix"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "latency_pad_complex_001",
+      "prompt": "Make a wide, airy pad with a slow fade-in, gentle chorus, more reverb, and a brighter open top.",
+      "tags": ["latency", "complex", "pad", "wide"],
+      "stream_id": "latency-stream-3",
+      "current_patch_context": null,
+      "expected_changed_paths": [
+        "envelope.attack-ms",
+        "effects.reverb-mix",
+        "effects.chorus-mix",
+        "effects.stereo-width",
+        "filter.cutoff-hz"
+      ],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "latency_perc_tight_001",
+      "prompt": "Make it tighter and more percussive with a sharper transient and shorter tail.",
+      "tags": ["latency", "baseline", "percussive"],
+      "stream_id": "latency-stream-4",
+      "current_patch_context": null,
+      "expected_changed_paths": ["envelope.attack-ms", "envelope.decay-ms", "envelope.release-ms"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "latency_space_only_001",
+      "prompt": "Keep the core tone mostly the same but make it feel larger and more distant.",
+      "tags": ["latency", "effects-focused", "space"],
+      "stream_id": "latency-stream-5",
+      "current_patch_context": null,
+      "expected_changed_paths": ["effects.reverb-mix", "effects.delay-mix"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "latency_stream_supersede_001",
+      "prompt": "Start from the current patch and make it darker and softer.",
+      "tags": ["latency", "streaming", "supersede"],
+      "stream_id": "latency-shared-stream",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 4},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 3.0, "level": 0.35, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 6400.0, "resonance": 2.0, "drive": 0.1, "keytrack": 0.5, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 12.0, "decay-ms": 240.0, "sustain": 0.45, "release-ms": 600.0, "velocity-amount": 0.6},
+        "effects": {"reverb-mix": 0.15, "delay-mix": 0.08, "chorus-mix": 0.0, "stereo-width": 1.1, "output-gain-db": -3.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": ["filter.cutoff-hz", "envelope.attack-ms"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "latency_stream_supersede_002",
+      "prompt": "Actually make it sharper, brighter, and more percussive instead.",
+      "tags": ["latency", "streaming", "supersede"],
+      "stream_id": "latency-shared-stream",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 4},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 3.0, "level": 0.35, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 6400.0, "resonance": 2.0, "drive": 0.1, "keytrack": 0.5, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 12.0, "decay-ms": 240.0, "sustain": 0.45, "release-ms": 600.0, "velocity-amount": 0.6},
+        "effects": {"reverb-mix": 0.15, "delay-mix": 0.08, "chorus-mix": 0.0, "stereo-width": 1.1, "output-gain-db": -3.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": ["filter.cutoff-hz", "envelope.attack-ms", "envelope.decay-ms"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "latency_stream_supersede_003",
+      "prompt": "No, strip the effects back down and make it punchier and drier right away.",
+      "tags": ["latency", "streaming", "supersede"],
+      "stream_id": "latency-shared-stream",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 4},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 3.0, "level": 0.35, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 6400.0, "resonance": 2.0, "drive": 0.1, "keytrack": 0.5, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 12.0, "decay-ms": 240.0, "sustain": 0.45, "release-ms": 600.0, "velocity-amount": 0.6},
+        "effects": {"reverb-mix": 0.15, "delay-mix": 0.08, "chorus-mix": 0.0, "stereo-width": 1.1, "output-gain-db": -3.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": ["effects.reverb-mix", "effects.delay-mix", "envelope.attack-ms", "envelope.release-ms"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    }
+  ]
+}

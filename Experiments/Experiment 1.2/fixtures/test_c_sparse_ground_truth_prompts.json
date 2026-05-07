@@ -1,0 +1,198 @@
+{
+  "suite": "test_c_sparse_ground_truth_prompts",
+  "description": "Sparse ground-truth corpus for zero-shot versus few-shot 3B evaluation with exact changed-path and null-path expectations.",
+  "cases": [
+    {
+      "id": "sparse_single_change_001",
+      "prompt": "Only make the attack slower.",
+      "tags": ["sparse-ground-truth", "single-change"],
+      "stream_id": "sparse-stream-1",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 2},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 4.0, "level": 0.25, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 4200.0, "resonance": 1.8, "drive": 0.0, "keytrack": 0.4, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 15.0, "decay-ms": 200.0, "sustain": 0.5, "release-ms": 500.0, "velocity-amount": 0.7},
+        "effects": {"reverb-mix": 0.1, "delay-mix": 0.0, "chorus-mix": 0.0, "stereo-width": 1.0, "output-gain-db": -2.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": ["envelope.attack-ms"],
+      "expected_exact_values": {},
+      "expected_null_paths": [
+        "oscillator-1.shape", "oscillator-1.octave", "oscillator-1.semitone", "oscillator-1.detune-cents", "oscillator-1.level", "oscillator-1.unison-voices",
+        "oscillator-2.shape", "oscillator-2.octave", "oscillator-2.semitone", "oscillator-2.detune-cents", "oscillator-2.level", "oscillator-2.sync-mode",
+        "filter.mode", "filter.cutoff-hz", "filter.resonance", "filter.drive", "filter.keytrack", "filter.env-amount", "filter.slope-db-per-oct",
+        "envelope.decay-ms", "envelope.sustain", "envelope.release-ms", "envelope.velocity-amount",
+        "effects.reverb-mix", "effects.delay-mix", "effects.chorus-mix", "effects.stereo-width", "effects.output-gain-db", "effects.distortion-drive"
+      ],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "sparse_filter_width_001",
+      "prompt": "Make it brighter and a little wider, but leave everything else alone.",
+      "tags": ["sparse-ground-truth", "cross-block"],
+      "stream_id": "sparse-stream-2",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 2},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 4.0, "level": 0.25, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 4200.0, "resonance": 1.8, "drive": 0.0, "keytrack": 0.4, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 15.0, "decay-ms": 200.0, "sustain": 0.5, "release-ms": 500.0, "velocity-amount": 0.7},
+        "effects": {"reverb-mix": 0.1, "delay-mix": 0.0, "chorus-mix": 0.0, "stereo-width": 1.0, "output-gain-db": -2.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": ["filter.cutoff-hz", "effects.stereo-width"],
+      "expected_exact_values": {},
+      "expected_null_paths": [
+        "oscillator-1.shape", "oscillator-1.octave", "oscillator-1.semitone", "oscillator-1.detune-cents", "oscillator-1.level", "oscillator-1.unison-voices",
+        "oscillator-2.shape", "oscillator-2.octave", "oscillator-2.semitone", "oscillator-2.detune-cents", "oscillator-2.level", "oscillator-2.sync-mode",
+        "filter.mode", "filter.resonance", "filter.drive", "filter.keytrack", "filter.env-amount", "filter.slope-db-per-oct",
+        "envelope.attack-ms", "envelope.decay-ms", "envelope.sustain", "envelope.release-ms", "envelope.velocity-amount",
+        "effects.reverb-mix", "effects.delay-mix", "effects.chorus-mix", "effects.output-gain-db", "effects.distortion-drive"
+      ],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "sparse_skip_same_shape_001",
+      "prompt": "Keep oscillator 1 as a saw, but darken the filter a touch.",
+      "tags": ["sparse-ground-truth", "same-value-skip"],
+      "stream_id": "sparse-stream-3",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 2},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 4.0, "level": 0.25, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 4200.0, "resonance": 1.8, "drive": 0.0, "keytrack": 0.4, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 15.0, "decay-ms": 200.0, "sustain": 0.5, "release-ms": 500.0, "velocity-amount": 0.7},
+        "effects": {"reverb-mix": 0.1, "delay-mix": 0.0, "chorus-mix": 0.0, "stereo-width": 1.0, "output-gain-db": -2.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": ["filter.cutoff-hz"],
+      "expected_exact_values": {},
+      "expected_null_paths": [
+        "oscillator-1.shape", "oscillator-1.octave", "oscillator-1.semitone", "oscillator-1.detune-cents", "oscillator-1.level", "oscillator-1.unison-voices",
+        "oscillator-2.shape", "oscillator-2.octave", "oscillator-2.semitone", "oscillator-2.detune-cents", "oscillator-2.level", "oscillator-2.sync-mode",
+        "filter.mode", "filter.resonance", "filter.drive", "filter.keytrack", "filter.env-amount", "filter.slope-db-per-oct",
+        "envelope.attack-ms", "envelope.decay-ms", "envelope.sustain", "envelope.release-ms", "envelope.velocity-amount",
+        "effects.reverb-mix", "effects.delay-mix", "effects.chorus-mix", "effects.stereo-width", "effects.output-gain-db", "effects.distortion-drive"
+      ],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "sparse_same_value_noop_001",
+      "prompt": "Keep the output gain exactly where it is.",
+      "tags": ["sparse-ground-truth", "noop", "same-value"],
+      "stream_id": "sparse-stream-4",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 2},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 4.0, "level": 0.25, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 4200.0, "resonance": 1.8, "drive": 0.0, "keytrack": 0.4, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 15.0, "decay-ms": 200.0, "sustain": 0.5, "release-ms": 500.0, "velocity-amount": 0.7},
+        "effects": {"reverb-mix": 0.1, "delay-mix": 0.0, "chorus-mix": 0.0, "stereo-width": 1.0, "output-gain-db": -2.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": [],
+      "expected_exact_values": {},
+      "expected_null_paths": [
+        "oscillator-1.shape", "oscillator-1.octave", "oscillator-1.semitone", "oscillator-1.detune-cents", "oscillator-1.level", "oscillator-1.unison-voices",
+        "oscillator-2.shape", "oscillator-2.octave", "oscillator-2.semitone", "oscillator-2.detune-cents", "oscillator-2.level", "oscillator-2.sync-mode",
+        "filter.mode", "filter.cutoff-hz", "filter.resonance", "filter.drive", "filter.keytrack", "filter.env-amount", "filter.slope-db-per-oct",
+        "envelope.attack-ms", "envelope.decay-ms", "envelope.sustain", "envelope.release-ms", "envelope.velocity-amount",
+        "effects.reverb-mix", "effects.delay-mix", "effects.chorus-mix", "effects.stereo-width", "effects.output-gain-db", "effects.distortion-drive"
+      ],
+      "expected_clamped_paths": [],
+      "expected_noop": true
+    },
+    {
+      "id": "sparse_exact_multi_block_001",
+      "prompt": "Turn on hard sync for oscillator 2, raise filter resonance to exactly 3.5, and add a small delay mix of exactly 0.2.",
+      "tags": ["sparse-ground-truth", "exact-values", "multi-block"],
+      "stream_id": "sparse-stream-5",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 2},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 4.0, "level": 0.25, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 4200.0, "resonance": 1.8, "drive": 0.0, "keytrack": 0.4, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 15.0, "decay-ms": 200.0, "sustain": 0.5, "release-ms": 500.0, "velocity-amount": 0.7},
+        "effects": {"reverb-mix": 0.1, "delay-mix": 0.0, "chorus-mix": 0.0, "stereo-width": 1.0, "output-gain-db": -2.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": ["oscillator-2.sync-mode", "filter.resonance", "effects.delay-mix"],
+      "expected_exact_values": {"oscillator-2.sync-mode": "hard", "filter.resonance": 3.5, "effects.delay-mix": 0.2},
+      "expected_null_paths": [
+        "oscillator-1.shape", "oscillator-1.octave", "oscillator-1.semitone", "oscillator-1.detune-cents", "oscillator-1.level", "oscillator-1.unison-voices",
+        "oscillator-2.shape", "oscillator-2.octave", "oscillator-2.semitone", "oscillator-2.detune-cents", "oscillator-2.level",
+        "filter.mode", "filter.cutoff-hz", "filter.drive", "filter.keytrack", "filter.env-amount", "filter.slope-db-per-oct",
+        "envelope.attack-ms", "envelope.decay-ms", "envelope.sustain", "envelope.release-ms", "envelope.velocity-amount",
+        "effects.reverb-mix", "effects.chorus-mix", "effects.stereo-width", "effects.output-gain-db", "effects.distortion-drive"
+      ],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "sparse_dual_env_exact_001",
+      "prompt": "Set decay to exactly 320 ms and release to exactly 900 ms, with no other changes.",
+      "tags": ["sparse-ground-truth", "exact-values", "envelope"],
+      "stream_id": "sparse-stream-6",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 2},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 4.0, "level": 0.25, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 4200.0, "resonance": 1.8, "drive": 0.0, "keytrack": 0.4, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 15.0, "decay-ms": 200.0, "sustain": 0.5, "release-ms": 500.0, "velocity-amount": 0.7},
+        "effects": {"reverb-mix": 0.1, "delay-mix": 0.0, "chorus-mix": 0.0, "stereo-width": 1.0, "output-gain-db": -2.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": ["envelope.decay-ms", "envelope.release-ms"],
+      "expected_exact_values": {"envelope.decay-ms": 320.0, "envelope.release-ms": 900.0},
+      "expected_null_paths": [
+        "oscillator-1.shape", "oscillator-1.octave", "oscillator-1.semitone", "oscillator-1.detune-cents", "oscillator-1.level", "oscillator-1.unison-voices",
+        "oscillator-2.shape", "oscillator-2.octave", "oscillator-2.semitone", "oscillator-2.detune-cents", "oscillator-2.level", "oscillator-2.sync-mode",
+        "filter.mode", "filter.cutoff-hz", "filter.resonance", "filter.drive", "filter.keytrack", "filter.env-amount", "filter.slope-db-per-oct",
+        "envelope.attack-ms", "envelope.sustain", "envelope.velocity-amount",
+        "effects.reverb-mix", "effects.delay-mix", "effects.chorus-mix", "effects.stereo-width", "effects.output-gain-db", "effects.distortion-drive"
+      ],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "sparse_shape_unison_exact_001",
+      "prompt": "Switch oscillator 1 to a square and set unison voices to exactly 5, with everything else untouched.",
+      "tags": ["sparse-ground-truth", "exact-values", "oscillator"],
+      "stream_id": "sparse-stream-7",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 2},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 4.0, "level": 0.25, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 4200.0, "resonance": 1.8, "drive": 0.0, "keytrack": 0.4, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 15.0, "decay-ms": 200.0, "sustain": 0.5, "release-ms": 500.0, "velocity-amount": 0.7},
+        "effects": {"reverb-mix": 0.1, "delay-mix": 0.0, "chorus-mix": 0.0, "stereo-width": 1.0, "output-gain-db": -2.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": ["oscillator-1.shape", "oscillator-1.unison-voices"],
+      "expected_exact_values": {"oscillator-1.shape": "square", "oscillator-1.unison-voices": 5},
+      "expected_null_paths": [
+        "oscillator-1.octave", "oscillator-1.semitone", "oscillator-1.detune-cents", "oscillator-1.level",
+        "oscillator-2.shape", "oscillator-2.octave", "oscillator-2.semitone", "oscillator-2.detune-cents", "oscillator-2.level", "oscillator-2.sync-mode",
+        "filter.mode", "filter.cutoff-hz", "filter.resonance", "filter.drive", "filter.keytrack", "filter.env-amount", "filter.slope-db-per-oct",
+        "envelope.attack-ms", "envelope.decay-ms", "envelope.sustain", "envelope.release-ms", "envelope.velocity-amount",
+        "effects.reverb-mix", "effects.delay-mix", "effects.chorus-mix", "effects.stereo-width", "effects.output-gain-db", "effects.distortion-drive"
+      ],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    },
+    {
+      "id": "sparse_gain_width_exact_001",
+      "prompt": "Lower the output gain to exactly -6 dB and widen the stereo field to exactly 1.5, leaving all else alone.",
+      "tags": ["sparse-ground-truth", "exact-values", "effects"],
+      "stream_id": "sparse-stream-8",
+      "current_patch_context": {
+        "oscillator-1": {"shape": "saw", "octave": 0, "semitone": 0, "detune-cents": 0.0, "level": 0.8, "unison-voices": 2},
+        "oscillator-2": {"shape": "square", "octave": -1, "semitone": 0, "detune-cents": 4.0, "level": 0.25, "sync-mode": "off"},
+        "filter": {"mode": "lowpass", "cutoff-hz": 4200.0, "resonance": 1.8, "drive": 0.0, "keytrack": 0.4, "env-amount": 0.2, "slope-db-per-oct": 24},
+        "envelope": {"attack-ms": 15.0, "decay-ms": 200.0, "sustain": 0.5, "release-ms": 500.0, "velocity-amount": 0.7},
+        "effects": {"reverb-mix": 0.1, "delay-mix": 0.0, "chorus-mix": 0.0, "stereo-width": 1.0, "output-gain-db": -2.0, "distortion-drive": 0.0}
+      },
+      "expected_changed_paths": ["effects.output-gain-db", "effects.stereo-width"],
+      "expected_exact_values": {"effects.output-gain-db": -6.0, "effects.stereo-width": 1.5},
+      "expected_null_paths": [
+        "oscillator-1.shape", "oscillator-1.octave", "oscillator-1.semitone", "oscillator-1.detune-cents", "oscillator-1.level", "oscillator-1.unison-voices",
+        "oscillator-2.shape", "oscillator-2.octave", "oscillator-2.semitone", "oscillator-2.detune-cents", "oscillator-2.level", "oscillator-2.sync-mode",
+        "filter.mode", "filter.cutoff-hz", "filter.resonance", "filter.drive", "filter.keytrack", "filter.env-amount", "filter.slope-db-per-oct",
+        "envelope.attack-ms", "envelope.decay-ms", "envelope.sustain", "envelope.release-ms", "envelope.velocity-amount",
+        "effects.reverb-mix", "effects.delay-mix", "effects.chorus-mix", "effects.distortion-drive"
+      ],
+      "expected_clamped_paths": [],
+      "expected_noop": false
+    }
+  ]
+}

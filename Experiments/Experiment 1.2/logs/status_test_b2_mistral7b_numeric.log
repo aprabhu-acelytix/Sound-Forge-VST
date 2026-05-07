@@ -1,0 +1,39 @@
+2026-05-07T02:47:34Z | Starting Experiment 1.2: Patch-Only Async Pipeline Sandbox
+2026-05-07T02:47:34Z | Run ID: 20260507T024734Z
+2026-05-07T02:47:34Z | Patch contract: sparse_patch_only
+2026-05-07T02:47:34Z | Explanation mode: off
+2026-05-07T02:47:34Z | Patch model path: /models_patch/Mistral-7B-Instruct-v0.3-Q4_K_M.gguf
+2026-05-07T02:47:34Z | Results JSON: /workspace/Experiments/Experiment 1.2/results/run_20260507T024734Z.json
+2026-05-07T02:47:34Z | Latency CSV: /workspace/Experiments/Experiment 1.2/logs/latency_20260507T024734Z.csv
+2026-05-07T02:47:34Z | Clamp events JSONL: /workspace/Experiments/Experiment 1.2/logs/clamp_events_20260507T024734Z.jsonl
+2026-05-07T02:47:34Z | Status log: Experiments/Experiment 1.2/logs/status_test_b2_mistral7b_numeric.log
+2026-05-07T02:47:34Z | Selected prompt cases: 7
+2026-05-07T02:47:34Z | Few-shot examples loaded: 0
+2026-05-07T02:47:34Z | Validating patch grammar file: /workspace/Experiments/Experiment 1.2/grammars/sparse_patch_only_v1.gbnf
+2026-05-07T02:47:34Z | Inference mode: GPU offload requested.
+2026-05-07T02:47:34Z | Loading patch model: /models_patch/Mistral-7B-Instruct-v0.3-Q4_K_M.gguf
+2026-05-07T02:48:22Z | Loaded patch model in 47851.87 ms
+2026-05-07T02:48:22Z | Submitting prompt cases into the async pipeline.
+2026-05-07T02:48:37Z | Completed [numeric_pressure_cutoff_001] | patch_pass=False | raw_range_pass=False | clamps=0 | patch_ready=14851.902 ms | patch_applied= ms | explanation_ready= ms
+2026-05-07T02:48:37Z | Progress: 1/7 completed so far; patch pipeline pass rate 0.0%
+2026-05-07T02:48:52Z | Completed [numeric_pressure_underflow_001] | patch_pass=False | raw_range_pass=False | clamps=0 | patch_ready=29575.405 ms | patch_applied= ms | explanation_ready= ms
+2026-05-07T02:48:52Z | Progress: 2/7 completed so far; patch pipeline pass rate 0.0%
+2026-05-07T02:49:06Z | Completed [numeric_pressure_integer_001] | patch_pass=False | raw_range_pass=False | clamps=0 | patch_ready=44291.617 ms | patch_applied= ms | explanation_ready= ms
+2026-05-07T02:49:06Z | Progress: 3/7 completed so far; patch pipeline pass rate 0.0%
+2026-05-07T02:49:21Z | Completed [numeric_pressure_negative_frequency_001] | patch_pass=False | raw_range_pass=False | clamps=0 | patch_ready=58908.617 ms | patch_applied= ms | explanation_ready= ms
+2026-05-07T02:49:21Z | Progress: 4/7 completed so far; patch pipeline pass rate 0.0%
+2026-05-07T02:49:36Z | Completed [numeric_pressure_drive_overflow_001] | patch_pass=False | raw_range_pass=False | clamps=0 | patch_ready=73551.759 ms | patch_applied= ms | explanation_ready= ms
+2026-05-07T02:49:36Z | Progress: 5/7 completed so far; patch pipeline pass rate 0.0%
+2026-05-07T02:49:50Z | Completed [numeric_pressure_wrong_enum_type_001] | patch_pass=False | raw_range_pass=False | clamps=0 | patch_ready=88407.570 ms | patch_applied= ms | explanation_ready= ms
+2026-05-07T02:49:50Z | Progress: 6/7 completed so far; patch pipeline pass rate 0.0%
+2026-05-07T02:50:05Z | Completed [numeric_pressure_mixed_bounds_001] | patch_pass=False | raw_range_pass=False | clamps=0 | patch_ready=103280.614 ms | patch_applied= ms | explanation_ready= ms
+2026-05-07T02:50:05Z | Progress: 7/7 completed so far; patch pipeline pass rate 0.0%
+2026-05-07T02:50:05Z | Async pipeline completed.
+2026-05-07T02:50:05Z | Patch pipeline pass rate: 0/7 (0.0%)
+2026-05-07T02:50:05Z | Raw range pass rate: 0/7 (0.0%)
+2026-05-07T02:50:05Z | Clamp intervention rate: 0/7 (0.0%)
+2026-05-07T02:50:05Z | Mean patch ready latency: 58981.07 ms
+2026-05-07T02:50:05Z | Results JSON written to: /workspace/Experiments/Experiment 1.2/results/run_20260507T024734Z.json
+2026-05-07T02:50:05Z | Latency CSV written to: /workspace/Experiments/Experiment 1.2/logs/latency_20260507T024734Z.csv
+2026-05-07T02:50:05Z | Clamp events JSONL written to: /workspace/Experiments/Experiment 1.2/logs/clamp_events_20260507T024734Z.jsonl
+2026-05-07T02:50:05Z | Status log written to: Experiments/Experiment 1.2/logs/status_test_b2_mistral7b_numeric.log

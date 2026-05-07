@@ -1,0 +1,47 @@
+2026-05-07T02:41:37Z | Starting Experiment 1.2: Patch-Only Async Pipeline Sandbox
+2026-05-07T02:41:37Z | Run ID: 20260507T024137Z
+2026-05-07T02:41:37Z | Patch contract: sparse_patch_only
+2026-05-07T02:41:37Z | Explanation mode: llm
+2026-05-07T02:41:37Z | Patch model path: /models_patch/Qwen2.5-7B-Instruct-Q4_K_M.gguf
+2026-05-07T02:41:37Z | Results JSON: /workspace/Experiments/Experiment 1.2/results/run_20260507T024137Z.json
+2026-05-07T02:41:37Z | Latency CSV: /workspace/Experiments/Experiment 1.2/logs/latency_20260507T024137Z.csv
+2026-05-07T02:41:37Z | Clamp events JSONL: /workspace/Experiments/Experiment 1.2/logs/clamp_events_20260507T024137Z.jsonl
+2026-05-07T02:41:37Z | Status log: Experiments/Experiment 1.2/logs/status_test_a2_qwen7b_plus_qwen3b_explainer.log
+2026-05-07T02:41:37Z | Selected prompt cases: 8
+2026-05-07T02:41:37Z | Few-shot examples loaded: 0
+2026-05-07T02:41:37Z | Validating patch grammar file: /workspace/Experiments/Experiment 1.2/grammars/sparse_patch_only_v1.gbnf
+2026-05-07T02:41:37Z | Validating explanation grammar file: /workspace/Experiments/Experiment 1.2/grammars/explanation_response_v1.gbnf
+2026-05-07T02:41:37Z | Inference mode: GPU offload requested.
+2026-05-07T02:41:37Z | Loading patch model: /models_patch/Qwen2.5-7B-Instruct-Q4_K_M.gguf
+2026-05-07T02:42:11Z | Loaded patch model in 33815.26 ms
+2026-05-07T02:42:11Z | Loading explainer model: /models_patch/Qwen2.5-3B-Instruct-Q4_K_M.gguf
+2026-05-07T02:42:31Z | Loaded explainer model in 20092.54 ms
+2026-05-07T02:42:31Z | Explainer runtime mode: isolated model instance.
+2026-05-07T02:42:31Z | Submitting prompt cases into the async pipeline.
+2026-05-07T02:42:46Z | Completed [latency_patch_only_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=11265.893 ms | patch_applied=11266.222 ms | explanation_ready=15138.845 ms
+2026-05-07T02:42:46Z | Progress: 1/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:42:58Z | Completed [latency_bass_dark_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=23474.333 ms | patch_applied=23474.691 ms | explanation_ready=26599.005 ms
+2026-05-07T02:42:58Z | Progress: 2/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:43:09Z | Completed [latency_pad_complex_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=35942.586 ms | patch_applied=35942.898 ms | explanation_ready=37661.576 ms
+2026-05-07T02:43:09Z | Progress: 3/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:43:21Z | Completed [latency_perc_tight_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=48099.796 ms | patch_applied=48100.123 ms | explanation_ready=50008.262 ms
+2026-05-07T02:43:21Z | Progress: 4/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:43:33Z | Completed [latency_space_only_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=59796.899 ms | patch_applied=59797.274 ms | explanation_ready=62260.897 ms
+2026-05-07T02:43:34Z | Progress: 5/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:43:45Z | Completed [latency_stream_supersede_001] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=72449.057 ms | patch_applied=72449.529 ms | explanation_ready=73657.274 ms
+2026-05-07T02:43:45Z | Progress: 6/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:43:58Z | Completed [latency_stream_supersede_002] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=85040.750 ms | patch_applied=85041.119 ms | explanation_ready=86838.091 ms
+2026-05-07T02:43:58Z | Progress: 7/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:44:10Z | Completed [latency_stream_supersede_003] | patch_pass=True | raw_range_pass=True | clamps=0 | patch_ready=97665.213 ms | patch_applied=97665.539 ms | explanation_ready=98926.387 ms
+2026-05-07T02:44:10Z | Progress: 8/8 completed so far; patch pipeline pass rate 100.0%
+2026-05-07T02:44:10Z | Async pipeline completed.
+2026-05-07T02:44:10Z | Patch pipeline pass rate: 8/8 (100.0%)
+2026-05-07T02:44:10Z | Raw range pass rate: 8/8 (100.0%)
+2026-05-07T02:44:10Z | Clamp intervention rate: 0/8 (0.0%)
+2026-05-07T02:44:10Z | Mean patch ready latency: 54216.82 ms
+2026-05-07T02:44:10Z | Mean patch applied latency: 54217.17 ms
+2026-05-07T02:44:10Z | Mean explanation ready latency: 56386.29 ms
+2026-05-07T02:44:10Z | Results JSON written to: /workspace/Experiments/Experiment 1.2/results/run_20260507T024137Z.json
+2026-05-07T02:44:10Z | Latency CSV written to: /workspace/Experiments/Experiment 1.2/logs/latency_20260507T024137Z.csv
+2026-05-07T02:44:10Z | Clamp events JSONL written to: /workspace/Experiments/Experiment 1.2/logs/clamp_events_20260507T024137Z.jsonl
+2026-05-07T02:44:10Z | Status log written to: Experiments/Experiment 1.2/logs/status_test_a2_qwen7b_plus_qwen3b_explainer.log
