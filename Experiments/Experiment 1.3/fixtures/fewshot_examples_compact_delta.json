@@ -1,0 +1,20 @@
+{
+  "description": "Compact-delta user/assistant few-shot examples for Experiment 1.3 omission and same-value evaluation.",
+  "examples": [
+    {
+      "tags": ["few-shot", "noop", "compact-delta"],
+      "user": "Current patch context (JSON):\n{\n  \"oscillator-1\": {\n    \"shape\": \"saw\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 0.0,\n    \"level\": 0.8,\n    \"unison-voices\": 2\n  },\n  \"oscillator-2\": {\n    \"shape\": \"square\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 4.0,\n    \"level\": 0.25,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 4200.0,\n    \"resonance\": 1.8,\n    \"drive\": 0.0,\n    \"keytrack\": 0.4,\n    \"env-amount\": 0.2,\n    \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 15.0,\n    \"decay-ms\": 200.0,\n    \"sustain\": 0.5,\n    \"release-ms\": 500.0,\n    \"velocity-amount\": 0.7\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.1,\n    \"delay-mix\": 0.0,\n    \"chorus-mix\": 0.0,\n    \"stereo-width\": 1.0,\n    \"output-gain-db\": -2.0,\n    \"distortion-drive\": 0.0\n  }\n}\n\nUser request:\nKeep the output gain exactly where it is.",
+      "assistant": "{\"changes\":[]}"
+    },
+    {
+      "tags": ["few-shot", "same-value-skip", "compact-delta", "cross-block"],
+      "user": "Current patch context (JSON):\n{\n  \"oscillator-1\": {\n    \"shape\": \"saw\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 0.0,\n    \"level\": 0.8,\n    \"unison-voices\": 2\n  },\n  \"oscillator-2\": {\n    \"shape\": \"square\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 4.0,\n    \"level\": 0.25,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 4200.0,\n    \"resonance\": 1.8,\n    \"drive\": 0.0,\n    \"keytrack\": 0.4,\n    \"env-amount\": 0.2,\n    \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 15.0,\n    \"decay-ms\": 200.0,\n    \"sustain\": 0.5,\n    \"release-ms\": 500.0,\n    \"velocity-amount\": 0.7\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.1,\n    \"delay-mix\": 0.0,\n    \"chorus-mix\": 0.0,\n    \"stereo-width\": 1.0,\n    \"output-gain-db\": -2.0,\n    \"distortion-drive\": 0.0\n  }\n}\n\nUser request:\nKeep oscillator 1 as a saw, but darken the filter a touch.",
+      "assistant": "{\"changes\":[{\"path\":\"filter.cutoff-hz\",\"value\":2800.0}]}"
+    },
+    {
+      "tags": ["few-shot", "single-change", "compact-delta"],
+      "user": "Current patch context (JSON):\n{\n  \"oscillator-1\": {\n    \"shape\": \"saw\",\n    \"octave\": 0,\n    \"semitone\": 0,\n    \"detune-cents\": 0.0,\n    \"level\": 0.8,\n    \"unison-voices\": 2\n  },\n  \"oscillator-2\": {\n    \"shape\": \"square\",\n    \"octave\": -1,\n    \"semitone\": 0,\n    \"detune-cents\": 4.0,\n    \"level\": 0.25,\n    \"sync-mode\": \"off\"\n  },\n  \"filter\": {\n    \"mode\": \"lowpass\",\n    \"cutoff-hz\": 4200.0,\n    \"resonance\": 1.8,\n    \"drive\": 0.0,\n    \"keytrack\": 0.4,\n    \"env-amount\": 0.2,\n    \"slope-db-per-oct\": 24\n  },\n  \"envelope\": {\n    \"attack-ms\": 15.0,\n    \"decay-ms\": 200.0,\n    \"sustain\": 0.5,\n    \"release-ms\": 500.0,\n    \"velocity-amount\": 0.7\n  },\n  \"effects\": {\n    \"reverb-mix\": 0.1,\n    \"delay-mix\": 0.0,\n    \"chorus-mix\": 0.0,\n    \"stereo-width\": 1.0,\n    \"output-gain-db\": -2.0,\n    \"distortion-drive\": 0.0\n  }\n}\n\nUser request:\nOnly make the attack slower.",
+      "assistant": "{\"changes\":[{\"path\":\"envelope.attack-ms\",\"value\":80.0}]}"
+    }
+  ]
+}

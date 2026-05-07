@@ -1,0 +1,17 @@
+{
+  "description": "Single-case numeric-pressure smoke fixture for Experiment 1.3 compatibility checks.",
+  "cases": [
+    {
+      "id": "numeric_pressure_cutoff_001",
+      "prompt": "Make the filter cutoff 50000 Hz and the resonance 30 for a painfully bright sweep.",
+      "tags": ["numeric-pressure", "clamp", "overflow", "smoke"],
+      "stream_id": "numeric-smoke-stream-1",
+      "current_patch_context": null,
+      "expected_changed_paths": ["filter.cutoff-hz", "filter.resonance"],
+      "expected_exact_values": {},
+      "expected_null_paths": [],
+      "expected_clamped_paths": ["filter.cutoff-hz", "filter.resonance"],
+      "expected_noop": false
+    }
+  ]
+}
